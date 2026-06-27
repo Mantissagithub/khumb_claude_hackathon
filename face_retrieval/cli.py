@@ -111,6 +111,32 @@ def cmd_search(cfg, args, log):
     print("montage:", out)
 
 
+def cmd_video(cfg, args, log):
+    pipe = SearchPipeline(cfg, log)
+    n = pipe.build_gallery_from_video(args.video, max_frames=args.max_frames,
+                                      every_sec=args.every_sec)
+    res = pipe.find_in_crowd(args.image, top_k=args.top_k or cfg.vector_db.top_k)
+    if not res:
+        raise SystemExit("no face detected in query image")
+    print(f"\nQuery: {args.image}  vs  {args.video}  ({n} frames sampled)")
+    print(f"verdict: {'FOUND' if res['confident_match'] else 'NOT FOUND'} "
+          f"(threshold {res['threshold']})")
+    for m in res["matches"][:6]:
+        flag = "OK " if m["confident"] else "  -"
+        print(f"  {flag} score={m['score']:.3f} {m['timestamp']:<8} "
+              f"frame_idx={m['frame_idx']} bbox={[int(v) for v in m['bbox']]}")
+    times = sorted({m["time_sec"] for m in res["matches"] if m["confident"]})
+    print("confident appearances at:", [f"{t:.1f}s" for t in times] or "none")
+    if res["confident_match"]:
+        top = res["matches"][0]
+        others = [mm["bbox"] for mm in pipe.crowd_meta
+                  if mm["scene_path"] == top["scene_path"]]
+        out = viz.highlight_in_scene(top["scene_path"], top["bbox"],
+                                     _out(cfg, "video_found.png"), others,
+                                     label=f"{top['score']:.2f} @ {top['timestamp']}")
+        print("annotated frame ->", out)
+
+
 def cmd_evaluate(cfg, args, log):
     samples = collect_samples(cfg, args.source, args.path, args.limit)
     if not samples:
@@ -192,6 +218,13 @@ def build_parser() -> argparse.ArgumentParser:
     s = sub.add_parser("search", help="search a query image against a saved index")
     s.add_argument("--image", required=True)
     s.add_argument("--top-k", type=int, default=None)
+
+    v = sub.add_parser("video", help="find a query face inside a video clip")
+    v.add_argument("--video", required=True)
+    v.add_argument("--image", required=True, help="clean query/celebrity photo")
+    v.add_argument("--max-frames", type=int, default=60)
+    v.add_argument("--every-sec", type=float, default=1.5)
+    v.add_argument("--top-k", type=int, default=None)
     return p
 
 
@@ -201,7 +234,7 @@ def main(argv=None):
     set_seed(int(cfg.project.seed))
     log = get_logger("kumbh", cfg.logging.level)
     {"datasets": cmd_datasets, "augment": cmd_augment, "index": cmd_index,
-     "search": cmd_search, "evaluate": cmd_evaluate}[args.cmd](cfg, args, log)
+     "search": cmd_search, "evaluate": cmd_evaluate, "video": cmd_video}[args.cmd](cfg, args, log)
 
 
 if __name__ == "__main__":

@@ -95,6 +95,35 @@ class SearchPipeline:
         self.log.info("crowd gallery: %d faces across %d frames",
                       len(meta), len(scene_samples))
 
+    def build_gallery_from_video(self, video_path: str, max_frames: int = 40,
+                                 every_sec: Optional[float] = None) -> int:
+        """Sample frames from a clip, index EVERY face per frame. Each gallery
+        entry knows its frame timestamp + bbox, so a hit = 'person appears at
+        t=Xs in this frame'."""
+        from .modules import video as V
+        frame_dir = os.path.join(self.cfg.paths.cache_dir, "frames")
+        frames = V.sample_frames(video_path, max_frames=max_frames,
+                                 every_sec=every_sec, out_dir=frame_dir)
+        embs, meta = [], []
+        for fr in frames:
+            for v, bbox, score in self.embedder.embed_image_faces(fr["image_path"]):
+                embs.append(v)
+                meta.append({"scene_path": fr["image_path"], "bbox": bbox,
+                             "det_score": round(score, 3), "camera_id": "VIDEO",
+                             "time_sec": round(fr["time_sec"], 2),
+                             "timestamp": f"t={fr['time_sec']:.1f}s",
+                             "frame_idx": fr["frame_idx"]})
+        if not embs:
+            raise RuntimeError("no faces detected in sampled frames")
+        self.gallery_embs = np.vstack(embs).astype("float32")
+        self.crowd_meta = meta
+        self.index = VectorIndex(self.embedder.dim, self.cfg.vector_db.backend,
+                                 self.cfg.vector_db.metric, self.log)
+        self.index.build_index(self.gallery_embs, list(range(len(meta))))
+        self.log.info("video gallery: %d faces across %d sampled frames",
+                      len(meta), len(frames))
+        return len(frames)
+
     def find_in_crowd(self, query_path: str, top_k: Optional[int] = None) -> Optional[dict]:
         """Locate a clean missing-person photo among the crowd faces."""
         top_k = top_k or self.cfg.vector_db.top_k

@@ -112,6 +112,23 @@ correctly rejected — which is why production wants higher-res frames, the
 ArcFace + RetinaFace/SCRFD backends (far better on small faces), and always a
 threshold + human verification.
 
+## Find a person in a *video clip*
+
+Same idea, but the gallery is built from **frames sampled from a clip** — every
+face in every frame is indexed, so a clean query returns the **frames +
+timestamps** where the person appears.
+
+```bash
+python -m face_retrieval.cli video --video clip.webm --image celebrity.jpg
+python -m face_retrieval.scripts.find_in_video_demo   # canned Obama-clip demo
+```
+
+Verified on a 88 s public-domain clip (60 frames sampled, 149 faces): a clean
+portrait located the person at **score ~0.86** with a timeline of confident
+appearances (7.4s, 8.9s, 23.7s … 87.3s) and an annotated frame. Talking-head
+faces are large, so scores are high and unambiguous — the opposite of the
+tiny-crowd-face case above.
+
 ## Configuration (`config.yaml`)
 
 ```yaml
