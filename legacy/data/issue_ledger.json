@@ -1,0 +1,311 @@
+[
+  {
+    "ticket_id": "KS-89903451",
+    "description": "My 6-year-old son got separated from me in the crowd. He is wearing a red shirt.",
+    "reporter_name": "Ramesh",
+    "reporter_contact": null,
+    "zone": "Sangam Ghat",
+    "created_at": "2026-06-27T07:40:16.990322+00:00",
+    "status": "NEW",
+    "ai_analysis": {
+      "summary": "My 6-year-old son got separated from me in the crowd. He is wearing a red shirt.",
+      "language": "Unknown (fallback)",
+      "suggested_department": "LOST_AND_FOUND",
+      "priority": "HIGH",
+      "confidence": 0.4,
+      "reasoning": "Keyword-based fallback (no Claude API key configured).",
+      "recommended_action": "Review and dispatch the relevant on-ground team.",
+      "nearest_asset": "Central Civil Hospital",
+      "tags": [
+        "son",
+        "separated",
+        "crowd"
+      ]
+    },
+    "ai_engine": "fallback",
+    "assigned_department": null,
+    "assigned_by": null,
+    "assigned_at": null,
+    "report_count": 1,
+    "merged_reports": []
+  },
+  {
+    "ticket_id": "KS-327E944D",
+    "description": "एक बुजुर्ग आदमी बेहोश होकर गिर गया है, उसे साँस लेने में दिक्कत हो रही है।",
+    "reporter_name": "Volunteer Sunita",
+    "reporter_contact": null,
+    "zone": "Sector 7",
+    "created_at": "2026-06-27T07:40:16.991856+00:00",
+    "status": "NEW",
+    "ai_analysis": {
+      "summary": "एक बुजुर्ग आदमी बेहोश होकर गिर गया है, उसे साँस लेने में दिक्कत हो रही है।",
+      "language": "Unknown (fallback)",
+      "suggested_department": "GENERAL_HELPDESK",
+      "priority": "LOW",
+      "confidence": 0.3,
+      "reasoning": "No specific keywords matched (fallback heuristic).",
+      "recommended_action": "Triage manually and route to the appropriate desk.",
+      "nearest_asset": "Central Civil Hospital",
+      "tags": []
+    },
+    "ai_engine": "fallback",
+    "assigned_department": null,
+    "assigned_by": null,
+    "assigned_at": null,
+    "report_count": 1,
+    "merged_reports": []
+  },
+  {
+    "ticket_id": "KS-16B7D467",
+    "description": "माझा मोबाईल आणि पैशाचे पाकीट कोणीतरी चोरले आहे, गर्दीत खिसा कापला.",
+    "reporter_name": "Anil",
+    "reporter_contact": null,
+    "zone": "Sector 4",
+    "created_at": "2026-06-27T07:40:16.993537+00:00",
+    "status": "NEW",
+    "ai_analysis": {
+      "summary": "माझा मोबाईल आणि पैशाचे पाकीट कोणीतरी चोरले आहे, गर्दीत खिसा कापला.",
+      "language": "Unknown (fallback)",
+      "suggested_department": "GENERAL_HELPDESK",
+      "priority": "LOW",
+      "confidence": 0.3,
+      "reasoning": "No specific keywords matched (fallback heuristic).",
+      "recommended_action": "Triage manually and route to the appropriate desk.",
+      "nearest_asset": "Central Civil Hospital",
+      "tags": []
+    },
+    "ai_engine": "fallback",
+    "assigned_department": null,
+    "assigned_by": null,
+    "assigned_at": null,
+    "report_count": 1,
+    "merged_reports": []
+  },
+  {
+    "ticket_id": "KS-E5083A92",
+    "description": "ఒక ఫుడ్ స్టాల్ దగ్గర గ్యాస్ సిలిండర్ నుండి మంటలు వస్తున్నాయి, పొగ చాలా ఉంది.",
+    "reporter_name": "Lakshmi",
+    "reporter_contact": null,
+    "zone": "Mela Bazaar",
+    "created_at": "2026-06-27T07:40:16.994914+00:00",
+    "status": "NEW",
+    "ai_analysis": {
+      "summary": "ఒక ఫుడ్ స్టాల్ దగ్గర గ్యాస్ సిలిండర్ నుండి మంటలు వస్తున్నాయి, పొగ చాలా ఉంది.",
+      "language": "Unknown (fallback)",
+      "suggested_department": "GENERAL_HELPDESK",
+      "priority": "LOW",
+      "confidence": 0.3,
+      "reasoning": "No specific keywords matched (fallback heuristic).",
+      "recommended_action": "Triage manually and route to the appropriate desk.",
+      "nearest_asset": "Central Civil Hospital",
+      "tags": []
+    },
+    "ai_engine": "fallback",
+    "assigned_department": null,
+    "assigned_by": null,
+    "assigned_at": null,
+    "report_count": 1,
+    "merged_reports": []
+  },
+  {
+    "ticket_id": "KS-53B5CA79",
+    "description": "Huge dangerous crowd crush building up on the bridge, people are getting pushed and could fall.",
+    "reporter_name": null,
+    "reporter_contact": null,
+    "zone": "Ram Ghat Bridge",
+    "created_at": "2026-06-27T07:40:16.996398+00:00",
+    "status": "NEW",
+    "ai_analysis": {
+      "summary": "Huge dangerous crowd crush building up on the bridge, people are getting pushed ",
+      "language": "Unknown (fallback)",
+      "suggested_department": "CROWD_CONTROL",
+      "priority": "CRITICAL",
+      "confidence": 0.4,
+      "reasoning": "Keyword-based fallback (no Claude API key configured).",
+      "recommended_action": "Review and dispatch the relevant on-ground team.",
+      "nearest_asset": "Central Civil Hospital",
+      "tags": [
+        "crowd",
+        "crush",
+        "push"
+      ]
+    },
+    "ai_engine": "fallback",
+    "assigned_department": null,
+    "assigned_by": null,
+    "assigned_at": null,
+    "report_count": 1,
+    "merged_reports": []
+  },
+  {
+    "ticket_id": "KS-2BF66D07",
+    "description": "The metal barricade near the entrance of Sector 2 is broken and people are spilling onto the road.",
+    "reporter_name": "A",
+    "reporter_contact": null,
+    "zone": "Sector 2",
+    "created_at": "2026-06-27T07:40:16.997907+00:00",
+    "status": "NEW",
+    "ai_analysis": {
+      "summary": "The metal barricade near the entrance of Sector 2 is broken and people are spill",
+      "language": "Unknown (fallback)",
+      "suggested_department": "INFRASTRUCTURE",
+      "priority": "MEDIUM",
+      "confidence": 0.4,
+      "reasoning": "Keyword-based fallback (no Claude API key configured).",
+      "recommended_action": "Review and dispatch the relevant on-ground team.",
+      "nearest_asset": "Central Civil Hospital",
+      "tags": [
+        "road",
+        "barricade"
+      ]
+    },
+    "ai_engine": "fallback",
+    "assigned_department": null,
+    "assigned_by": null,
+    "assigned_at": null,
+    "report_count": 1,
+    "merged_reports": []
+  },
+  {
+    "ticket_id": "KS-82DC669C",
+    "description": "Barricade in sector 2 is broken, crowd pushing through the gap.",
+    "reporter_name": "B",
+    "reporter_contact": null,
+    "zone": "Sector 2",
+    "created_at": "2026-06-27T07:40:16.999375+00:00",
+    "status": "NEW",
+    "ai_analysis": {
+      "summary": "Barricade in sector 2 is broken, crowd pushing through the gap.",
+      "language": "Unknown (fallback)",
+      "suggested_department": "CROWD_CONTROL",
+      "priority": "CRITICAL",
+      "confidence": 0.4,
+      "reasoning": "Keyword-based fallback (no Claude API key configured).",
+      "recommended_action": "Review and dispatch the relevant on-ground team.",
+      "nearest_asset": "Central Civil Hospital",
+      "tags": [
+        "crowd",
+        "push",
+        "barricade"
+      ]
+    },
+    "ai_engine": "fallback",
+    "assigned_department": null,
+    "assigned_by": null,
+    "assigned_at": null,
+    "report_count": 1,
+    "merged_reports": []
+  },
+  {
+    "ticket_id": "KS-2618298E",
+    "description": "Broken barricade at sector 2 gate, it is unsafe.",
+    "reporter_name": "C",
+    "reporter_contact": null,
+    "zone": "Sector 2",
+    "created_at": "2026-06-27T07:40:17.001077+00:00",
+    "status": "NEW",
+    "ai_analysis": {
+      "summary": "Broken barricade at sector 2 gate, it is unsafe.",
+      "language": "Unknown (fallback)",
+      "suggested_department": "INFRASTRUCTURE",
+      "priority": "MEDIUM",
+      "confidence": 0.4,
+      "reasoning": "Keyword-based fallback (no Claude API key configured).",
+      "recommended_action": "Review and dispatch the relevant on-ground team.",
+      "nearest_asset": "Central Civil Hospital",
+      "tags": [
+        "barricade"
+      ]
+    },
+    "ai_engine": "fallback",
+    "assigned_department": null,
+    "assigned_by": null,
+    "assigned_at": null,
+    "report_count": 1,
+    "merged_reports": []
+  },
+  {
+    "ticket_id": "KS-81978D9B",
+    "description": "The fencing/barricade at the Sector 2 entry has collapsed.",
+    "reporter_name": "D",
+    "reporter_contact": null,
+    "zone": "Sector 2",
+    "created_at": "2026-06-27T07:40:17.002538+00:00",
+    "status": "NEW",
+    "ai_analysis": {
+      "summary": "The fencing/barricade at the Sector 2 entry has collapsed.",
+      "language": "Unknown (fallback)",
+      "suggested_department": "MEDICAL",
+      "priority": "HIGH",
+      "confidence": 0.4,
+      "reasoning": "Keyword-based fallback (no Claude API key configured).",
+      "recommended_action": "Review and dispatch the relevant on-ground team.",
+      "nearest_asset": "Central Civil Hospital",
+      "tags": [
+        "collapse",
+        "barricade"
+      ]
+    },
+    "ai_engine": "fallback",
+    "assigned_department": null,
+    "assigned_by": null,
+    "assigned_at": null,
+    "report_count": 1,
+    "merged_reports": []
+  },
+  {
+    "ticket_id": "KS-64FACFE6",
+    "description": "Toilets near sector 7 camp are overflowing and very dirty.",
+    "reporter_name": null,
+    "reporter_contact": null,
+    "zone": "Sector 7",
+    "created_at": "2026-06-27T07:40:17.003987+00:00",
+    "status": "NEW",
+    "ai_analysis": {
+      "summary": "Toilets near sector 7 camp are overflowing and very dirty.",
+      "language": "Unknown (fallback)",
+      "suggested_department": "SANITATION",
+      "priority": "MEDIUM",
+      "confidence": 0.4,
+      "reasoning": "Keyword-based fallback (no Claude API key configured).",
+      "recommended_action": "Review and dispatch the relevant on-ground team.",
+      "nearest_asset": "Central Civil Hospital",
+      "tags": [
+        "toilet",
+        "dirty"
+      ]
+    },
+    "ai_engine": "fallback",
+    "assigned_department": null,
+    "assigned_by": null,
+    "assigned_at": null,
+    "report_count": 1,
+    "merged_reports": []
+  },
+  {
+    "ticket_id": "KS-00B4F2B1",
+    "description": "What time does the main aarti start this evening?",
+    "reporter_name": null,
+    "reporter_contact": null,
+    "zone": "Main Gate",
+    "created_at": "2026-06-27T07:40:17.005414+00:00",
+    "status": "NEW",
+    "ai_analysis": {
+      "summary": "What time does the main aarti start this evening?",
+      "language": "Unknown (fallback)",
+      "suggested_department": "GENERAL_HELPDESK",
+      "priority": "LOW",
+      "confidence": 0.3,
+      "reasoning": "No specific keywords matched (fallback heuristic).",
+      "recommended_action": "Triage manually and route to the appropriate desk.",
+      "nearest_asset": "Central Civil Hospital",
+      "tags": []
+    },
+    "ai_engine": "fallback",
+    "assigned_department": null,
+    "assigned_by": null,
+    "assigned_at": null,
+    "report_count": 1,
+    "merged_reports": []
+  }
+]

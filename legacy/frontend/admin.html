@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>KumbhSeva — Admin Control Room</title>
+  <style>
+    :root {
+      --bg: #0f1115; --card: #1a1d24; --line: #2a2f3a; --muted: #8b93a7;
+      --text: #e9edf5; --accent: #e9883b; --accent2: #4c9be8;
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; background: var(--bg); color: var(--text);
+      font-family: -apple-system, system-ui, "Segoe UI", Roboto, sans-serif; }
+    header { padding: 18px 24px; border-bottom: 1px solid var(--line);
+      display: flex; align-items: center; justify-content: space-between; }
+    header h1 { font-size: 18px; margin: 0; letter-spacing: .3px; }
+    header .sub { color: var(--muted); font-size: 13px; }
+    .bar { padding: 12px 24px; display: flex; gap: 12px; align-items: center;
+      color: var(--muted); font-size: 13px; border-bottom: 1px solid var(--line); }
+    .bar a { color: var(--accent2); text-decoration: none; }
+    .grid { padding: 20px 24px; display: grid; gap: 16px;
+      grid-template-columns: repeat(auto-fill, minmax(360px, 1fr)); }
+    .card { background: var(--card); border: 1px solid var(--line);
+      border-radius: 12px; padding: 16px; }
+    .card.NEW { border-left: 4px solid var(--accent); }
+    .card.ASSIGNED { border-left: 4px solid #3fb27f; }
+    .top { display: flex; justify-content: space-between; align-items: flex-start; gap: 8px; }
+    .summary { font-weight: 600; font-size: 15px; margin: 0 0 2px; }
+    .id { color: var(--muted); font-size: 12px; font-family: ui-monospace, monospace; }
+    .badges { display: flex; gap: 6px; flex-wrap: wrap; margin: 10px 0; }
+    .badge { font-size: 11px; padding: 3px 8px; border-radius: 999px;
+      border: 1px solid var(--line); color: var(--muted); }
+    .p-CRITICAL { background: #3a1414; color: #ff8a8a; border-color: #5a1d1d; }
+    .p-HIGH { background: #3a2a14; color: #ffc07a; border-color: #5a401d; }
+    .p-MEDIUM { background: #14303a; color: #7ad0ff; border-color: #1d4a5a; }
+    .p-LOW { background: #1b2330; color: #9fb4d6; }
+    .lang { background: #221a33; color: #c8a6ff; border-color: #3a2a5a; }
+    .dup { background: #3a1430; color: #ff8ad4; border-color: #5a1d4a; }
+    .desc { color: #c4ccdc; font-size: 13px; line-height: 1.5; margin: 8px 0; }
+    .ai { background: #12151b; border: 1px solid var(--line); border-radius: 8px;
+      padding: 10px; margin: 10px 0; font-size: 13px; }
+    .ai .row { margin: 4px 0; }
+    .ai .label { color: var(--muted); }
+    .suggest { color: var(--accent); font-weight: 600; }
+    .meta { color: var(--muted); font-size: 12px; margin-top: 6px; }
+    .actions { display: flex; gap: 8px; margin-top: 12px; }
+    select, button { font: inherit; border-radius: 8px; border: 1px solid var(--line);
+      background: #12151b; color: var(--text); padding: 8px 10px; }
+    button { background: var(--accent); color: #1a1206; border: none; font-weight: 600;
+      cursor: pointer; }
+    button.ghost { background: #1f2530; color: var(--text); }
+    .assigned-note { color: #3fb27f; font-size: 13px; margin-top: 10px; }
+    .empty { color: var(--muted); padding: 40px; text-align: center; grid-column: 1/-1; }
+  </style>
+</head>
+<body>
+  <header>
+    <div>
+      <h1>🕉️ KumbhSeva — Admin Control Room</h1>
+      <div class="sub">AI-routed issue tickets · assign with one click</div>
+    </div>
+    <div class="sub" id="status">loading…</div>
+  </header>
+  <div class="bar">
+    <span id="counts"></span>
+    <span>· auto-refresh every 5s ·</span>
+    <a href="/report" target="_blank">+ Report an issue (test)</a>
+  </div>
+  <div class="grid" id="grid"><div class="empty">Loading tickets…</div></div>
+
+  <script>
+    let DEPARTMENTS = [];
+
+    async function loadDepartments() {
+      const r = await fetch('/api/v1/departments');
+      DEPARTMENTS = (await r.json()).departments;
+    }
+
+    async function loadHealth() {
+      try {
+        const r = await fetch('/health');
+        const h = await r.json();
+        document.getElementById('status').textContent =
+          `AI: ${h.ai_routing} · ${h.model}`;
+      } catch (e) { /* ignore */ }
+    }
+
+    function deptName(code) {
+      const d = DEPARTMENTS.find(x => x.code === code);
+      return d ? d.name : code;
+    }
+
+    function deptOptions(selected) {
+      return DEPARTMENTS.map(d =>
+        `<option value="${d.code}" ${d.code === selected ? 'selected' : ''}>${d.name}</option>`
+      ).join('');
+    }
+
+    function card(t) {
+      const ai = t.ai_analysis || {};
+      const dup = t.report_count > 1
+        ? `<span class="badge dup">${t.report_count}× reported</span>` : '';
+      const lang = ai.language && !/english/i.test(ai.language)
+        ? `<span class="badge lang">${ai.language}</span>` : '';
+      const assigned = t.assigned_department
+        ? `<div class="assigned-note">✓ Assigned to ${deptName(t.assigned_department)} by ${t.assigned_by || 'admin'}</div>`
+        : `<div class="actions">
+             <select id="sel-${t.ticket_id}">${deptOptions(ai.suggested_department)}</select>
+             <button onclick="assign('${t.ticket_id}')">Assign</button>
+           </div>`;
+      return `<div class="card ${t.status}">
+        <div class="top">
+          <div>
+            <p class="summary">${escapeHtml(ai.summary || t.description)}</p>
+            <span class="id">${t.ticket_id} · ${t.zone || 'no zone'}</span>
+          </div>
+        </div>
+        <div class="badges">
+          <span class="badge p-${ai.priority}">${ai.priority || '—'}</span>
+          ${dup} ${lang}
+          <span class="badge">${t.ai_engine}</span>
+        </div>
+        <div class="desc">${escapeHtml(t.description)}</div>
+        <div class="ai">
+          <div class="row"><span class="label">AI suggests → </span>
+            <span class="suggest">${deptName(ai.suggested_department)}</span>
+            <span class="label"> (${Math.round((ai.confidence||0)*100)}% conf)</span></div>
+          <div class="row"><span class="label">Why: </span>${escapeHtml(ai.reasoning||'')}</div>
+          <div class="row"><span class="label">Action: </span>${escapeHtml(ai.recommended_action||'')}</div>
+          ${ai.nearest_asset ? `<div class="row"><span class="label">Nearest asset: </span>${escapeHtml(ai.nearest_asset)}</div>` : ''}
+        </div>
+        ${assigned}
+      </div>`;
+    }
+
+    function escapeHtml(s) {
+      return (s || '').replace(/[&<>"']/g, c =>
+        ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+    }
+
+    async function assign(id) {
+      const dept = document.getElementById('sel-' + id).value;
+      await fetch(`/api/v1/issues/${id}/assign`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ department: dept, assigned_by: 'admin' }),
+      });
+      load();
+    }
+
+    async function load() {
+      const r = await fetch('/api/v1/issues');
+      const tickets = await r.json();
+      const grid = document.getElementById('grid');
+      if (!tickets.length) {
+        grid.innerHTML = '<div class="empty">No tickets yet. Open “Report an issue” or run the seed script.</div>';
+      } else {
+        grid.innerHTML = tickets.map(card).join('');
+      }
+      const open = tickets.filter(t => t.status === 'NEW').length;
+      document.getElementById('counts').textContent =
+        `${tickets.length} tickets · ${open} unassigned`;
+    }
+
+    (async () => {
+      await loadDepartments();
+      await loadHealth();
+      await load();
+      setInterval(load, 5000);
+    })();
+  </script>
+</body>
+</html>
