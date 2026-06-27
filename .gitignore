@@ -1,0 +1,16 @@
+# Python
+__pycache__/
+*.pyc
+artifacts/
+.venv/
+
+# Secrets — never commit API keys
+.env
+.env.*
+!.env.example
+
+# Node / Vite (console)
+node_modules/
+dist/
+*.log
+.DS_Store
