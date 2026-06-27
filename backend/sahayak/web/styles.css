@@ -1,0 +1,16 @@
+/* Small custom layer on top of Tailwind (CDN). */
+.toast { transition: opacity .3s ease; animation: slidein .25s ease; }
+@keyframes slidein { from { transform: translateX(20px); opacity: 0; } to { transform: none; opacity: 1; } }
+
+.pulse-dot { position: relative; }
+.pulse-dot::after {
+  content: ""; position: absolute; inset: 0; border-radius: 9999px;
+  animation: pulse 1.8s infinite; box-shadow: 0 0 0 0 rgba(16,185,129,.6);
+}
+@keyframes pulse { 70% { box-shadow: 0 0 0 8px rgba(16,185,129,0); } 100% { box-shadow: 0 0 0 0 rgba(16,185,129,0); } }
+
+.kumbh-gradient { background: linear-gradient(135deg, #ea580c 0%, #db2777 55%, #6d28d9 100%); }
+.card-hover { transition: transform .15s ease, box-shadow .15s ease; }
+.card-hover:hover { transform: translateY(-3px); box-shadow: 0 12px 30px rgba(0,0,0,.12); }
+::-webkit-scrollbar { width: 10px; height: 10px; }
+::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 8px; }

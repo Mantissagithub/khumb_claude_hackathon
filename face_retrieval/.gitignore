@@ -1,0 +1,7 @@
+__pycache__/
+*.pyc
+.cache/
+outputs/
+# dataset content is large & licensed — keep only the layout doc
+datasets/*/
+!datasets/README.md

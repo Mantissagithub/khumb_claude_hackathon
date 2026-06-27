@@ -1,5 +1,9 @@
 .venv/
+venv/
 __pycache__/
 *.pyc
+*.log
+uploads/
+_testdata/
 data/sangam.db
 data/photos/sub_*
