@@ -10,9 +10,10 @@ import { Badge } from "@/shared/ui/badge";
 import { Tabs, TabsList, TabsTrigger } from "@/shared/ui/tabs";
 import { Skeleton } from "@/shared/ui/skeleton";
 import {
-  listReports, matchReport, confirmReportMatch, rejectReport, reuniteReport, reportMedia,
+  listReports, confirmReportMatch, rejectReport, reuniteReport, reportMedia,
 } from "@/shared/authApi";
-import { verdictFromScore, faceEngineLive } from "@/shared/faceApi";
+import { verdictFromScore } from "@/shared/faceApi";
+import { descriptorFor, distance, faceVerdict } from "@/admin/lib/faceMatch";
 
 const TYPE_LABEL = { lost_self: "Lost (self)", seeking: "Seeking", found: "Found person" };
 const initials = (n) => (n || "?").split(/\s+/).map((w) => w[0]).join("").slice(0, 2).toUpperCase();
@@ -163,7 +164,16 @@ export default function Alerts() {
       const linked = new Set(reports.filter((r) => r.matched_report_id).map((r) => String(r.matched_report_id)));
       const review = [], auto = [], active = [];
 
-      // Pre-confirmed matches need no scoring; the rest get matched in parallel.
+      // Embed every report photo once with on-device face recognition.
+      const descById = Object.fromEntries(
+        await Promise.all(reports.map(async (r) => [String(r.id), await descriptorFor(reportMedia(r.photo_path))]))
+      );
+
+      const isOpposite = (a, b) =>
+        (a.report_type === "found" && (b.report_type === "seeking" || b.report_type === "lost_self")) ||
+        ((a.report_type === "seeking" || a.report_type === "lost_self") && b.report_type === "found");
+
+      // Pre-confirmed matches need no scoring; the rest get matched by face.
       const searching = [];
       for (const report of reports) {
         if (linked.has(String(report.id))) continue;
@@ -175,24 +185,44 @@ export default function Alerts() {
         }
       }
 
-      const matched = await Promise.all(
-        searching.map((r) => matchReport(r.id, 3).then((c) => ({ r, c })).catch(() => ({ r, c: [] })))
-      );
-
       const seenPairs = new Set(); // dedupe report↔report matches found in both directions
-      for (const { r: report, c: candidates } of matched) {
-        const top = candidates[0];
-        if (!top) {
-          active.push({ report, match: { name: "—", caption: "No candidate yet", photo: null }, verdict: verdictFromScore(0), kind: "active" });
+      for (const report of searching) {
+        const qd = descById[String(report.id)];
+        // best opposite-direction report by face distance
+        let best = null;
+        if (qd) {
+          for (const cand of searching) {
+            if (cand.id === report.id || !isOpposite(report, cand)) continue;
+            const d = distance(qd, descById[String(cand.id)]);
+            if (d == null) continue;
+            if (!best || d < best.d) best = { cand, d };
+          }
+        }
+        if (!best) {
+          active.push({
+            report,
+            match: { name: "—", caption: qd ? "No candidate yet" : "No face in photo", photo: null },
+            verdict: {
+              band: "NO_MATCH", confidence_pct: 0,
+              label: qd ? "No match found" : "No usable face",
+              reasons: [
+                qd ? "No opposite-direction report matches this face yet." : "No clear face detected in this photo — can't compare faces.",
+                "On-device face recognition · decision support only.",
+              ],
+            },
+            kind: "active",
+          });
           continue;
         }
-        if (top.source === "report") {
-          const key = [String(report.id), String(top.ref_id)].sort().join("-");
-          if (seenPairs.has(key)) continue;
-          seenPairs.add(key);
-        }
-        const verdict = verdictFromScore(top.score, { second: candidates[1]?.score, reasonHint: top.reason });
-        const match = resolveMatch(report, top, byId);
+        const key = [String(report.id), String(best.cand.id)].sort().join("-");
+        if (seenPairs.has(key)) continue;
+        seenPairs.add(key);
+        const verdict = faceVerdict(best.d);
+        const match = {
+          source: "report", ref_id: String(best.cand.id), name: best.cand.person_name,
+          caption: `Report #${best.cand.id}`, photo: reportMedia(best.cand.photo_path),
+          where: best.cand.location_text || best.cand.found_center,
+        };
         if (verdict.band === "STRONG") auto.push({ report, match, verdict, kind: "auto" });
         else if (verdict.band === "NO_MATCH") active.push({ report, match, verdict, kind: "active" });
         else review.push({ report, match, verdict, kind: "review" });
@@ -229,14 +259,11 @@ export default function Alerts() {
     <>
       <PageHeader
         title="Alerts"
-        description="Lost ↔ found matches surfaced by face recognition. Confirm the borderline ones; the system auto-approves the confident ones."
+        description="Lost ↔ found matches ranked by on-device face recognition. Confirm the borderline ones; the system auto-approves the confident ones."
       >
-        <Badge
-          variant="outline"
-          className={faceEngineLive ? "border-success/30 bg-success/15 text-success" : "border-info/30 bg-info/15 text-info"}
-        >
+        <Badge variant="outline" className="border-success/30 bg-success/15 text-success">
           <ScanFace className="mr-1.5 size-3" />
-          Face engine: {faceEngineLive ? "live" : "fallback matcher"}
+          Face engine: on-device
         </Badge>
       </PageHeader>
 
