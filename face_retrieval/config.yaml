@@ -1,0 +1,72 @@
+# Kumbh-Reunite — pipeline configuration.
+# Every stage is configurable here. Backends fall back gracefully when a
+# heavy dependency is not installed (e.g. insightface -> facenet -> torchvision).
+
+project:
+  name: kumbh-reunite
+  seed: 42
+
+device: auto            # auto | cpu | cuda
+mixed_precision: true   # AMP autocast on CUDA (ignored on CPU)
+
+paths:
+  datasets_root: datasets
+  cache_dir: .cache
+  output_dir: outputs
+
+detector:
+  backend: auto         # auto | retinaface | yolov11face | insightface | mtcnn
+  min_face_size: 24
+  conf_threshold: 0.6
+  det_size: [640, 640]
+
+embedding:
+  backend: auto         # auto | insightface | facenet
+  insightface_pack: buffalo_l   # ArcFace model pack (if insightface installed)
+  image_size: 112
+  batch_size: 32
+  normalize: true       # L2-normalize embeddings (cosine via inner product)
+  cache: true           # cache embeddings to paths.cache_dir
+
+augmentation:
+  enabled: true
+  probability: 0.5      # default per-transform apply probability
+  seed: 42
+  transforms:           # per-transform probability overrides
+    motion_blur: 0.3
+    gaussian_blur: 0.3
+    low_light: 0.3
+    bright_sunlight: 0.2
+    dust: 0.2
+    fog: 0.2
+    compression: 0.3
+    cctv_noise: 0.3
+    small_face: 0.3
+    occlusion: 0.2
+    face_mask: 0.2
+    scarf: 0.2
+    umbrella: 0.1
+    camera_angle: 0.2
+    random_crop: 0.2
+
+vector_db:
+  backend: auto         # auto | faiss | numpy
+  metric: cosine        # cosine | l2
+  top_k: 10
+
+camera_network:
+  num_cameras: 32
+  use_cctv_csv: true                       # ground GPS on real CCTV coords if present
+  cctv_csv: ../data/data/CCTV_Locations.csv
+  start_time: "2027-07-14T06:00:00"
+  time_window_minutes: 720
+  seed: 42
+
+evaluation:
+  top_k: [1, 5, 10]
+  roc: true
+  cmc: true
+  embedding_plot: tsne  # tsne | umap | none
+
+logging:
+  level: INFO
