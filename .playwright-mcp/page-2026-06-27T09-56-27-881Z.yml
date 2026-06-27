@@ -1,0 +1,111 @@
+- generic [ref=e1]:
+  - generic [ref=e2]:
+    - generic [ref=e3]:
+      - banner [ref=e4]:
+        - generic [ref=e5]:
+          - link "হোম" [ref=e6] [cursor=pointer]:
+            - /url: /
+            - generic [ref=e7]: स
+            - generic [ref=e8]: সংগম
+          - button "বাংলা" [active] [ref=e9]:
+            - img [ref=e10]
+            - generic [ref=e13]: বাংলা
+      - generic [ref=e14]:
+        - generic [ref=e15]:
+          - generic [ref=e16]:
+            - img [ref=e17]
+            - heading "আপনার প্রিয়জনের সঙ্গে আবার মিলিত হন" [level=1] [ref=e19]
+            - paragraph [ref=e20]: কয়েক সেকেন্ডে একটি রিপোর্ট দাখিল করুন — কোনো অ্যাকাউন্ট লাগবে না। পরিবারকে আবার একত্র করতে আমরা প্রতিটি কেন্দ্রে খোঁজ করি।
+          - generic [ref=e21]:
+            - link "রিপোর্ট দাখিল করুন" [ref=e22] [cursor=pointer]:
+              - /url: /new
+              - img
+              - text: রিপোর্ট দাখিল করুন
+            - link "আমার রিপোর্ট দেখুন" [ref=e23] [cursor=pointer]:
+              - /url: /track
+              - img
+              - text: আমার রিপোর্ট দেখুন
+          - generic [ref=e24]:
+            - paragraph [ref=e25]:
+              - img [ref=e26]
+              - text: জরুরি হেল্পলাইন
+            - paragraph [ref=e28]: "1920"
+            - paragraph [ref=e29]: ভুলা-ভাটকা / হারানো ও প্রাপ্তি কেন্দ্র
+          - paragraph [ref=e30]:
+            - text: কর্মী?
+            - link "কন্ট্রোল-রুম সাইন ইন" [ref=e31] [cursor=pointer]:
+              - /url: /ops/login
+        - button "কথা বলতে ট্যাপ করুন" [ref=e32]:
+          - img [ref=e33]
+          - generic [ref=e36]: কথা বলতে ট্যাপ করুন
+    - region "Notifications alt+T"
+  - dialog [ref=e37]:
+    - generic [ref=e39]:
+      - generic [ref=e40]:
+        - paragraph [ref=e41]:
+          - img [ref=e42]
+          - text: Language · भाषा
+        - button "Close" [ref=e45]:
+          - img [ref=e46]
+      - generic [ref=e49]:
+        - button "English English" [ref=e50]:
+          - generic [ref=e51]:
+            - generic [ref=e52]: English
+            - generic [ref=e53]: English
+        - button "हिन्दी Hindi" [ref=e54]:
+          - generic [ref=e55]:
+            - generic [ref=e56]: हिन्दी
+            - generic [ref=e57]: Hindi
+        - button "मराठी Marathi" [ref=e58]:
+          - generic [ref=e59]:
+            - generic [ref=e60]: मराठी
+            - generic [ref=e61]: Marathi
+        - button "বাংলা Bengali" [ref=e62]:
+          - generic [ref=e63]:
+            - generic [ref=e64]: বাংলা
+            - generic [ref=e65]: Bengali
+          - img [ref=e66]
+        - button "తెలుగు Telugu" [ref=e68]:
+          - generic [ref=e69]:
+            - generic [ref=e70]: తెలుగు
+            - generic [ref=e71]: Telugu
+        - button "தமிழ் Tamil" [ref=e72]:
+          - generic [ref=e73]:
+            - generic [ref=e74]: தமிழ்
+            - generic [ref=e75]: Tamil
+        - button "ગુજરાતી Gujarati" [ref=e76]:
+          - generic [ref=e77]:
+            - generic [ref=e78]: ગુજરાતી
+            - generic [ref=e79]: Gujarati
+        - button "ಕನ್ನಡ Kannada" [ref=e80]:
+          - generic [ref=e81]:
+            - generic [ref=e82]: ಕನ್ನಡ
+            - generic [ref=e83]: Kannada
+        - button "മലയാളം Malayalam" [ref=e84]:
+          - generic [ref=e85]:
+            - generic [ref=e86]: മലയാളം
+            - generic [ref=e87]: Malayalam
+        - button "ਪੰਜਾਬੀ Punjabi" [ref=e88]:
+          - generic [ref=e89]:
+            - generic [ref=e90]: ਪੰਜਾਬੀ
+            - generic [ref=e91]: Punjabi
+        - button "ଓଡ଼ିଆ Odia" [ref=e92]:
+          - generic [ref=e93]:
+            - generic [ref=e94]: ଓଡ଼ିଆ
+            - generic [ref=e95]: Odia
+        - button "অসমীয়া Assamese" [ref=e96]:
+          - generic [ref=e97]:
+            - generic [ref=e98]: অসমীয়া
+            - generic [ref=e99]: Assamese
+        - button "اردو Urdu" [ref=e100]:
+          - generic [ref=e101]:
+            - generic [ref=e102]: اردو
+            - generic [ref=e103]: Urdu
+        - button "संस्कृतम् Sanskrit" [ref=e104]:
+          - generic [ref=e105]:
+            - generic [ref=e106]: संस्कृतम्
+            - generic [ref=e107]: Sanskrit
+        - button "کٲشُر Kashmiri" [ref=e108]:
+          - generic [ref=e109]:
+            - generic [ref=e110]: کٲشُر
+            - generic [ref=e111]: Kashmiri

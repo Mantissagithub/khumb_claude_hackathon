@@ -2,12 +2,16 @@ import { Routes, Route, Navigate } from "react-router-dom";
 import Layout from "@/admin/components/Layout";
 import Login from "@/admin/pages/Login";
 import Dashboard from "@/admin/pages/Dashboard";
+import Alerts from "@/admin/pages/Alerts";
+import Reports from "@/admin/pages/Reports";
+import ReportDetail from "@/admin/pages/ReportDetail";
+import MapView from "@/admin/pages/MapView";
 import Staff from "@/admin/pages/Staff";
-import Simulation from "@/admin/pages/Simulation";
-import Routing from "@/admin/pages/Routing";
 import { RequireAuth } from "@/shared/auth/AuthContext";
 
 // Control Center (Admin) — mounted at "/admin". Admin role only.
+// Nav surfaces: Dashboard · Alerts · Reports · Map. (Staff stays reachable
+// at /admin/staff but is off-nav; Simulation/Routing are parked.)
 export default function AdminApp() {
   return (
     <Routes>
@@ -20,9 +24,11 @@ export default function AdminApp() {
         }
       >
         <Route index element={<Dashboard />} />
+        <Route path="alerts" element={<Alerts />} />
+        <Route path="reports" element={<Reports />} />
+        <Route path="reports/:id" element={<ReportDetail />} />
+        <Route path="map" element={<MapView />} />
         <Route path="staff" element={<Staff />} />
-        <Route path="simulation" element={<Simulation />} />
-        <Route path="routing" element={<Routing />} />
       </Route>
       <Route path="*" element={<Navigate to="/admin" replace />} />
     </Routes>

@@ -1,0 +1,89 @@
+- generic [ref=e2]:
+  - generic [ref=e35]:
+    - complementary [ref=e36]:
+      - generic [ref=e37]:
+        - generic [ref=e38]: स
+        - generic [ref=e39]:
+          - paragraph [ref=e40]: SANGAM
+          - paragraph [ref=e41]: Control Center
+      - navigation [ref=e42]:
+        - paragraph [ref=e43]: Admin
+        - link "Dashboard" [ref=e44] [cursor=pointer]:
+          - /url: "#/admin"
+          - img [ref=e45]
+          - text: Dashboard
+        - link "Alerts" [ref=e50] [cursor=pointer]:
+          - /url: "#/admin/alerts"
+          - img [ref=e51]
+          - text: Alerts
+        - link "Reports" [ref=e56] [cursor=pointer]:
+          - /url: "#/admin/reports"
+          - img [ref=e57]
+          - text: Reports
+        - link "Map" [ref=e61] [cursor=pointer]:
+          - /url: "#/admin/map"
+          - img [ref=e62]
+          - text: Map
+      - generic [ref=e64]:
+        - generic [ref=e65]:
+          - generic [ref=e66]: C
+          - generic [ref=e67]:
+            - paragraph [ref=e68]: Control Room Admin
+            - paragraph [ref=e69]: admin
+        - button "Sign out" [ref=e70]:
+          - img [ref=e71]
+          - text: Sign out
+    - main [ref=e75]:
+      - link "All reports" [ref=e10789] [cursor=pointer]:
+        - /url: "#/admin/reports"
+        - img [ref=e10790]
+        - text: All reports
+      - generic [ref=e10792]:
+        - generic [ref=e10793]:
+          - img "Sohan Mehta" [ref=e10795]
+          - generic [ref=e10796]:
+            - generic [ref=e10797]:
+              - heading "Sohan Mehta" [level=1] [ref=e10798]
+              - generic [ref=e10799]: Active
+            - paragraph [ref=e10801]: KMP-2027-00399
+        - generic [ref=e10802]:
+          - generic [ref=e10804]:
+            - generic [ref=e10805]:
+              - paragraph [ref=e10806]: Type
+              - paragraph [ref=e10807]: missing
+            - generic [ref=e10808]:
+              - paragraph [ref=e10809]: Gender
+              - paragraph [ref=e10810]: Male
+            - generic [ref=e10811]:
+              - paragraph [ref=e10812]: Age band
+              - paragraph [ref=e10813]: 41-60
+            - generic [ref=e10814]:
+              - paragraph [ref=e10815]: Language
+              - paragraph [ref=e10816]: Kannada
+            - generic [ref=e10817]:
+              - paragraph [ref=e10818]: Zone
+              - paragraph [ref=e10819]: Zone Area 2
+            - generic [ref=e10820]:
+              - paragraph [ref=e10821]: State / District
+              - paragraph [ref=e10822]: Punjab District 1, Punjab
+          - generic [ref=e10825]:
+            - paragraph [ref=e10826]: Physical description
+            - paragraph [ref=e10827]: Boy about 12, wearing school dress
+          - generic [ref=e10829]:
+            - generic [ref=e10830]:
+              - img [ref=e10831]
+              - generic [ref=e10834]:
+                - paragraph [ref=e10835]: Location
+                - paragraph [ref=e10836]: Sadhugram Gate 1
+                - paragraph [ref=e10837]: 20.0489, 73.8045
+            - generic [ref=e10838]:
+              - img [ref=e10839]
+              - generic [ref=e10841]:
+                - paragraph [ref=e10842]: Reporter
+                - paragraph [ref=e10843]: +91 8262326542
+            - generic [ref=e10844]:
+              - img [ref=e10845]
+              - generic [ref=e10849]:
+                - paragraph [ref=e10850]: Reported
+                - paragraph [ref=e10851]: 2027-08-14 21:38
+  - region "Notifications alt+T"

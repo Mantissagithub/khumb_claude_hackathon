@@ -1,0 +1,22 @@
+- generic [ref=e2]:
+  - generic [ref=e4]:
+    - generic [ref=e5]: स
+    - heading "SANGAM" [level=1] [ref=e6]
+    - paragraph [ref=e7]: Choose your language · भाषा चुनें · भाषा निवडा
+    - generic [ref=e8]:
+      - button "English" [ref=e9]
+      - button "हिन्दी" [ref=e10]
+      - button "मराठी" [ref=e11]
+      - button "বাংলা" [ref=e12]
+      - button "తెలుగు" [ref=e13]
+      - button "தமிழ்" [ref=e14]
+      - button "ગુજરાતી" [ref=e15]
+      - button "ಕನ್ನಡ" [ref=e16]
+      - button "മലയാളം" [ref=e17]
+      - button "ਪੰਜਾਬੀ" [ref=e18]
+      - button "ଓଡ଼ିଆ" [ref=e19]
+      - button "অসমীয়া" [ref=e20]
+      - button "اردو" [ref=e21]
+      - button "संस्कृतम्" [ref=e22]
+      - button "کٲشُر" [ref=e23]
+  - region "Notifications alt+T"

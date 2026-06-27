@@ -198,7 +198,11 @@ export async function reunite(case_id) {
 
 // ── Cases ──
 export async function listCases(params = {}) {
-  let query = supabase.from("cases").select("*").order("reported_at", { ascending: false }).limit(50);
+  let query = supabase
+    .from("cases")
+    .select("*")
+    .order("reported_at", { ascending: false })
+    .limit(params.limit ?? 50);
   if (params.status) query = query.eq("status", params.status);
   if (params.zone) query = query.eq("zone", params.zone);
   if (params.q)
@@ -208,6 +212,25 @@ export async function listCases(params = {}) {
   const { data, error } = await query;
   if (error) throw new Error(error.message);
   return { items: data, total: data.length };
+}
+
+// Lightweight geo points for the admin heatmap — all cases with coords.
+export async function casePoints({ status } = {}) {
+  let query = supabase
+    .from("cases")
+    .select("case_id,name,lat,lng,status,zone")
+    .not("lat", "is", null)
+    .limit(5000);
+  if (status) query = query.eq("status", status);
+  const { data, error } = await query;
+  if (error) throw new Error(error.message);
+  return data;
+}
+
+export async function getCase(case_id) {
+  const { data, error } = await supabase.from("cases").select("*").eq("case_id", case_id).single();
+  if (error) throw new Error(error.message);
+  return data;
 }
 
 // ── Staff (admin only) ──

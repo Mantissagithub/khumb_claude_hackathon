@@ -1,21 +1,17 @@
 import { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { Loader2, FilePlus2, LogOut, ChevronRight } from "lucide-react";
+import { Loader2, FilePlus2, LogOut, ChevronRight, ArrowLeft } from "lucide-react";
 import { toast } from "sonner";
 import { listMyReports } from "@/public/publicApi";
 import { usePublicAuth } from "@/public/auth/PublicAuthContext";
+import { useLang } from "@/public/i18n/LanguageContext";
 import { StatusBadge } from "@/shared/components/StatusBadge";
 import { Button } from "@/shared/ui/button";
 import { Card, CardContent } from "@/shared/ui/card";
 
-const TYPE_LABEL = {
-  lost_self: "I am lost",
-  seeking: "Searching for someone",
-  found: "I found a person",
-};
-
 export default function MyReports() {
   const navigate = useNavigate();
+  const { t } = useLang();
   const { phone, signOut } = usePublicAuth();
   const [reports, setReports] = useState(null);
 
@@ -24,20 +20,24 @@ export default function MyReports() {
   }, []);
 
   return (
-    <div className="min-h-svh bg-background px-4 py-8">
+    <div className="bg-background px-4 py-8">
       <div className="mx-auto w-full max-w-xl">
+        <Link to="/" className="mb-4 inline-flex items-center gap-1 text-base text-muted-foreground hover:text-foreground">
+          <ArrowLeft className="size-5" /> {t("common.back")}
+        </Link>
+
         <div className="mb-6 flex items-center justify-between">
           <div>
-            <h1 className="text-xl font-semibold tracking-tight">My reports</h1>
+            <h1 className="text-xl font-semibold tracking-tight">{t("myReports.title")}</h1>
             <p className="text-sm text-muted-foreground">{phone}</p>
           </div>
           <Button variant="ghost" size="sm" onClick={async () => { await signOut(); navigate("/"); }}>
-            <LogOut className="size-4" /> Sign out
+            <LogOut className="size-4" /> {t("myReports.signOut")}
           </Button>
         </div>
 
-        <Button asChild className="mb-4 w-full">
-          <Link to="/new"><FilePlus2 className="size-4" /> File a new report</Link>
+        <Button asChild className="mb-4 h-14 w-full text-base">
+          <Link to="/new"><FilePlus2 className="size-5" /> {t("myReports.fileNew")}</Link>
         </Button>
 
         {reports === null ? (
@@ -47,7 +47,7 @@ export default function MyReports() {
         ) : reports.length === 0 ? (
           <Card className="border-border bg-card">
             <CardContent className="py-12 text-center text-sm text-muted-foreground">
-              No reports filed with this number yet.
+              {t("myReports.empty")}
             </CardContent>
           </Card>
         ) : (
@@ -59,11 +59,11 @@ export default function MyReports() {
                     <div className="min-w-0">
                       <div className="flex items-center gap-2">
                         <StatusBadge status={r.status} />
-                        <span className="text-xs text-muted-foreground">{TYPE_LABEL[r.report_type]}</span>
+                        <span className="text-xs text-muted-foreground">{t(`typeLabel.${r.report_type}`)}</span>
                       </div>
-                      <p className="mt-1 truncate font-medium">{r.person_name || "Unnamed report"}</p>
+                      <p className="mt-1 truncate font-medium">{r.person_name || t("myReports.unnamed")}</p>
                       <p className="truncate text-sm text-muted-foreground">
-                        {r.description || r.location_text || `Reference #${r.id}`}
+                        {r.description || r.location_text || `#${r.id}`}
                       </p>
                     </div>
                     <ChevronRight className="size-5 shrink-0 text-muted-foreground" />

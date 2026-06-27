@@ -1,13 +1,13 @@
 import { NavLink, Outlet, useNavigate } from "react-router-dom";
-import { LayoutDashboard, Users, Activity, Route, LogOut } from "lucide-react";
+import { LayoutDashboard, BellRing, IdCard, Map, LogOut } from "lucide-react";
 import { cn } from "@/shared/lib/utils";
 import { useAuth } from "@/shared/auth/AuthContext";
 
 const NAV = [
   { to: "/admin", label: "Dashboard", icon: LayoutDashboard, end: true },
-  { to: "/admin/staff", label: "Staff & Analytics", icon: Users },
-  { to: "/admin/simulation", label: "Simulation", icon: Activity },
-  { to: "/admin/routing", label: "Routing", icon: Route },
+  { to: "/admin/alerts", label: "Alerts", icon: BellRing },
+  { to: "/admin/reports", label: "Reports", icon: IdCard },
+  { to: "/admin/map", label: "Map", icon: Map },
 ];
 
 export default function Layout() {

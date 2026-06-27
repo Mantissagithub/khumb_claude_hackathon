@@ -1,0 +1,40 @@
+- generic [ref=e2]:
+  - generic [ref=e3]:
+    - banner [ref=e4]:
+      - generic [ref=e5]:
+        - link "முகப்பு" [ref=e112] [cursor=pointer]:
+          - /url: /
+          - generic [ref=e7]: स
+          - generic [ref=e8]: சங்கம்
+        - button "தமிழ்" [ref=e113]:
+          - img [ref=e10]
+          - generic [ref=e13]: தமிழ்
+    - generic [ref=e14]:
+      - generic [ref=e15]:
+        - generic [ref=e16]:
+          - img [ref=e17]
+          - heading "உங்கள் அன்புக்குரியவர்களுடன் மீண்டும் இணையுங்கள்" [level=1] [ref=e114]
+          - paragraph [ref=e20]: சில நொடிகளில் ஒரு புகாரைப் பதிவு செய்யுங்கள் — கணக்கு தேவையில்லை. குடும்பங்களை மீண்டும் ஒன்றிணைக்க ஒவ்வொரு மையத்திலும் நாங்கள் தேடுகிறோம்.
+        - generic [ref=e21]:
+          - link "புகார் பதிவு செய்யுங்கள்" [ref=e115] [cursor=pointer]:
+            - /url: /new
+            - img
+            - text: புகார் பதிவு செய்யுங்கள்
+          - link "எனது புகார்களைப் பார்க்க" [ref=e116] [cursor=pointer]:
+            - /url: /track
+            - img
+            - text: எனது புகார்களைப் பார்க்க
+        - generic [ref=e24]:
+          - paragraph [ref=e25]:
+            - img [ref=e26]
+            - text: அவசர உதவி எண்
+          - paragraph [ref=e28]: "1920"
+          - paragraph [ref=e29]: புலா-பாட்கா / தொலைந்தவர் & கண்டெடுக்கப்பட்டவர் கேந்திரம்
+        - paragraph [ref=e30]:
+          - text: பணியாளரா?
+          - link "கட்டுப்பாட்டு அறை உள்நுழைவு" [ref=e117] [cursor=pointer]:
+            - /url: /ops/login
+      - button "பேச தட்டவும்" [ref=e118]:
+        - img [ref=e33]
+        - generic [ref=e36]: பேச தட்டவும்
+  - region "Notifications alt+T"

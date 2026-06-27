@@ -3,6 +3,7 @@ import { Link, useParams } from "react-router-dom";
 import { Loader2, ArrowLeft, MapPin, Navigation, CheckCircle2, Search } from "lucide-react";
 import { toast } from "sonner";
 import { getMyReport, mediaUrl } from "@/public/publicApi";
+import { useLang } from "@/public/i18n/LanguageContext";
 import { StatusBadge } from "@/shared/components/StatusBadge";
 import { Button } from "@/shared/ui/button";
 import {
@@ -27,6 +28,7 @@ function FoundMap({ lat, lng }) {
 
 export default function ReportStatus() {
   const { id } = useParams();
+  const { t } = useLang();
   const [r, setR] = useState(null);
 
   useEffect(() => {
@@ -37,7 +39,7 @@ export default function ReportStatus() {
     return <div className="grid min-h-svh place-items-center text-muted-foreground"><Loader2 className="size-5 animate-spin" /></div>;
   }
   if (r === false) {
-    return <div className="grid min-h-svh place-items-center text-sm text-muted-foreground">Report not found.</div>;
+    return <div className="grid min-h-svh place-items-center text-sm text-muted-foreground">{t("reportStatus.notFound")}</div>;
   }
 
   const isFound = r.status === "found" || r.status === "reunited";
@@ -46,8 +48,8 @@ export default function ReportStatus() {
   return (
     <div className="min-h-svh bg-background px-4 py-8">
       <div className="mx-auto w-full max-w-xl">
-        <Link to="/reports" className="mb-4 inline-flex items-center gap-1 text-sm text-muted-foreground hover:text-foreground">
-          <ArrowLeft className="size-4" /> My reports
+        <Link to="/reports" className="mb-4 inline-flex items-center gap-1 text-base text-muted-foreground hover:text-foreground">
+          <ArrowLeft className="size-5" /> {t("reportStatus.back")}
         </Link>
 
         {/* Status banner */}
@@ -60,9 +62,9 @@ export default function ReportStatus() {
                 <span className="font-mono text-xs text-muted-foreground">#{r.id}</span>
               </div>
               <p className="mt-1 text-sm text-muted-foreground">
-                {r.status === "searching" && "We're actively searching across every center."}
-                {r.status === "found" && "Good news — a match was found. See where below."}
-                {r.status === "reunited" && "This case is closed. Reunited 🙏"}
+                {r.status === "searching" && t("reportStatus.searchingMsg")}
+                {r.status === "found" && t("reportStatus.foundMsg")}
+                {r.status === "reunited" && t("reportStatus.reunitedMsg")}
               </p>
             </div>
           </CardContent>
@@ -72,8 +74,8 @@ export default function ReportStatus() {
         {isFound && (
           <Card className="mb-4 border-success/30 bg-card">
             <CardHeader>
-              <CardTitle className="text-base">Where they were found</CardTitle>
-              <CardDescription>Details captured when the person was found.</CardDescription>
+              <CardTitle className="text-base">{t("reportStatus.whereFound")}</CardTitle>
+              <CardDescription>{t("reportStatus.whereFoundSub")}</CardDescription>
             </CardHeader>
             <CardContent className="space-y-3">
               {r.found_photo_path && (
@@ -92,7 +94,7 @@ export default function ReportStatus() {
                   <Button asChild className="w-full">
                     <a href={`https://www.google.com/maps/dir/?api=1&destination=${r.found_lat},${r.found_lng}`}
                        target="_blank" rel="noreferrer">
-                      <Navigation className="size-4" /> Get directions
+                      <Navigation className="size-4" /> {t("reportStatus.directions")}
                     </a>
                   </Button>
                 </>
@@ -103,12 +105,12 @@ export default function ReportStatus() {
 
         {/* Your report */}
         <Card className="border-border bg-card">
-          <CardHeader><CardTitle className="text-base">Your report</CardTitle></CardHeader>
+          <CardHeader><CardTitle className="text-base">{t("reportStatus.yourReport")}</CardTitle></CardHeader>
           <CardContent className="space-y-1.5 text-sm">
-            <p><span className="text-muted-foreground">Name:</span> {r.person_name || "—"}</p>
-            <p><span className="text-muted-foreground">Gender / Age:</span> {r.gender || "—"} · {r.age_band || "—"}</p>
-            <p><span className="text-muted-foreground">Location:</span> {r.location_text || "—"}</p>
-            <p><span className="text-muted-foreground">Description:</span> {r.description || "—"}</p>
+            <p><span className="text-muted-foreground">{t("reportStatus.fName")}</span> {r.person_name || "—"}</p>
+            <p><span className="text-muted-foreground">{t("reportStatus.fGenderAge")}</span> {r.gender || "—"} · {r.age_band || "—"}</p>
+            <p><span className="text-muted-foreground">{t("reportStatus.fLocation")}</span> {r.location_text || "—"}</p>
+            <p><span className="text-muted-foreground">{t("reportStatus.fDescription")}</span> {r.description || "—"}</p>
             {r.photo_path && (
               <img src={mediaUrl(r.photo_path)} alt="" className="mt-2 aspect-square w-28 rounded-lg border border-border object-cover" />
             )}

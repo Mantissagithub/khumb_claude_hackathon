@@ -1,0 +1,17 @@
+[     144ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:5175/node_modules/.vite/deps/react-dom_client.js?v=adfe3314:14335
+[  148415ms] Error: Target container is not a DOM element.
+    at exports.createPortal (http://localhost:5175/node_modules/.vite/deps/react-dom.js?v=adfe3314:73:111)
+    at LanguageSwitcher (http://localhost:5175/src/public/i18n/LanguageSwitcher.jsx?t=1782554171856:35:20)
+    at Object.react_stack_bottom_frame (http://localhost:5175/node_modules/.vite/deps/react-dom_client.js?v=adfe3314:12866:12)
+    at renderWithHooks (http://localhost:5175/node_modules/.vite/deps/react-dom_client.js?v=adfe3314:4213:19)
+    at updateFunctionComponent (http://localhost:5175/node_modules/.vite/deps/react-dom_client.js?v=adfe3314:5569:16)
+    at beginWork (http://localhost:5175/node_modules/.vite/deps/react-dom_client.js?v=adfe3314:6140:20)
+    at runWithFiberInDEV (http://localhost:5175/node_modules/.vite/deps/react-dom_client.js?v=adfe3314:851:66)
+    at performUnitOfWork (http://localhost:5175/node_modules/.vite/deps/react-dom_client.js?v=adfe3314:8429:92)
+    at workLoopSync (http://localhost:5175/node_modules/.vite/deps/react-dom_client.js?v=adfe3314:8325:37)
+    at renderRootSync (http://localhost:5175/node_modules/.vite/deps/react-dom_client.js?v=adfe3314:8309:6)
+[  148323ms] [WARNING] %s
+
+%s
+ An error occurred in the <LanguageSwitcher> component. Consider adding an error boundary to your tree to customize error handling behavior.
+Visit https://react.dev/link/error-boundaries to learn more about error boundaries. @ http://localhost:5175/@vite/client:524

@@ -1,0 +1,40 @@
+- generic [ref=e2]:
+  - generic [ref=e24]:
+    - banner [ref=e25]:
+      - generic [ref=e26]:
+        - link "হোম" [active] [ref=e27] [cursor=pointer]:
+          - /url: /
+          - generic [ref=e28]: स
+          - generic [ref=e29]: সংগম
+        - button "বাংলা" [ref=e30]:
+          - img [ref=e31]
+          - generic [ref=e34]: বাংলা
+    - generic [ref=e35]:
+      - generic [ref=e36]:
+        - generic [ref=e37]:
+          - img [ref=e38]
+          - heading "আপনার প্রিয়জনের সঙ্গে আবার মিলিত হন" [level=1] [ref=e40]
+          - paragraph [ref=e41]: কয়েক সেকেন্ডে একটি রিপোর্ট দাখিল করুন — কোনো অ্যাকাউন্ট লাগবে না। পরিবারকে আবার একত্র করতে আমরা প্রতিটি কেন্দ্রে খোঁজ করি।
+        - generic [ref=e42]:
+          - link "রিপোর্ট দাখিল করুন" [ref=e43] [cursor=pointer]:
+            - /url: /new
+            - img
+            - text: রিপোর্ট দাখিল করুন
+          - link "আমার রিপোর্ট দেখুন" [ref=e44] [cursor=pointer]:
+            - /url: /track
+            - img
+            - text: আমার রিপোর্ট দেখুন
+        - generic [ref=e45]:
+          - paragraph [ref=e46]:
+            - img [ref=e47]
+            - text: জরুরি হেল্পলাইন
+          - paragraph [ref=e49]: "1920"
+          - paragraph [ref=e50]: ভুলা-ভাটকা / হারানো ও প্রাপ্তি কেন্দ্র
+        - paragraph [ref=e51]:
+          - text: কর্মী?
+          - link "কন্ট্রোল-রুম সাইন ইন" [ref=e52] [cursor=pointer]:
+            - /url: /ops/login
+      - button "কথা বলতে ট্যাপ করুন" [ref=e53]:
+        - img [ref=e54]
+        - generic [ref=e57]: কথা বলতে ট্যাপ করুন
+  - region "Notifications alt+T"

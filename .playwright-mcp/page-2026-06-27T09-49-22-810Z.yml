@@ -1,0 +1,48 @@
+- generic [ref=e2]:
+  - generic [ref=e35]:
+    - complementary [ref=e36]:
+      - generic [ref=e37]:
+        - generic [ref=e38]: स
+        - generic [ref=e39]:
+          - paragraph [ref=e40]: SANGAM
+          - paragraph [ref=e41]: Control Center
+      - navigation [ref=e42]:
+        - paragraph [ref=e43]: Admin
+        - link "Dashboard" [ref=e44] [cursor=pointer]:
+          - /url: "#/admin"
+          - img [ref=e45]
+          - text: Dashboard
+        - link "Alerts" [ref=e50] [cursor=pointer]:
+          - /url: "#/admin/alerts"
+          - img [ref=e51]
+          - text: Alerts
+        - link "Reports" [ref=e56] [cursor=pointer]:
+          - /url: "#/admin/reports"
+          - img [ref=e57]
+          - text: Reports
+        - link "Map" [ref=e61] [cursor=pointer]:
+          - /url: "#/admin/map"
+          - img [ref=e62]
+          - text: Map
+      - generic [ref=e64]:
+        - generic [ref=e65]:
+          - generic [ref=e66]: C
+          - generic [ref=e67]:
+            - paragraph [ref=e68]: Control Room Admin
+            - paragraph [ref=e69]: admin
+        - button "Sign out" [ref=e70]:
+          - img [ref=e71]
+          - text: Sign out
+    - main [ref=e75]:
+      - generic [ref=e318]:
+        - heading "Reports" [level=1] [ref=e319]
+        - paragraph [ref=e320]: Everyone reported missing or found across the Kumbh. Open a card for the full record.
+      - generic [ref=e321]:
+        - generic [ref=e322]:
+          - img [ref=e323]
+          - textbox "Search name, description, ID…" [ref=e326]
+        - combobox [ref=e327]:
+          - generic: All
+          - img
+        - generic [ref=e328]: 0 people
+  - region "Notifications alt+T"
