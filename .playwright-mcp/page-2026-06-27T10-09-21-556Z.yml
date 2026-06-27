@@ -1,0 +1,48 @@
+- generic [ref=e2]:
+  - generic [ref=e27]:
+    - complementary [ref=e28]:
+      - generic [ref=e29]:
+        - generic [ref=e30]: स
+        - generic [ref=e31]:
+          - paragraph [ref=e32]: SANGAM
+          - paragraph [ref=e33]: Control Center
+      - navigation [ref=e34]:
+        - paragraph [ref=e35]: Admin
+        - link "Dashboard" [ref=e36] [cursor=pointer]:
+          - /url: "#/admin"
+          - img [ref=e37]
+          - text: Dashboard
+        - link "Alerts" [ref=e42] [cursor=pointer]:
+          - /url: "#/admin/alerts"
+          - img [ref=e43]
+          - text: Alerts
+        - link "Reports" [ref=e48] [cursor=pointer]:
+          - /url: "#/admin/reports"
+          - img [ref=e49]
+          - text: Reports
+        - link "Map" [ref=e53] [cursor=pointer]:
+          - /url: "#/admin/map"
+          - img [ref=e54]
+          - text: Map
+      - generic [ref=e56]:
+        - generic [ref=e57]:
+          - generic [ref=e58]: C
+          - generic [ref=e59]:
+            - paragraph [ref=e60]: Control Room Admin
+            - paragraph [ref=e61]: admin
+        - button "Sign out" [ref=e62]:
+          - img [ref=e63]
+          - text: Sign out
+    - main [ref=e67]:
+      - generic [ref=e1132]:
+        - heading "Reports" [level=1] [ref=e1133]
+        - paragraph [ref=e1134]: Live public & operator submissions plus the full missing/found registry. Open a card for the record.
+      - generic [ref=e1135]:
+        - generic [ref=e1136]:
+          - img [ref=e1137]
+          - textbox "Search name, location, ID…" [ref=e1140]
+        - combobox [ref=e1141]:
+          - generic: All
+          - img
+        - generic [ref=e1142]: 0 people
+  - region "Notifications alt+T"

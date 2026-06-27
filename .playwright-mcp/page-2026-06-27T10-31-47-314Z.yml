@@ -1,0 +1,189 @@
+- generic [ref=e2]:
+  - generic [ref=e4]:
+    - complementary [ref=e5]:
+      - generic [ref=e6]:
+        - generic [ref=e7]: स
+        - generic [ref=e8]:
+          - paragraph [ref=e9]: SANGAM
+          - paragraph [ref=e10]: Control Center
+      - navigation [ref=e11]:
+        - paragraph [ref=e12]: Admin
+        - link "Dashboard" [ref=e13] [cursor=pointer]:
+          - /url: "#/admin"
+          - img [ref=e14]
+          - text: Dashboard
+        - link "Alerts" [ref=e19] [cursor=pointer]:
+          - /url: "#/admin/alerts"
+          - img [ref=e20]
+          - text: Alerts
+        - link "Reports" [ref=e25] [cursor=pointer]:
+          - /url: "#/admin/reports"
+          - img [ref=e26]
+          - text: Reports
+        - link "Map" [ref=e30] [cursor=pointer]:
+          - /url: "#/admin/map"
+          - img [ref=e31]
+          - text: Map
+      - generic [ref=e33]:
+        - generic [ref=e34]:
+          - generic [ref=e35]: C
+          - generic [ref=e36]:
+            - paragraph [ref=e37]: Control Room Admin
+            - paragraph [ref=e38]: admin
+        - button "Sign out" [ref=e39]:
+          - img [ref=e40]
+          - text: Sign out
+    - main [ref=e44]:
+      - generic [ref=e45]:
+        - generic [ref=e46]:
+          - heading "Alerts" [level=1] [ref=e47]
+          - paragraph [ref=e48]: Lost ↔ found matches surfaced by face recognition. Confirm the borderline ones; the system auto-approves the confident ones.
+        - generic [ref=e50]:
+          - img
+          - text: "Face engine: fallback matcher"
+      - tablist [ref=e52]:
+        - tab "Review required 0" [ref=e53]:
+          - text: Review required
+          - generic [ref=e54]: "0"
+        - tab "Auto-approved 0" [ref=e55]:
+          - text: Auto-approved
+          - generic [ref=e56]: "0"
+        - tab "Actively matching 4" [active] [selected] [ref=e57]:
+          - text: Actively matching
+          - generic [ref=e58]: "4"
+      - generic [ref=e61]:
+        - generic [ref=e63]:
+          - generic [ref=e64]:
+            - generic [ref=e65]: Found person
+            - generic [ref=e66]:
+              - img
+              - text: 0% · no match
+          - generic [ref=e67]:
+            - generic [ref=e68]:
+              - img [ref=e70]
+              - generic [ref=e71]:
+                - paragraph [ref=e72]: Unknown
+                - paragraph [ref=e73]: "Report #62"
+            - img [ref=e74]
+            - generic [ref=e77]:
+              - generic [ref=e79]: —
+              - generic [ref=e80]:
+                - paragraph [ref=e81]: —
+                - paragraph [ref=e82]: No candidate yet
+          - paragraph [ref=e83]: No match found
+          - list [ref=e84]:
+            - listitem [ref=e85]:
+              - img [ref=e86]
+              - text: Face/profile similarity 0.00 — no match similarity.
+            - listitem [ref=e89]:
+              - img [ref=e90]
+              - text: Decision support only — a trained operator must visually confirm before any reunification.
+          - generic [ref=e94]:
+            - img [ref=e95]
+            - text: Comparing against registry & found reports…
+        - generic [ref=e98]:
+          - generic [ref=e99]:
+            - generic [ref=e100]: Lost (self)
+            - generic [ref=e101]:
+              - img
+              - text: 15.5% · no match
+          - generic [ref=e102]:
+            - generic [ref=e103]:
+              - img "Rajesh" [ref=e105]
+              - generic [ref=e106]:
+                - paragraph [ref=e107]: Rajesh
+                - paragraph [ref=e108]: Hah
+            - img [ref=e109]
+            - generic [ref=e112]:
+              - generic [ref=e114]: RM
+              - generic [ref=e115]:
+                - paragraph [ref=e116]: Rajesh Mehta
+                - paragraph [ref=e117]: Registry · KMP-2027-00821
+          - paragraph [ref=e118]: No match found
+          - list [ref=e119]:
+            - listitem [ref=e120]:
+              - img [ref=e121]
+              - text: Face/profile similarity 0.29 — no match similarity.
+            - listitem [ref=e124]:
+              - img [ref=e125]
+              - text: 1 shared terms, same gender
+            - listitem [ref=e128]:
+              - img [ref=e129]
+              - text: Decision support only — a trained operator must visually confirm before any reunification.
+          - paragraph [ref=e132]:
+            - img [ref=e133]
+            - text: Zone Area 31
+          - generic [ref=e137]:
+            - img [ref=e138]
+            - text: Comparing against registry & found reports…
+        - generic [ref=e141]:
+          - generic [ref=e142]:
+            - generic [ref=e143]: Lost (self)
+            - generic [ref=e144]:
+              - img
+              - text: 15.5% · no match
+          - generic [ref=e145]:
+            - generic [ref=e146]:
+              - img "Hero" [ref=e148]
+              - generic [ref=e149]:
+                - paragraph [ref=e150]: Hero
+                - paragraph [ref=e151]: Ghat
+            - img [ref=e152]
+            - generic [ref=e155]:
+              - generic [ref=e157]: "?"
+              - generic [ref=e158]:
+                - paragraph [ref=e159]: Unknown
+                - paragraph [ref=e160]: Registry · KMP-2027-00761
+          - paragraph [ref=e161]: No match found
+          - list [ref=e162]:
+            - listitem [ref=e163]:
+              - img [ref=e164]
+              - text: Face/profile similarity 0.29 — no match similarity.
+            - listitem [ref=e167]:
+              - img [ref=e168]
+              - text: 1 shared terms, same gender
+            - listitem [ref=e171]:
+              - img [ref=e172]
+              - text: Decision support only — a trained operator must visually confirm before any reunification.
+          - paragraph [ref=e175]:
+            - img [ref=e176]
+            - text: Zone Area 29
+          - generic [ref=e180]:
+            - img [ref=e181]
+            - text: Comparing against registry & found reports…
+        - generic [ref=e184]:
+          - generic [ref=e185]:
+            - generic [ref=e186]: Lost (self)
+            - generic [ref=e187]:
+              - img
+              - text: 19.5% · no match
+          - generic [ref=e188]:
+            - generic [ref=e189]:
+              - img "Rakesh" [ref=e191]
+              - generic [ref=e192]:
+                - paragraph [ref=e193]: Rakesh
+                - paragraph [ref=e194]: Ghat
+            - img [ref=e195]
+            - generic [ref=e198]:
+              - generic [ref=e200]: "?"
+              - generic [ref=e201]:
+                - paragraph [ref=e202]: Unknown
+                - paragraph [ref=e203]: Registry · KMP-2027-00761
+          - paragraph [ref=e204]: No match found
+          - list [ref=e205]:
+            - listitem [ref=e206]:
+              - img [ref=e207]
+              - text: Face/profile similarity 0.32 — no match similarity.
+            - listitem [ref=e210]:
+              - img [ref=e211]
+              - text: 1 shared terms, same gender
+            - listitem [ref=e214]:
+              - img [ref=e215]
+              - text: Decision support only — a trained operator must visually confirm before any reunification.
+          - paragraph [ref=e218]:
+            - img [ref=e219]
+            - text: Zone Area 29
+          - generic [ref=e223]:
+            - img [ref=e224]
+            - text: Comparing against registry & found reports…
+  - region "Notifications alt+T"

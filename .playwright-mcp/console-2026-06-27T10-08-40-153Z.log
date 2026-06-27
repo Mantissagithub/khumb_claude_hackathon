@@ -1,0 +1,12 @@
+[     356ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:5199/node_modules/.vite/deps/react-dom_client.js?v=adfe3314:14335
+[     659ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:5199/favicon.ico:0
+[     729ms] [ERROR] TypeError: Failed to fetch
+    at http://localhost:5199/node_modules/.vite/deps/@supabase_supabase-js.js?v=adfe3314:13171:22
+    at _handleRequest (http://localhost:5199/node_modules/.vite/deps/@supabase_supabase-js.js?v=adfe3314:13452:18)
+    at _request (http://localhost:5199/node_modules/.vite/deps/@supabase_supabase-js.js?v=adfe3314:13439:21)
+    at http://localhost:5199/node_modules/.vite/deps/@supabase_supabase-js.js?v=adfe3314:18274:18
+    at SupabaseAuthClient._useSession (http://localhost:5199/node_modules/.vite/deps/@supabase_supabase-js.js?v=adfe3314:18106:17)
+    at async SupabaseAuthClient._getUser (http://localhost:5199/node_modules/.vite/deps/@supabase_supabase-js.js?v=adfe3314:18266:11)
+    at async SupabaseAuthClient.getUser (http://localhost:5199/node_modules/.vite/deps/@supabase_supabase-js.js?v=adfe3314:18255:17)
+    at async me (http://localhost:5199/src/shared/authApi.js?t=1782554775668:31:29) @ http://localhost:5199/@vite/client:524
+[     801ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:5199/node_modules/.vite/deps/react-dom_client.js?v=adfe3314:14335

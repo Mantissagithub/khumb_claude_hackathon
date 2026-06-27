@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Link, useNavigate, useSearchParams } from "react-router-dom";
+import { useNavigate, useSearchParams } from "react-router-dom";
 import {
   Upload,
   Loader2,
@@ -17,13 +17,7 @@ import { Button } from "@/shared/ui/button";
 import { Input } from "@/shared/ui/input";
 import { Label } from "@/shared/ui/label";
 import { Textarea } from "@/shared/ui/textarea";
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from "@/shared/ui/card";
+import { Card, CardContent } from "@/shared/ui/card";
 import {
   Select,
   SelectContent,
@@ -42,6 +36,7 @@ const TYPES = [
 
 // Shared sizing for big, easy-to-tap form controls.
 const FIELD = "h-14 text-base";
+const LABEL = "text-base font-semibold";
 
 export default function NewReport() {
   const navigate = useNavigate();
@@ -61,6 +56,12 @@ export default function NewReport() {
 
   const isFound = type === "found";
   const isSelf = type === "lost_self";
+
+  // Inside the form, Back returns to the type chooser; on the chooser it goes home.
+  function goBack() {
+    if (type) setType(null);
+    else navigate("/");
+  }
 
   function useMyLocation() {
     if (!navigator.geolocation) return toast.error(t("toast.locationUnavailable"));
@@ -118,12 +119,12 @@ export default function NewReport() {
             <h2 className="text-xl font-semibold">{t("newReport.received")}</h2>
             <p className="text-sm text-muted-foreground">{t("newReport.receivedMsg", { id: done.id })}</p>
             <div className="flex flex-col gap-2 pt-2">
-              <Button className="h-14 text-base" onClick={() => navigate("/track")}>
+              <Button className="h-14 text-base font-semibold" onClick={() => navigate("/track")}>
                 {t("newReport.trackBtn")}
               </Button>
               <Button
                 variant="secondary"
-                className="h-14 text-base"
+                className="h-14 text-base font-semibold"
                 onClick={() => { setDone(null); setType(null); }}
               >
                 {t("newReport.fileAnother")}
@@ -136,134 +137,128 @@ export default function NewReport() {
   }
 
   return (
-    <div className="bg-background px-4 py-8">
+    <div className="bg-background px-4 py-6">
       <div className="mx-auto w-full max-w-xl">
-        <Link to="/" className="mb-4 inline-flex items-center gap-1 text-base text-muted-foreground hover:text-foreground">
+        <button
+          onClick={goBack}
+          className="mb-5 inline-flex items-center gap-1.5 text-base font-medium text-muted-foreground hover:text-foreground"
+        >
           <ArrowLeft className="size-5" /> {t("common.back")}
-        </Link>
+        </button>
 
         {!type ? (
-          <Card className="border-border bg-card">
-            <CardHeader>
-              <CardTitle>{t("newReport.q")}</CardTitle>
-              <CardDescription>{t("newReport.qSub")}</CardDescription>
-            </CardHeader>
-            <CardContent className="space-y-3">
+          <>
+            <h1 className="text-2xl font-bold tracking-tight">{t("newReport.q")}</h1>
+            <p className="mt-1 text-base text-muted-foreground">{t("newReport.qSub")}</p>
+
+            <div className="mt-6 space-y-3">
               {TYPES.map(({ id, icon: Icon }) => (
                 <button
                   key={id}
                   onClick={() => setType(id)}
-                  className="flex w-full items-center gap-3 rounded-lg border border-border bg-surface-1 p-5 text-left transition-colors hover:border-primary/50 active:translate-y-px"
+                  className="flex w-full items-center gap-4 rounded-2xl border-2 border-border bg-card p-5 text-left transition-colors hover:border-primary active:translate-y-px"
                 >
-                  <div className="grid size-12 shrink-0 place-items-center rounded-md bg-secondary text-primary">
-                    <Icon className="size-6" />
+                  <div className="grid size-14 shrink-0 place-items-center rounded-xl bg-secondary text-primary">
+                    <Icon className="size-7" />
                   </div>
                   <div>
-                    <p className="text-base font-medium">{t(`types.${id}.label`)}</p>
+                    <p className="text-lg font-semibold">{t(`types.${id}.label`)}</p>
                     <p className="text-sm text-muted-foreground">{t(`types.${id}.blurb`)}</p>
                   </div>
                 </button>
               ))}
-            </CardContent>
-          </Card>
+            </div>
+          </>
         ) : (
-          <Card className="border-border bg-card">
-            <CardHeader>
-              <CardTitle>{t(`types.${type}.label`)}</CardTitle>
-              <CardDescription>
-                {t("newReport.detailSub")}{" "}
-                <button onClick={() => setType(null)} className="text-primary hover:underline">
-                  {t("newReport.change")}
-                </button>
-              </CardDescription>
-            </CardHeader>
-            <CardContent>
-              <form onSubmit={onSubmit} className="space-y-4">
-                <div className="space-y-2">
-                  <Label htmlFor="photo" className="text-base">
-                    {isFound ? t("newReport.photoFound") : t("newReport.photoOpt")}
-                  </Label>
-                  <label
-                    htmlFor="photo"
-                    className="flex cursor-pointer flex-col items-center gap-2 rounded-lg border border-dashed border-border bg-surface-1 p-8 text-center text-base text-muted-foreground hover:border-primary/50"
-                  >
-                    <Upload className="size-6" />
-                    {photo ? photo.name : t("newReport.photoTap")}
-                  </label>
-                  <Input id="photo" type="file" accept="image/*" capture="environment" className="hidden"
-                    onChange={(e) => setPhoto(e.target.files?.[0] ?? null)} />
-                </div>
+          <>
+            <h1 className="text-2xl font-bold tracking-tight">{t(`types.${type}.label`)}</h1>
+            <p className="mt-1 text-base text-muted-foreground">{t("newReport.detailSub")}</p>
 
-                <div className="space-y-2">
-                  <Label htmlFor="person_name" className="text-base">
-                    {isSelf ? t("newReport.nameSelf") : isFound ? t("newReport.nameFound") : t("newReport.nameKnown")}
-                  </Label>
-                  <Input id="person_name" name="person_name" className={FIELD} placeholder={t("newReport.namePlaceholder")} />
-                </div>
+            <form onSubmit={onSubmit} className="mt-6 space-y-6">
+              <div className="space-y-2">
+                <Label htmlFor="photo" className={LABEL}>
+                  {isFound ? t("newReport.photoFound") : t("newReport.photoOpt")}
+                </Label>
+                <label
+                  htmlFor="photo"
+                  className="flex cursor-pointer flex-col items-center gap-2 rounded-2xl border-2 border-dashed border-border p-8 text-center text-base text-muted-foreground hover:border-primary"
+                >
+                  <Upload className="size-7" />
+                  {photo ? photo.name : t("newReport.photoTap")}
+                </label>
+                <Input id="photo" type="file" accept="image/*" capture="environment" className="hidden"
+                  onChange={(e) => setPhoto(e.target.files?.[0] ?? null)} />
+              </div>
 
-                <div className="grid grid-cols-2 gap-3">
+              <div className="space-y-2">
+                <Label htmlFor="person_name" className={LABEL}>
+                  {isSelf ? t("newReport.nameSelf") : isFound ? t("newReport.nameFound") : t("newReport.nameKnown")}
+                </Label>
+                <Input id="person_name" name="person_name" className={FIELD} placeholder={t("newReport.namePlaceholder")} />
+              </div>
+
+              <div className="grid grid-cols-2 gap-3">
+                <div className="space-y-2">
+                  <Label className={LABEL}>{t("newReport.gender")}</Label>
+                  <Select value={gender} onValueChange={setGender}>
+                    <SelectTrigger className={FIELD}><SelectValue placeholder={t("common.select")} /></SelectTrigger>
+                    <SelectContent>
+                      <SelectItem value="Male">{t("gender.male")}</SelectItem>
+                      <SelectItem value="Female">{t("gender.female")}</SelectItem>
+                      <SelectItem value="Other">{t("gender.other")}</SelectItem>
+                    </SelectContent>
+                  </Select>
+                </div>
+                <div className="space-y-2">
+                  <Label className={LABEL}>{t("newReport.age")}</Label>
+                  <Select value={ageBand} onValueChange={setAgeBand}>
+                    <SelectTrigger className={FIELD}><SelectValue placeholder={t("common.select")} /></SelectTrigger>
+                    <SelectContent>
+                      {AGE_BANDS.map((a) => <SelectItem key={a} value={a}>{a}</SelectItem>)}
+                    </SelectContent>
+                  </Select>
+                </div>
+              </div>
+
+              <div className="space-y-2">
+                <Label htmlFor="location_text" className={LABEL}>
+                  {isFound ? t("newReport.locFound") : t("newReport.locLast")}
+                </Label>
+                <Input id="location_text" name="location_text" className={FIELD} placeholder={t("newReport.locPlaceholder")} />
+              </div>
+
+              {isFound && (
+                <>
                   <div className="space-y-2">
-                    <Label className="text-base">{t("newReport.gender")}</Label>
-                    <Select value={gender} onValueChange={setGender}>
-                      <SelectTrigger className={FIELD}><SelectValue placeholder={t("common.select")} /></SelectTrigger>
-                      <SelectContent>
-                        <SelectItem value="Male">{t("gender.male")}</SelectItem>
-                        <SelectItem value="Female">{t("gender.female")}</SelectItem>
-                        <SelectItem value="Other">{t("gender.other")}</SelectItem>
-                      </SelectContent>
-                    </Select>
+                    <Label htmlFor="center_name" className={LABEL}>{t("newReport.center")}</Label>
+                    <Input id="center_name" name="center_name" className={FIELD} placeholder={t("newReport.centerPlaceholder")} />
                   </div>
-                  <div className="space-y-2">
-                    <Label className="text-base">{t("newReport.age")}</Label>
-                    <Select value={ageBand} onValueChange={setAgeBand}>
-                      <SelectTrigger className={FIELD}><SelectValue placeholder={t("common.select")} /></SelectTrigger>
-                      <SelectContent>
-                        {AGE_BANDS.map((a) => <SelectItem key={a} value={a}>{a}</SelectItem>)}
-                      </SelectContent>
-                    </Select>
-                  </div>
-                </div>
+                  <Button type="button" variant="secondary" className="h-14 w-full text-base font-semibold" onClick={useMyLocation} disabled={locating}>
+                    {locating ? <Loader2 className="size-5 animate-spin" /> : <MapPin className="size-5" />}
+                    {coords
+                      ? t("newReport.locationCaptured", { lat: coords.lat.toFixed(4), lng: coords.lng.toFixed(4) })
+                      : t("newReport.useLocation")}
+                  </Button>
+                </>
+              )}
 
-                <div className="space-y-2">
-                  <Label htmlFor="location_text" className="text-base">
-                    {isFound ? t("newReport.locFound") : t("newReport.locLast")}
-                  </Label>
-                  <Input id="location_text" name="location_text" className={FIELD} placeholder={t("newReport.locPlaceholder")} />
-                </div>
+              <div className="space-y-2">
+                <Label htmlFor="description" className={LABEL}>{t("newReport.description")}</Label>
+                <Textarea id="description" name="description" rows={3} className="text-base"
+                  placeholder={t("newReport.descPlaceholder")} />
+              </div>
 
-                {isFound && (
-                  <>
-                    <div className="space-y-2">
-                      <Label htmlFor="center_name" className="text-base">{t("newReport.center")}</Label>
-                      <Input id="center_name" name="center_name" className={FIELD} placeholder={t("newReport.centerPlaceholder")} />
-                    </div>
-                    <Button type="button" variant="secondary" className="h-14 w-full text-base" onClick={useMyLocation} disabled={locating}>
-                      {locating ? <Loader2 className="size-5 animate-spin" /> : <MapPin className="size-5" />}
-                      {coords
-                        ? t("newReport.locationCaptured", { lat: coords.lat.toFixed(4), lng: coords.lng.toFixed(4) })
-                        : t("newReport.useLocation")}
-                    </Button>
-                  </>
-                )}
+              <div className="space-y-2">
+                <Label htmlFor="phone" className={LABEL}>{t("newReport.phone")}</Label>
+                <Input id="phone" name="phone" type="tel" required className={FIELD} placeholder="+91…" />
+                <p className="text-sm text-muted-foreground">{t("newReport.phoneHelp")}</p>
+              </div>
 
-                <div className="space-y-2">
-                  <Label htmlFor="description" className="text-base">{t("newReport.description")}</Label>
-                  <Textarea id="description" name="description" rows={3} className="text-base"
-                    placeholder={t("newReport.descPlaceholder")} />
-                </div>
-
-                <div className="space-y-2">
-                  <Label htmlFor="phone" className="text-base">{t("newReport.phone")}</Label>
-                  <Input id="phone" name="phone" type="tel" required className={FIELD} placeholder="+91…" />
-                  <p className="text-sm text-muted-foreground">{t("newReport.phoneHelp")}</p>
-                </div>
-
-                <Button type="submit" className="h-14 w-full text-base" disabled={loading}>
-                  {loading && <Loader2 className="size-5 animate-spin" />} {t("newReport.submit")}
-                </Button>
-              </form>
-            </CardContent>
-          </Card>
+              <Button type="submit" className="h-14 w-full text-base font-semibold" disabled={loading}>
+                {loading && <Loader2 className="size-5 animate-spin" />} {t("newReport.submit")}
+              </Button>
+            </form>
+          </>
         )}
       </div>
     </div>

@@ -1,0 +1,52 @@
+- generic [ref=e2]:
+  - generic [ref=e4]:
+    - complementary [ref=e5]:
+      - generic [ref=e6]:
+        - generic [ref=e7]: स
+        - generic [ref=e8]:
+          - paragraph [ref=e9]: SANGAM
+          - paragraph [ref=e10]: Control Center
+      - navigation [ref=e11]:
+        - paragraph [ref=e12]: Admin
+        - link "Dashboard" [ref=e13] [cursor=pointer]:
+          - /url: "#/admin"
+          - img [ref=e14]
+          - text: Dashboard
+        - link "Alerts" [ref=e19] [cursor=pointer]:
+          - /url: "#/admin/alerts"
+          - img [ref=e20]
+          - text: Alerts
+        - link "Reports" [ref=e25] [cursor=pointer]:
+          - /url: "#/admin/reports"
+          - img [ref=e26]
+          - text: Reports
+        - link "Map" [ref=e30] [cursor=pointer]:
+          - /url: "#/admin/map"
+          - img [ref=e31]
+          - text: Map
+      - generic [ref=e33]:
+        - generic [ref=e34]:
+          - generic [ref=e35]: C
+          - generic [ref=e36]:
+            - paragraph [ref=e37]: Control Room Admin
+            - paragraph [ref=e38]: admin
+        - button "Sign out" [ref=e39]:
+          - img [ref=e40]
+          - text: Sign out
+    - main [ref=e44]:
+      - generic [ref=e226]:
+        - generic [ref=e227]:
+          - heading "Reports" [level=1] [ref=e228]
+          - paragraph [ref=e229]: Live reports submitted by the public and operators. Open a card for the full record.
+        - generic [ref=e231]:
+          - img [ref=e232]
+          - text: 0 submissions
+      - generic [ref=e238]:
+        - generic [ref=e239]:
+          - img [ref=e240]
+          - textbox "Search name, location, phone…" [ref=e243]
+        - combobox [ref=e244]:
+          - generic: All
+          - img
+        - generic [ref=e245]: 0 shown
+  - region "Notifications alt+T"

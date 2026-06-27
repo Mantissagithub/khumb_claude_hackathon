@@ -1,0 +1,58 @@
+- generic [ref=e2]:
+  - generic [ref=e27]:
+    - complementary [ref=e28]:
+      - generic [ref=e29]:
+        - generic [ref=e30]: स
+        - generic [ref=e31]:
+          - paragraph [ref=e32]: SANGAM
+          - paragraph [ref=e33]: Control Center
+      - navigation [ref=e34]:
+        - paragraph [ref=e35]: Admin
+        - link "Dashboard" [ref=e36] [cursor=pointer]:
+          - /url: "#/admin"
+          - img [ref=e37]
+          - text: Dashboard
+        - link "Alerts" [ref=e42] [cursor=pointer]:
+          - /url: "#/admin/alerts"
+          - img [ref=e43]
+          - text: Alerts
+        - link "Reports" [ref=e48] [cursor=pointer]:
+          - /url: "#/admin/reports"
+          - img [ref=e49]
+          - text: Reports
+        - link "Map" [ref=e53] [cursor=pointer]:
+          - /url: "#/admin/map"
+          - img [ref=e54]
+          - text: Map
+      - generic [ref=e56]:
+        - generic [ref=e57]:
+          - generic [ref=e58]: C
+          - generic [ref=e59]:
+            - paragraph [ref=e60]: Control Room Admin
+            - paragraph [ref=e61]: admin
+        - button "Sign out" [ref=e62]:
+          - img [ref=e63]
+          - text: Sign out
+    - main [ref=e67]:
+      - generic [ref=e147]:
+        - generic [ref=e148]:
+          - heading "Alerts" [level=1] [ref=e149]
+          - paragraph [ref=e150]: Lost ↔ found matches surfaced by face recognition. Confirm the borderline ones; the system auto-approves the confident ones.
+        - generic [ref=e152]:
+          - img
+          - text: "Face engine: fallback matcher"
+      - tablist [ref=e154]:
+        - tab "Review required 0" [selected] [ref=e155]:
+          - text: Review required
+          - generic [ref=e156]: "0"
+        - tab "Auto-approved 0" [ref=e157]:
+          - text: Auto-approved
+          - generic [ref=e158]: "0"
+        - tab "Actively matching 0" [ref=e159]:
+          - text: Actively matching
+          - generic [ref=e160]: "0"
+  - region "Notifications alt+T":
+    - list:
+      - listitem [ref=e140]:
+        - img [ref=e142]
+        - generic [ref=e146]: Signed in
