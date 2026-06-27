@@ -1,0 +1,20 @@
+- generic [ref=e2]:
+  - generic [ref=e3]:
+    - status [ref=e7]:
+      - generic [ref=e8]: Loading...
+    - region "Notifications (F8)":
+      - list
+  - generic [ref=e9]:
+    - heading "Cookie settings" [level=3] [ref=e10]
+    - paragraph [ref=e11]:
+      - text: We use cookies to deliver and improve our services, analyze site usage, and if you agree, to customize or personalize your experience and market our services to you. You can read our Cookie Policy
+      - link "here" [ref=e12] [cursor=pointer]:
+        - /url: https://www.anthropic.com/legal/cookies
+      - text: .
+    - generic [ref=e13]:
+      - button "Customize Cookie Settings" [ref=e14] [cursor=pointer]:
+        - generic [ref=e15]: Customize Cookie Settings
+      - button "Reject All Cookies" [ref=e16] [cursor=pointer]:
+        - generic [ref=e17]: Reject All Cookies
+      - button "Accept All Cookies" [ref=e18] [cursor=pointer]:
+        - generic [ref=e19]: Accept All Cookies
