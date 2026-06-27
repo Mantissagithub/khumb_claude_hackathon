@@ -129,6 +129,27 @@ def draw_bboxes(img_rgb: np.ndarray, detections, out_path: str) -> str:
     return _save(fig, out_path)
 
 
+def highlight_in_scene(scene_path: str, target_bbox, out_path: str,
+                       other_bboxes=None, label: str = "") -> str:
+    """Draw the located face (green, labelled) on the crowd frame; other
+    detected faces in thin grey — 'your person is HERE in this crowd'."""
+    from PIL import Image
+    img = np.asarray(Image.open(scene_path).convert("RGB"))
+    fig, ax = plt.subplots(figsize=(8, 8))
+    ax.imshow(img)
+    for b in (other_bboxes or []):
+        x1, y1, x2, y2 = b
+        ax.add_patch(plt.Rectangle((x1, y1), x2 - x1, y2 - y1, fill=False,
+                                   edgecolor="gray", linewidth=1, alpha=0.6))
+    x1, y1, x2, y2 = target_bbox
+    ax.add_patch(plt.Rectangle((x1, y1), x2 - x1, y2 - y1, fill=False,
+                               edgecolor="lime", linewidth=3))
+    ax.text(x1, max(0, y1 - 6), label or "match", color="black", fontsize=10,
+            bbox=dict(facecolor="lime", edgecolor="none", pad=1))
+    ax.axis("off"); ax.set_title("Located in crowd frame")
+    return _save(fig, out_path)
+
+
 def plot_embedding_scatter(embs: np.ndarray, labels: list, out_path: str,
                            method: str = "tsne") -> Optional[str]:
     if len(embs) < 3:

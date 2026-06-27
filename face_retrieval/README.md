@@ -87,6 +87,31 @@ Outputs (metrics + plots) are written to `outputs/`. Notebooks:
 `notebooks/inference.ipynb` (search demo) and `notebooks/evaluation.ipynb`
 (metrics + curves).
 
+## Find a person *in a crowd*
+
+The real scenario: the **query is one clean photo**, but the person is **one
+face among many** in a CCTV/crowd frame. So the gallery is built per-FACE — every
+face in every frame is detected, embedded and indexed — and a hit returns the
+frame, the face's bounding box, and the camera/time.
+
+```bash
+python -m face_retrieval.scripts.find_in_crowd_demo
+```
+```python
+from face_retrieval.pipeline import SearchPipeline
+pipe.build_crowd_gallery(scene_samples)        # each frame -> all its faces
+res = pipe.find_in_crowd("missing_person.jpg") # clean query -> located in a frame
+# res["confident_match"], res["matches"][0] -> {scene_path, bbox, camera_id, lat, lng, timestamp, score}
+```
+
+A `match_threshold` (config) gates this: if even the best score is below it,
+the result is **"no confident match → human review"** rather than a wrong
+identity. Demonstrated finding: a large gallery face matches strongly (~0.78),
+but a **tiny** face in a 17-person frame (~12 px) scores low (~0.39) and is
+correctly rejected — which is why production wants higher-res frames, the
+ArcFace + RetinaFace/SCRFD backends (far better on small faces), and always a
+threshold + human verification.
+
 ## Configuration (`config.yaml`)
 
 ```yaml

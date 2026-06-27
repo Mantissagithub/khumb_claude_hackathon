@@ -53,6 +53,7 @@ vector_db:
   backend: auto         # auto | faiss | numpy
   metric: cosine        # cosine | l2
   top_k: 10
+  match_threshold: 0.45 # below this cosine, report "no confident match" (backend-dependent)
 
 camera_network:
   num_cameras: 32

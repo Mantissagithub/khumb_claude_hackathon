@@ -146,6 +146,32 @@ class FaceEmbedder:
             return None
         return self.embed_crops([aligned[0][1]])[0]
 
+    def embed_image_faces(self, path_or_img, max_faces: int = 64) -> list[tuple]:
+        """Embed EVERY face in an image (crowd scene).
+
+        Returns [(embedding, bbox[x1,y1,x2,y2], det_score)] for each face, so a
+        single CCTV/crowd frame contributes many gallery entries. This is what
+        lets a clean missing-person query be located among many faces.
+        """
+        img = _read_rgb(path_or_img) if isinstance(path_or_img, str) else path_or_img
+        if img is None:
+            return []
+        if self.backend == "insightface":
+            faces = self._model.get(img[:, :, ::-1])[:max_faces]
+            out = []
+            for f in faces:
+                v = np.asarray(f.normed_embedding, dtype="float32")
+                out.append((_l2norm(v) if self.normalize else v,
+                            [float(x) for x in f.bbox], float(f.det_score)))
+            return out
+        # facenet: detect+align all faces, embed in one batch
+        aligned = self._detector.detect_align(img, size=self.crop_size)[:max_faces]
+        if not aligned:
+            return []
+        vecs = self.embed_crops([c for _, c in aligned])
+        return [(vecs[i], [float(x) for x in d.bbox], float(d.score))
+                for i, (d, _) in enumerate(aligned)]
+
     def embed_paths(self, paths: list[str], show_progress: bool = True):
         """Embed many images with caching + batching.
 

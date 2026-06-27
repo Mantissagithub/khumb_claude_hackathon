@@ -8,6 +8,7 @@ to measure robustness to 'Digital Kumbh' degradations.
 from __future__ import annotations
 
 import os
+from datetime import datetime, timedelta
 from typing import Optional
 
 import numpy as np
@@ -15,7 +16,8 @@ import numpy as np
 from .config import PKG_ROOT, resolve_device, use_amp
 from .modules import dataset_loader as dl
 from .modules.augmentation import KumbhAugmentor
-from .modules.camera_sim import observations_by_embedding, simulate_observations
+from .modules.camera_sim import (load_cameras, observations_by_embedding,
+                                 simulate_observations)
 from .modules.embedding import FaceEmbedder, _read_rgb
 from .modules.evaluation import Timer, catchtime, cosine_sim_matrix, full_evaluation
 from .modules.retrieval import VectorIndex
@@ -61,6 +63,56 @@ class SearchPipeline:
         self.observations = observations_by_embedding(obs)
         self.log.info("gallery=%d faces, identities=%d, cameras simulated",
                       len(kept), len(set(self.gallery_ids)))
+
+    # -- crowd gallery: detect EVERY face per scene frame -------------------
+    def build_crowd_gallery(self, scene_samples) -> None:
+        """Each scene frame contributes ALL its faces. Every gallery entry
+        stores its source frame, bbox and the frame's camera observation."""
+        cams = load_cameras(self.cfg.camera_network, str(PKG_ROOT))
+        start = datetime.fromisoformat(self.cfg.camera_network.start_time)
+        window = int(self.cfg.camera_network.time_window_minutes)
+        rng = np.random.default_rng(int(self.cfg.camera_network.seed))
+
+        embs, meta = [], []
+        for k, s in enumerate(scene_samples):
+            cam = cams[k % len(cams)]                  # one camera per frame
+            ts = (start + timedelta(minutes=float(rng.uniform(0, window)))
+                  ).isoformat(timespec="seconds")
+            faces = self.embedder.embed_image_faces(s.image_path)
+            for v, bbox, score in faces:
+                embs.append(v)
+                meta.append({"scene_path": s.image_path, "bbox": bbox,
+                             "det_score": round(score, 3),
+                             "camera_id": cam["camera_id"],
+                             "lat": cam["lat"], "lng": cam["lng"], "timestamp": ts})
+        if not embs:
+            raise RuntimeError("no faces detected across crowd scenes")
+        self.gallery_embs = np.vstack(embs).astype("float32")
+        self.crowd_meta = meta
+        self.index = VectorIndex(self.embedder.dim, self.cfg.vector_db.backend,
+                                 self.cfg.vector_db.metric, self.log)
+        self.index.build_index(self.gallery_embs, list(range(len(meta))))
+        self.log.info("crowd gallery: %d faces across %d frames",
+                      len(meta), len(scene_samples))
+
+    def find_in_crowd(self, query_path: str, top_k: Optional[int] = None) -> Optional[dict]:
+        """Locate a clean missing-person photo among the crowd faces."""
+        top_k = top_k or self.cfg.vector_db.top_k
+        q = self.embedder.embed_image(query_path)   # largest face in the query
+        if q is None:
+            return None
+        ranked = self.index.search_ids(q, top_k)[0]
+        thr = float(self.cfg.vector_db.get("match_threshold", 0.45))
+        matches = []
+        for rank, (row, score) in enumerate(ranked, 1):
+            m = dict(self.crowd_meta[row])
+            m.update({"rank": rank, "score": round(float(score), 4),
+                      "confident": float(score) >= thr})
+            matches.append(m)
+        # never assert a wrong identity: flag when even the best is below threshold
+        confident = bool(matches and matches[0]["confident"])
+        return {"query": query_path, "matches": matches,
+                "confident_match": confident, "threshold": thr}
 
     # -- search -------------------------------------------------------------
     def search_image(self, image_path: str, top_k: Optional[int] = None,
