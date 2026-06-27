@@ -45,7 +45,7 @@ const BASE_URL = (
 const MODEL = "claude-sonnet-4-6";
 
 console.log(
-  `[server] API key ${API_KEY ? "FOUND (" + API_KEY.slice(0, 16) + "…)" : "NOT FOUND — heuristic only"}`
+  `[server] API key ${API_KEY ? "FOUND" : "NOT FOUND — heuristic only"}`
 );
 
 // -------------------------------------------------------------------------- //
