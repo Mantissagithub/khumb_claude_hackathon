@@ -239,6 +239,35 @@ export async function getReport(id) {
   return data;
 }
 
+// ── Claude face matches (report_matches) ──
+export async function listReportMatches() {
+  const { data, error } = await supabase
+    .from("report_matches")
+    .select(
+      "*, query:reports!report_matches_query_report_id_fkey(*), candidate:reports!report_matches_candidate_report_id_fkey(*)"
+    )
+    .order("confidence", { ascending: false });
+  if (error) throw new Error(error.message);
+  return data;
+}
+
+// Invoke the Claude vision matcher for one report (manual run / backfill).
+export async function runFaceMatch(reportId) {
+  const { data, error } = await supabase.functions.invoke("face-match", {
+    body: { report_id: reportId },
+  });
+  if (error) {
+    const msg = (await error?.context?.json?.().catch(() => null))?.error;
+    throw new Error(msg || error.message);
+  }
+  return data;
+}
+
+export async function setMatchStatus(id, status) {
+  const { error } = await supabase.from("report_matches").update({ status }).eq("id", id);
+  if (error) throw new Error(error.message);
+}
+
 // ── Staff (admin only) ──
 export async function listStaff() {
   const { data, error } = await supabase
