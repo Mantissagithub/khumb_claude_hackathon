@@ -1,11 +1,37 @@
 import { useEffect, useState } from "react";
 import { useParams, Link } from "react-router-dom";
-import { ArrowLeft, Loader2, MapPin, Phone, ImageOff, CalendarClock } from "lucide-react";
+import { ArrowLeft, Loader2, MapPin, Phone, ImageOff, CalendarClock, Radio } from "lucide-react";
 import { StatusBadge } from "@/shared/components/StatusBadge";
+import { Badge } from "@/shared/ui/badge";
 import { Card, CardContent } from "@/shared/ui/card";
-import { getCase, mediaUrl } from "@/shared/authApi";
+import { getCase, getReport, mediaUrl } from "@/shared/authApi";
 
 const initials = (n) => (n || "?").split(/\s+/).map((w) => w[0]).join("").slice(0, 2).toUpperCase();
+const TYPE_LABEL = { lost_self: "Lost report", seeking: "Seeking report", found: "Found report" };
+
+// Map either a registry case or a live report into one display shape.
+function normalize(d, isReport) {
+  if (isReport) {
+    return {
+      live: true, ref: `#${d.id}`, name: d.person_name, status: d.status,
+      type: TYPE_LABEL[d.report_type] || "Report", gender: d.gender, age_band: d.age_band,
+      language: d.language, zone: d.zone, region: null, photo_path: d.photo_path,
+      description: d.description, transcript: null, remarks: null,
+      location: d.location_text || d.found_center, lat: d.lat, lng: d.lng,
+      reporter: d.reporter_phone, reported_at: d.created_at,
+      found: d.found_center ? { center: d.found_center, at: d.found_at, photo: d.found_photo_path } : null,
+    };
+  }
+  return {
+    live: false, ref: d.case_id, name: d.name, status: d.status,
+    type: d.type === "found" ? "Found (registry)" : "Missing (registry)", gender: d.gender, age_band: d.age_band,
+    language: d.language, zone: d.zone, region: [d.district, d.state].filter(Boolean).join(", "),
+    photo_path: d.photo_path, description: d.physical_description,
+    transcript: d.transcript_en || d.transcript, remarks: d.remarks,
+    location: d.last_seen_location || d.reporting_center, lat: d.lat, lng: d.lng,
+    reporter: d.reporter_mobile, reported_at: d.reported_at, found: null,
+  };
+}
 
 function Field({ label, value }) {
   if (value == null || value === "") return null;
@@ -19,14 +45,17 @@ function Field({ label, value }) {
 
 export default function ReportDetail() {
   const { id } = useParams();
+  const isReport = /^\d+$/.test(id);
   const [c, setC] = useState(null);
   const [error, setError] = useState(null);
 
   useEffect(() => {
     setC(null);
     setError(null);
-    getCase(id).then(setC).catch((e) => setError(e.message));
-  }, [id]);
+    (isReport ? getReport(id) : getCase(id))
+      .then((d) => setC(normalize(d, isReport)))
+      .catch((e) => setError(e.message));
+  }, [id, isReport]);
 
   const photo = c && mediaUrl(c.photo_path);
 
@@ -42,7 +71,6 @@ export default function ReportDetail() {
         <div className="flex items-center justify-center py-24 text-muted-foreground"><Loader2 className="size-5 animate-spin" /></div>
       ) : (
         <div className="grid grid-cols-1 gap-6 lg:grid-cols-[320px_1fr]">
-          {/* Photo */}
           <Card className="overflow-hidden border-border bg-card">
             <div className="aspect-square w-full overflow-hidden bg-muted">
               {photo ? (
@@ -59,50 +87,55 @@ export default function ReportDetail() {
                 <h1 className="truncate text-xl font-semibold tracking-tight">{c.name || "Unknown"}</h1>
                 <StatusBadge status={c.status} />
               </div>
-              <p className="font-mono text-xs text-muted-foreground">{c.case_id}</p>
+              <div className="flex items-center gap-2">
+                <p className="font-mono text-xs text-muted-foreground">{c.ref}</p>
+                {c.live && (
+                  <Badge className="gap-1 rounded-full bg-sig-coral text-white"><Radio className="size-3" /> Live submission</Badge>
+                )}
+              </div>
             </CardContent>
           </Card>
 
-          {/* Details */}
           <div className="space-y-6">
             <Card className="border-border bg-card">
               <CardContent className="grid grid-cols-2 gap-5 p-5 sm:grid-cols-3">
-                <Field label="Type" value={<span className="capitalize">{c.type}</span>} />
+                <Field label="Type" value={c.type} />
                 <Field label="Gender" value={<span className="capitalize">{c.gender}</span>} />
                 <Field label="Age band" value={c.age_band} />
                 <Field label="Language" value={c.language} />
                 <Field label="Zone" value={c.zone} />
-                <Field label="State / District" value={[c.district, c.state].filter(Boolean).join(", ")} />
+                <Field label="State / District" value={c.region} />
               </CardContent>
             </Card>
 
-            <Card className="border-border bg-card">
-              <CardContent className="space-y-4 p-5">
-                <Field label="Physical description" value={c.physical_description} />
-                {c.transcript_en && <Field label="Transcript (EN)" value={c.transcript_en} />}
-                {c.transcript && !c.transcript_en && <Field label="Transcript" value={c.transcript} />}
-                {c.remarks && <Field label="Remarks" value={c.remarks} />}
-              </CardContent>
-            </Card>
+            {(c.description || c.transcript || c.remarks) && (
+              <Card className="border-border bg-card">
+                <CardContent className="space-y-4 p-5">
+                  <Field label="Description" value={c.description} />
+                  <Field label="Transcript" value={c.transcript} />
+                  <Field label="Remarks" value={c.remarks} />
+                </CardContent>
+              </Card>
+            )}
 
             <Card className="border-border bg-card">
               <CardContent className="grid grid-cols-1 gap-4 p-5 sm:grid-cols-2">
-                {(c.last_seen_location || c.reporting_center) && (
+                {c.location && (
                   <div className="flex items-start gap-2">
                     <MapPin className="mt-0.5 size-4 shrink-0 text-muted-foreground" />
                     <div>
                       <p className="text-xs font-medium uppercase tracking-wide text-muted-foreground">Location</p>
-                      <p className="text-sm">{c.last_seen_location || c.reporting_center}</p>
+                      <p className="text-sm">{c.location}</p>
                       {c.lat != null && <p className="text-xs text-muted-foreground">{Number(c.lat).toFixed(4)}, {Number(c.lng).toFixed(4)}</p>}
                     </div>
                   </div>
                 )}
-                {c.reporter_mobile && (
+                {c.reporter && (
                   <div className="flex items-start gap-2">
                     <Phone className="mt-0.5 size-4 shrink-0 text-muted-foreground" />
                     <div>
                       <p className="text-xs font-medium uppercase tracking-wide text-muted-foreground">Reporter</p>
-                      <p className="text-sm">{c.reporter_mobile}</p>
+                      <p className="text-sm">{c.reporter}</p>
                     </div>
                   </div>
                 )}

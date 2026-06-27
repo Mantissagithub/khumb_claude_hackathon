@@ -233,6 +233,12 @@ export async function getCase(case_id) {
   return data;
 }
 
+export async function getReport(id) {
+  const { data, error } = await supabase.from("reports").select("*").eq("id", id).single();
+  if (error) throw new Error(error.message);
+  return data;
+}
+
 // ── Staff (admin only) ──
 export async function listStaff() {
   const { data, error } = await supabase

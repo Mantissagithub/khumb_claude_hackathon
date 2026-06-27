@@ -7,7 +7,6 @@ import { PageHeader } from "@/shared/components/PageHeader";
 import { Button } from "@/shared/ui/button";
 import { Card, CardContent } from "@/shared/ui/card";
 import { Badge } from "@/shared/ui/badge";
-import { Avatar, AvatarImage, AvatarFallback } from "@/shared/ui/avatar";
 import { Tabs, TabsList, TabsTrigger } from "@/shared/ui/tabs";
 import { Skeleton } from "@/shared/ui/skeleton";
 import {
@@ -37,10 +36,15 @@ function BandChip({ verdict }) {
 function PersonFace({ name, photo, caption }) {
   return (
     <div className="flex min-w-0 flex-1 flex-col items-center gap-2 text-center">
-      <Avatar size="lg" className="size-40 rounded-2xl">
-        {photo && <AvatarImage src={photo} alt={name} className="rounded-2xl" />}
-        <AvatarFallback className="rounded-2xl text-4xl">{initials(name)}</AvatarFallback>
-      </Avatar>
+      <div className="aspect-[3/4] w-40 overflow-hidden rounded-xl border border-border bg-muted sm:w-44">
+        {photo ? (
+          <img src={photo} alt={name} loading="lazy" className="size-full object-cover" />
+        ) : (
+          <div className="flex size-full items-center justify-center bg-gradient-to-br from-surface-2 to-surface-3 text-3xl font-medium text-muted-foreground">
+            {initials(name)}
+          </div>
+        )}
+      </div>
       <div className="min-w-0">
         <p className="truncate text-base font-semibold">{name || "Unknown"}</p>
         <p className="truncate text-xs text-muted-foreground">{caption}</p>
