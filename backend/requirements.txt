@@ -1,0 +1,26 @@
+# --- Core API (required) ---------------------------------------------------
+fastapi>=0.110
+uvicorn[standard]>=0.27
+python-multipart>=0.0.9      # multipart form / file uploads
+pydantic>=2.6
+
+# --- Strongly recommended (text matching quality) --------------------------
+rapidfuzz>=3.6              # fast fuzzy name/description matching; difflib fallback if absent
+
+# --- Optional: face + cloth (Feature 1) ------------------------------------
+# Pillow + numpy enable the cloth colour signature.
+numpy>=1.26
+Pillow>=10.0
+# Face embeddings — install ONE of these (both free, offline, pre-trained):
+#   face_recognition needs dlib (cmake + a C++ build toolchain on Windows).
+face_recognition>=1.3.0
+#   deepface is a pure-pip fallback if dlib won't build:
+# deepface>=0.0.92
+
+# --- Optional: cross-language voice (Feature 2) ----------------------------
+# Whisper-based STT + translate (free, offline, pre-trained).
+faster-whisper>=1.0.0
+# openai-whisper>=20231117   # alternative backend
+
+# Everything is import-guarded: the API boots and does text+geo matching even
+# if the optional groups above are not installed.
