@@ -1,0 +1,173 @@
+- generic:
+  - generic:
+    - generic:
+      - complementary:
+        - generic:
+          - generic: स
+          - generic:
+            - paragraph: SANGAM
+            - paragraph: Kumbh Mela Ops
+        - navigation:
+          - paragraph: Modules
+          - link:
+            - /url: /
+            - img
+            - text: Dashboard
+          - link:
+            - /url: /queue
+            - img
+            - text: Review Queue
+          - link:
+            - /url: /face
+            - img
+            - text: Face Search
+          - link:
+            - /url: /voice
+            - img
+            - text: Voice Match
+          - link:
+            - /url: /simulation
+            - img
+            - text: Simulation
+          - link:
+            - /url: /routing
+            - img
+            - text: Routing
+          - link:
+            - /url: /staff
+            - img
+            - text: Staff & Analytics
+        - generic:
+          - generic:
+            - generic: C
+            - generic:
+              - paragraph: Control Room Admin
+              - paragraph: admin
+          - button:
+            - img
+            - text: Sign out
+      - generic:
+        - main:
+          - generic:
+            - generic:
+              - heading [level=1]: Review Queue
+              - paragraph: Public missing-person reports awaiting staff review. Open a report, run a match against the registry, then confirm, create a new case, or reject.
+          - generic:
+            - generic:
+              - tablist:
+                - tab [selected]: pending
+                - tab: reviewing
+                - tab: matched
+                - tab: promoted
+                - tab: rejected
+            - generic:
+              - textbox:
+                - /placeholder: Search name / description…
+              - button:
+                - img
+          - generic:
+            - generic:
+              - generic:
+                - table:
+                  - rowgroup:
+                    - row:
+                      - columnheader: "#"
+                      - columnheader: Name
+                      - columnheader: Description
+                      - columnheader: Last seen
+                      - columnheader: Reporter
+                      - columnheader: Status
+                  - rowgroup:
+                    - row:
+                      - cell: "2"
+                      - cell: Ravi Krishnan
+                      - cell: elderly man saffron kurta rudraksha mala walking stick
+                      - cell: Ramkund Ghat
+                      - cell: "+919812345678"
+                      - cell:
+                        - generic: pending
+    - region "Notifications alt+T"
+  - 'dialog "Submission #2 pending" [active] [ref=e96]':
+    - generic [ref=e97]:
+      - 'heading "Submission #2 pending" [level=2] [ref=e98]':
+        - text: "Submission #2"
+        - generic [ref=e99]: pending
+      - paragraph [ref=e101]: Review the report and match against the registry.
+    - generic [ref=e102]:
+      - generic [ref=e104]: No photo
+      - generic [ref=e105]:
+        - paragraph [ref=e106]: "Name: Ravi Krishnan"
+        - paragraph [ref=e107]: "Gender / Age: — · —"
+        - paragraph [ref=e108]:
+          - img [ref=e109]
+          - text: Ramkund Ghat
+        - paragraph [ref=e112]: "Description: elderly man saffron kurta rudraksha mala walking stick"
+        - paragraph [ref=e113]:
+          - img [ref=e114]
+          - text: "+919812345678"
+    - generic [ref=e116]:
+      - button "Run match" [ref=e117]:
+        - img
+        - text: Run match
+      - button "Create new case" [ref=e118]:
+        - img
+        - text: Create new case
+      - button "Reject" [ref=e119]:
+        - img
+        - text: Reject
+    - generic [ref=e122]:
+      - paragraph [ref=e123]: 5 candidate matches
+      - generic [ref=e124]:
+        - generic [ref=e125]:
+          - generic [ref=e126]:
+            - paragraph [ref=e127]: Kamla Verma KMP-2027-01431
+            - paragraph [ref=e128]: Man in saffron kurta, has rudraksha mala
+            - paragraph [ref=e129]: 5 shared description terms
+          - generic [ref=e130]:
+            - generic [ref=e131]: 36%
+            - button "Confirm" [ref=e132]:
+              - img
+              - text: Confirm
+        - generic [ref=e133]:
+          - generic [ref=e134]:
+            - paragraph [ref=e135]: Meena Shukla KMP-2027-00997
+            - paragraph [ref=e136]: Elderly man with walking stick, hard of hearing
+            - paragraph [ref=e137]: 5 shared description terms
+          - generic [ref=e138]:
+            - generic [ref=e139]: 33%
+            - button "Confirm" [ref=e140]:
+              - img
+              - text: Confirm
+        - generic [ref=e141]:
+          - generic [ref=e142]:
+            - paragraph [ref=e143]: Ravi Nair KMP-2027-00533
+            - paragraph [ref=e144]: Elderly man with walking stick, hard of hearing
+            - paragraph [ref=e145]: 5 shared description terms
+          - generic [ref=e146]:
+            - generic [ref=e147]: 33%
+            - button "Confirm" [ref=e148]:
+              - img
+              - text: Confirm
+        - generic [ref=e149]:
+          - generic [ref=e150]:
+            - paragraph [ref=e151]: Gaurav Krishnan KMP-2027-02259
+            - paragraph [ref=e152]: Man in saffron kurta, has rudraksha mala
+            - paragraph [ref=e153]: 5 shared description terms
+          - generic [ref=e154]:
+            - generic [ref=e155]: 33%
+            - button "Confirm" [ref=e156]:
+              - img
+              - text: Confirm
+        - generic [ref=e157]:
+          - generic [ref=e158]:
+            - paragraph [ref=e159]: Unknown KMP-2027-00880
+            - paragraph [ref=e160]: Man in saffron kurta, has rudraksha mala
+            - paragraph [ref=e161]: 4 shared description terms
+          - generic [ref=e162]:
+            - generic [ref=e163]: 29%
+            - button "Confirm" [ref=e164]:
+              - img
+              - text: Confirm
+    - button "Close" [ref=e120]:
+      - img
+      - generic [ref=e121]: Close

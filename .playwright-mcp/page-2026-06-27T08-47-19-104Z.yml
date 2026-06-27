@@ -1,0 +1,125 @@
+- generic:
+  - generic:
+    - generic:
+      - complementary:
+        - generic:
+          - generic: स
+          - generic:
+            - paragraph: SANGAM
+            - paragraph: Kumbh Mela Ops
+        - navigation:
+          - paragraph: Modules
+          - link:
+            - /url: /ops
+            - img
+            - text: Dashboard
+          - link:
+            - /url: /ops/reports
+            - img
+            - text: Public Reports
+          - link:
+            - /url: /ops/queue
+            - img
+            - text: Review Queue
+          - link:
+            - /url: /ops/face
+            - img
+            - text: Face Search
+          - link:
+            - /url: /ops/voice
+            - img
+            - text: Voice Match
+          - link:
+            - /url: /ops/simulation
+            - img
+            - text: Simulation
+          - link:
+            - /url: /ops/routing
+            - img
+            - text: Routing
+          - link:
+            - /url: /ops/staff
+            - img
+            - text: Staff & Analytics
+        - generic:
+          - generic:
+            - generic: C
+            - generic:
+              - paragraph: Control Room Admin
+              - paragraph: admin
+          - button:
+            - img
+            - text: Sign out
+      - generic:
+        - main:
+          - generic:
+            - generic:
+              - heading [level=1]: Public Reports
+              - paragraph: Reports filed by the public (lost / seeking / found). Open one, match it against found reports and the registry, then confirm — the reporter sees the result instantly.
+          - generic:
+            - tablist:
+              - tab [selected]: searching
+              - tab: found
+              - tab: reunited
+          - generic:
+            - generic:
+              - generic:
+                - table:
+                  - rowgroup:
+                    - row:
+                      - columnheader: "#"
+                      - columnheader: Type
+                      - columnheader: Name
+                      - columnheader: Description
+                      - columnheader: Location
+                      - columnheader: Reporter
+                      - columnheader: Status
+                  - rowgroup:
+                    - row:
+                      - cell: "6"
+                      - cell: Seeking
+                      - cell: Ravi Krishnan
+                      - cell: elderly man saffron kurta rudraksha mala walking stick
+                      - cell: Ramkund
+                      - cell: "9123456789"
+                      - cell:
+                        - generic: searching
+                    - row:
+                      - cell: "5"
+                      - cell: Found person
+                      - cell: Unknown elderly man
+                      - cell: elderly man saffron kurta rudraksha mala walking stick confused
+                      - cell: Ramkund Ghat
+                      - cell: "9000000001"
+                      - cell:
+                        - generic: searching
+    - region "Notifications alt+T"
+  - 'dialog "Report #6 searching Seeking" [ref=e106]':
+    - generic [ref=e107]:
+      - 'heading "Report #6 searching Seeking" [level=2] [ref=e108]':
+        - text: "Report #6"
+        - generic [ref=e109]: searching
+        - generic [ref=e111]: Seeking
+      - paragraph [ref=e112]: Match against found reports + the registry, then confirm.
+    - generic [ref=e113]:
+      - generic [ref=e115]: No photo
+      - generic [ref=e116]:
+        - paragraph [ref=e117]: "Name: Ravi Krishnan"
+        - paragraph [ref=e118]: "Gender / Age: — · —"
+        - paragraph [ref=e119]:
+          - img [ref=e120]
+          - text: Ramkund
+        - paragraph [ref=e123]: "Description: elderly man saffron kurta rudraksha mala walking stick"
+        - paragraph [ref=e124]:
+          - img [ref=e125]
+          - text: "9123456789"
+    - generic [ref=e127]:
+      - button "Run match" [active] [ref=e128]:
+        - img
+        - text: Run match
+      - button "Reject" [ref=e129]:
+        - img
+        - text: Reject
+    - button "Close" [ref=e130]:
+      - img
+      - generic [ref=e131]: Close

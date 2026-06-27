@@ -1,0 +1,125 @@
+- generic [ref=e2]:
+  - generic [ref=e3]:
+    - complementary [ref=e4]:
+      - generic [ref=e5]:
+        - generic [ref=e6]: स
+        - generic [ref=e7]:
+          - paragraph [ref=e8]: SANGAM
+          - paragraph [ref=e9]: Kumbh Mela Ops
+      - navigation [ref=e10]:
+        - paragraph [ref=e11]: Modules
+        - link "Dashboard" [ref=e12] [cursor=pointer]:
+          - /url: /
+          - img [ref=e13]
+          - text: Dashboard
+        - link "Face Search" [ref=e18] [cursor=pointer]:
+          - /url: /face
+          - img [ref=e19]
+          - text: Face Search
+        - link "Voice Match" [ref=e25] [cursor=pointer]:
+          - /url: /voice
+          - img [ref=e26]
+          - text: Voice Match
+        - link "Simulation" [ref=e27] [cursor=pointer]:
+          - /url: /simulation
+          - img [ref=e28]
+          - text: Simulation
+        - link "Routing" [ref=e30] [cursor=pointer]:
+          - /url: /routing
+          - img [ref=e31]
+          - text: Routing
+      - paragraph [ref=e36]: Claude Impact Lab · Mumbai 2026
+    - main [ref=e38]:
+      - generic [ref=e40]:
+        - heading "Operations Simulation" [level=1] [ref=e41]
+        - paragraph [ref=e42]: Simulate crowd & separation scenarios across zones and chokepoints to predict hotspots and resource needs.
+      - generic [ref=e43]:
+        - generic [ref=e44]:
+          - generic [ref=e45]: Pilgrims
+          - spinbutton "Pilgrims" [ref=e46]: "50000"
+        - generic [ref=e47]:
+          - generic [ref=e48]: Hours
+          - spinbutton "Hours" [ref=e49]: "6"
+        - generic [ref=e50]:
+          - generic [ref=e51]: Seed
+          - spinbutton "Seed" [ref=e52]: "42"
+        - button "Run simulation" [ref=e53]:
+          - img
+          - text: Run simulation
+      - generic [ref=e76]:
+        - generic [ref=e77]:
+          - paragraph [ref=e78]: Predicted separations
+          - paragraph [ref=e79]: "313"
+        - generic [ref=e80]:
+          - paragraph [ref=e81]: Staff needed
+          - paragraph [ref=e82]: "48"
+        - generic [ref=e83]:
+          - paragraph [ref=e84]: Help desks
+          - paragraph [ref=e85]: "6"
+        - generic [ref=e86]:
+          - paragraph [ref=e87]: Peak hour
+          - paragraph [ref=e88]: 4h
+      - generic [ref=e54]:
+        - generic [ref=e55]:
+          - generic [ref=e56]:
+            - generic [ref=e57]: Predicted hotspots
+            - generic [ref=e58]: Zones ranked by separation risk.
+          - table [ref=e61]:
+            - rowgroup [ref=e62]:
+              - row "Zone Risk Level" [ref=e63]:
+                - columnheader "Zone" [ref=e64]
+                - columnheader "Risk" [ref=e65]
+                - columnheader "Level" [ref=e66]
+            - rowgroup [ref=e67]:
+              - row "Sangam Ghat high" [ref=e89]:
+                - cell "Sangam Ghat" [ref=e90]
+                - cell [ref=e91]:
+                  - progressbar [ref=e92]
+                - cell "high" [ref=e94]:
+                  - generic [ref=e95]: high
+              - row "Zone Area 12 high" [ref=e97]:
+                - cell "Zone Area 12" [ref=e98]
+                - cell [ref=e99]:
+                  - progressbar [ref=e100]
+                - cell "high" [ref=e102]:
+                  - generic [ref=e103]: high
+              - row "Ram Ghat medium" [ref=e105]:
+                - cell "Ram Ghat" [ref=e106]
+                - cell [ref=e107]:
+                  - progressbar [ref=e108]
+                - cell "medium" [ref=e110]:
+                  - generic [ref=e111]: medium
+              - row "Zone Area 3 low" [ref=e113]:
+                - cell "Zone Area 3" [ref=e114]
+                - cell [ref=e115]:
+                  - progressbar [ref=e116]
+                - cell "low" [ref=e118]:
+                  - generic [ref=e119]: low
+        - generic [ref=e70]:
+          - generic [ref=e71]:
+            - generic [ref=e72]: Separation timeline
+            - generic [ref=e73]: Expected separations per hour.
+          - generic [ref=e121]:
+            - generic [ref=e122]:
+              - generic "12" [ref=e123]
+              - generic [ref=e124]: 1h
+            - generic [ref=e125]:
+              - generic "28" [ref=e126]
+              - generic [ref=e127]: 2h
+            - generic [ref=e128]:
+              - generic "64" [ref=e129]
+              - generic [ref=e130]: 3h
+            - generic [ref=e131]:
+              - generic "98" [ref=e132]
+              - generic [ref=e133]: 4h
+            - generic [ref=e134]:
+              - generic "71" [ref=e135]
+              - generic [ref=e136]: 5h
+            - generic [ref=e137]:
+              - generic "40" [ref=e138]
+              - generic [ref=e139]: 6h
+  - region "Notifications alt+T":
+    - list:
+      - listitem [ref=e140]:
+        - img [ref=e142]
+        - generic [ref=e147]: Backend not reachable — showing mock result

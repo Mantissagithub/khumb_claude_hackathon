@@ -1,0 +1,50 @@
+- generic [ref=e2]:
+  - generic [ref=e42]:
+    - link "Back" [ref=e43] [cursor=pointer]:
+      - /url: /
+      - img [ref=e44]
+      - text: Back
+    - generic [ref=e46]:
+      - generic [ref=e47]:
+        - generic [ref=e48]: I'm searching for someone
+        - generic [ref=e49]:
+          - text: Add as much detail as you can — it helps us match faster.
+          - button "Change" [ref=e79]
+      - generic [ref=e80]:
+        - generic [ref=e81]:
+          - generic [ref=e82]: Photo (if you have one)
+          - generic [ref=e83] [cursor=pointer]:
+            - img [ref=e84]
+            - text: Tap to add a photo
+        - generic [ref=e87]:
+          - generic [ref=e88]: Their name (if known)
+          - textbox "Their name (if known)" [ref=e89]:
+            - /placeholder: e.g. Ramesh Kumar
+        - generic [ref=e90]:
+          - generic [ref=e91]:
+            - generic [ref=e92]: Gender
+            - combobox [ref=e93]:
+              - generic: Select
+              - img
+            - combobox [ref=e94]
+          - generic [ref=e95]:
+            - generic [ref=e96]: Approx. age
+            - combobox [ref=e97]:
+              - generic: Select
+              - img
+            - combobox [ref=e98]
+        - generic [ref=e99]:
+          - generic [ref=e100]: Last seen location
+          - textbox "Last seen location" [ref=e101]:
+            - /placeholder: e.g. Ramkund Ghat
+        - generic [ref=e102]:
+          - generic [ref=e103]: Description (clothes, marks, etc.)
+          - textbox "Description (clothes, marks, etc.)" [ref=e104]:
+            - /placeholder: e.g. saffron kurta, rudraksha mala, hard of hearing
+        - generic [ref=e105]:
+          - generic [ref=e106]: Your phone number *
+          - textbox "Your phone number *" [ref=e107]:
+            - /placeholder: +91…
+          - paragraph [ref=e108]: Used to update you on a match and to view your report later.
+        - button "Submit report" [ref=e109]
+  - region "Notifications alt+T"

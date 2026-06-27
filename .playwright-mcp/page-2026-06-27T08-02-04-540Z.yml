@@ -1,0 +1,59 @@
+- generic [ref=e2]:
+  - generic [ref=e4]:
+    - generic [ref=e5]:
+      - generic [ref=e6]: स
+      - generic [ref=e7]:
+        - paragraph [ref=e8]: SANGAM
+        - paragraph [ref=e9]: Missing person report
+    - generic [ref=e10]:
+      - generic [ref=e11]:
+        - generic [ref=e12]:
+          - img [ref=e13]
+          - text: Report a missing person
+        - generic [ref=e15]: Anyone can report. No account needed. Add a photo and as much detail as you can — our staff will match it against found persons across all centers.
+      - generic [ref=e17]:
+        - generic [ref=e18]:
+          - generic [ref=e19]: Photo of the missing person
+          - generic [ref=e20] [cursor=pointer]:
+            - img [ref=e21]
+            - text: Tap to upload a photo
+        - generic [ref=e24]:
+          - generic [ref=e25]: Their name (if known)
+          - textbox "Their name (if known)" [ref=e26]:
+            - /placeholder: e.g. Ramesh Kumar
+        - generic [ref=e27]:
+          - generic [ref=e28]:
+            - generic [ref=e29]: Gender
+            - combobox [ref=e30]:
+              - generic: Select
+              - img
+            - combobox [ref=e31]
+          - generic [ref=e32]:
+            - generic [ref=e33]: Approx. age
+            - combobox [ref=e34]:
+              - generic: Select
+              - img
+            - combobox [ref=e35]
+        - generic [ref=e36]:
+          - generic [ref=e37]: Last seen location
+          - textbox "Last seen location" [ref=e38]:
+            - /placeholder: e.g. Ramkund Ghat
+        - generic [ref=e39]:
+          - generic [ref=e40]: Description (clothes, marks, etc.)
+          - textbox "Description (clothes, marks, etc.)" [ref=e41]:
+            - /placeholder: e.g. Man in saffron kurta, has rudraksha mala, hard of hearing
+        - generic [ref=e42]:
+          - generic [ref=e43]:
+            - generic [ref=e44]: Your name
+            - textbox "Your name" [ref=e45]:
+              - /placeholder: Optional
+          - generic [ref=e46]:
+            - generic [ref=e47]: Your phone *
+            - textbox "Your phone *" [ref=e48]:
+              - /placeholder: +91…
+        - button "Submit report" [ref=e49]
+        - paragraph [ref=e50]:
+          - text: Staff member?
+          - link "Sign in here" [ref=e51] [cursor=pointer]:
+            - /url: /login
+  - region "Notifications alt+T"

@@ -1,0 +1,169 @@
+- generic:
+  - generic:
+    - generic:
+      - complementary:
+        - generic:
+          - generic: स
+          - generic:
+            - paragraph: SANGAM
+            - paragraph: Kumbh Mela Ops
+        - navigation:
+          - paragraph: Modules
+          - link:
+            - /url: /
+            - img
+            - text: Dashboard
+          - link:
+            - /url: /queue
+            - img
+            - text: Review Queue
+          - link:
+            - /url: /face
+            - img
+            - text: Face Search
+          - link:
+            - /url: /voice
+            - img
+            - text: Voice Match
+          - link:
+            - /url: /simulation
+            - img
+            - text: Simulation
+          - link:
+            - /url: /routing
+            - img
+            - text: Routing
+        - generic:
+          - generic:
+            - generic: F
+            - generic:
+              - paragraph: Field Operator
+              - paragraph: operator
+          - button:
+            - img
+            - text: Sign out
+      - generic:
+        - main:
+          - generic:
+            - generic:
+              - heading [level=1]: Review Queue
+              - paragraph: Public missing-person reports awaiting staff review. Open a report, run a match against the registry, then confirm, create a new case, or reject.
+          - generic:
+            - generic:
+              - tablist:
+                - tab [selected]: pending
+                - tab: reviewing
+                - tab: matched
+                - tab: promoted
+                - tab: rejected
+            - generic:
+              - textbox:
+                - /placeholder: Search name / description…
+              - button:
+                - img
+          - generic:
+            - generic:
+              - generic:
+                - table:
+                  - rowgroup:
+                    - row:
+                      - columnheader: "#"
+                      - columnheader: Name
+                      - columnheader: Description
+                      - columnheader: Last seen
+                      - columnheader: Reporter
+                      - columnheader: Status
+                  - rowgroup:
+                    - row:
+                      - cell: "1"
+                      - cell: Ramesh Kumar
+                      - cell: Man in saffron kurta, has rudraksha mala, hard of hearing
+                      - cell: Ramkund Ghat
+                      - cell: "+919812345678"
+                      - cell:
+                        - generic: pending
+    - region "Notifications alt+T"
+  - 'dialog "Submission #1 pending" [active] [ref=e89]':
+    - generic [ref=e90]:
+      - 'heading "Submission #1 pending" [level=2] [ref=e91]':
+        - text: "Submission #1"
+        - generic [ref=e92]: pending
+      - paragraph [ref=e94]: Review the report and match against the registry.
+    - generic [ref=e95]:
+      - generic [ref=e97]: No photo
+      - generic [ref=e98]:
+        - paragraph [ref=e99]: "Name: Ramesh Kumar"
+        - paragraph [ref=e100]: "Gender / Age: — · —"
+        - paragraph [ref=e101]:
+          - img [ref=e102]
+          - text: Ramkund Ghat (Zone Area 31)
+        - paragraph [ref=e105]: "Description: Man in saffron kurta, has rudraksha mala, hard of hearing"
+        - paragraph [ref=e106]:
+          - img [ref=e107]
+          - text: "+919812345678"
+    - generic [ref=e109]:
+      - button "Run match" [ref=e110]:
+        - img
+        - text: Run match
+      - button "Create new case" [ref=e111]:
+        - img
+        - text: Create new case
+      - button "Reject" [ref=e112]:
+        - img
+        - text: Reject
+    - generic [ref=e115]:
+      - paragraph [ref=e116]: 5 candidate matches
+      - generic [ref=e117]:
+        - generic [ref=e118]:
+          - generic [ref=e119]:
+            - paragraph [ref=e120]: Vimla Dubey KMP-2027-00090
+            - paragraph [ref=e121]: Man in saffron kurta, has rudraksha mala
+            - paragraph [ref=e122]: 5 shared description terms, same zone
+          - generic [ref=e123]:
+            - generic [ref=e124]: 56%
+            - button "Confirm" [ref=e125]:
+              - img
+              - text: Confirm
+        - generic [ref=e126]:
+          - generic [ref=e127]:
+            - paragraph [ref=e128]: Meena Shukla KMP-2027-00997
+            - paragraph [ref=e129]: Elderly man with walking stick, hard of hearing
+            - paragraph [ref=e130]: 4 shared description terms, same zone
+          - generic [ref=e131]:
+            - generic [ref=e132]: 47%
+            - button "Confirm" [ref=e133]:
+              - img
+              - text: Confirm
+        - generic [ref=e134]:
+          - generic [ref=e135]:
+            - paragraph [ref=e136]: Ramesh Singh KMP-2027-00511
+            - paragraph [ref=e137]: Woman with three children, lost husband
+            - paragraph [ref=e138]: 3 shared description terms, same zone
+          - generic [ref=e139]:
+            - generic [ref=e140]: 40%
+            - button "Confirm" [ref=e141]:
+              - img
+              - text: Confirm
+        - generic [ref=e142]:
+          - generic [ref=e143]:
+            - paragraph [ref=e144]: Kamla Verma KMP-2027-01431
+            - paragraph [ref=e145]: Man in saffron kurta, has rudraksha mala
+            - paragraph [ref=e146]: 5 shared description terms
+          - generic [ref=e147]:
+            - generic [ref=e148]: 39%
+            - button "Confirm" [ref=e149]:
+              - img
+              - text: Confirm
+        - generic [ref=e150]:
+          - generic [ref=e151]:
+            - paragraph [ref=e152]: Hari Agarwal KMP-2027-00730
+            - paragraph [ref=e153]: Old man in dhoti kurta, cannot remember name
+            - paragraph [ref=e154]: 3 shared description terms, same zone
+          - generic [ref=e155]:
+            - generic [ref=e156]: 38%
+            - button "Confirm" [ref=e157]:
+              - img
+              - text: Confirm
+    - button "Close" [ref=e113]:
+      - img
+      - generic [ref=e114]: Close

@@ -1,0 +1,152 @@
+- generic [ref=e2]:
+  - generic [ref=e27]:
+    - complementary [ref=e28]:
+      - generic [ref=e29]:
+        - generic [ref=e30]: स
+        - generic [ref=e31]:
+          - paragraph [ref=e32]: SANGAM
+          - paragraph [ref=e33]: Kumbh Mela Ops
+      - navigation [ref=e34]:
+        - paragraph [ref=e35]: Modules
+        - link "Dashboard" [ref=e36] [cursor=pointer]:
+          - /url: /ops
+          - img [ref=e37]
+          - text: Dashboard
+        - link "Public Reports" [ref=e42] [cursor=pointer]:
+          - /url: /ops/reports
+          - img [ref=e43]
+          - text: Public Reports
+        - link "Review Queue" [ref=e46] [cursor=pointer]:
+          - /url: /ops/queue
+          - img [ref=e47]
+          - text: Review Queue
+        - link "Face Search" [ref=e50] [cursor=pointer]:
+          - /url: /ops/face
+          - img [ref=e51]
+          - text: Face Search
+        - link "Voice Match" [ref=e57] [cursor=pointer]:
+          - /url: /ops/voice
+          - img [ref=e58]
+          - text: Voice Match
+        - link "Simulation" [ref=e59] [cursor=pointer]:
+          - /url: /ops/simulation
+          - img [ref=e60]
+          - text: Simulation
+        - link "Routing" [ref=e62] [cursor=pointer]:
+          - /url: /ops/routing
+          - img [ref=e63]
+          - text: Routing
+        - link "Staff & Analytics" [ref=e67] [cursor=pointer]:
+          - /url: /ops/staff
+          - img [ref=e68]
+          - text: Staff & Analytics
+      - generic [ref=e73]:
+        - generic [ref=e74]:
+          - generic [ref=e75]: C
+          - generic [ref=e76]:
+            - paragraph [ref=e77]: Control Room Admin
+            - paragraph [ref=e78]: admin
+        - button "Sign out" [ref=e79]:
+          - img [ref=e80]
+          - text: Sign out
+    - main [ref=e84]:
+      - generic [ref=e85]:
+        - generic [ref=e86]:
+          - heading "Operations Dashboard" [level=1] [ref=e87]
+          - paragraph [ref=e88]: Live overview of missing & found cases across all Kumbh Mela centers.
+        - generic [ref=e90]: Supabase online
+      - generic [ref=e92]:
+        - generic [ref=e93]:
+          - paragraph [ref=e94]: Total cases
+          - paragraph [ref=e95]: 2,500
+          - paragraph [ref=e96]: across all centers
+        - generic [ref=e97]:
+          - paragraph [ref=e98]: Active
+          - paragraph [ref=e99]: "349"
+          - paragraph [ref=e100]: awaiting match
+        - generic [ref=e101]:
+          - paragraph [ref=e102]: Matched
+          - paragraph [ref=e103]: "0"
+          - paragraph [ref=e104]: pending confirmation
+        - generic [ref=e105]:
+          - paragraph [ref=e106]: Reunited
+          - paragraph [ref=e107]: 2,151
+          - paragraph [ref=e108]: closed
+      - generic [ref=e109]:
+        - generic [ref=e110]:
+          - generic [ref=e111]: Recent cases
+          - generic [ref=e112]: Newest reports from across all reporting centers.
+        - table [ref=e115]:
+          - rowgroup [ref=e116]:
+            - row "Case ID Name Type Age Zone Status" [ref=e117]:
+              - columnheader "Case ID" [ref=e118]
+              - columnheader "Name" [ref=e119]
+              - columnheader "Type" [ref=e120]
+              - columnheader "Age" [ref=e121]
+              - columnheader "Zone" [ref=e122]
+              - columnheader "Status" [ref=e123]
+          - rowgroup [ref=e124]:
+            - row "KMP-2027-00399 Sohan Mehta missing 41-60 Zone Area 2 Active" [ref=e125]:
+              - cell "KMP-2027-00399" [ref=e126]
+              - cell "Sohan Mehta" [ref=e127]
+              - cell "missing" [ref=e128]:
+                - generic [ref=e129]: missing
+              - cell "41-60" [ref=e131]
+              - cell "Zone Area 2" [ref=e132]
+              - cell "Active" [ref=e133]:
+                - generic [ref=e134]: Active
+            - row "KMP-2027-02401 — missing 0-12 Zone Area 12 Reunited" [ref=e136]:
+              - cell "KMP-2027-02401" [ref=e137]
+              - cell "—" [ref=e138]
+              - cell "missing" [ref=e139]:
+                - generic [ref=e140]: missing
+              - cell "0-12" [ref=e142]
+              - cell "Zone Area 12" [ref=e143]
+              - cell "Reunited" [ref=e144]:
+                - generic [ref=e145]: Reunited
+            - row "KMP-2027-02439 Ravi Krishnan missing 71-80 Zone Area 12 Reunited" [ref=e147]:
+              - cell "KMP-2027-02439" [ref=e148]
+              - cell "Ravi Krishnan" [ref=e149]
+              - cell "missing" [ref=e150]:
+                - generic [ref=e151]: missing
+              - cell "71-80" [ref=e153]
+              - cell "Zone Area 12" [ref=e154]
+              - cell "Reunited" [ref=e155]:
+                - generic [ref=e156]: Reunited
+            - row "KMP-2027-01867 Sunita Sharma missing 41-60 Zone Area 4 Reunited" [ref=e158]:
+              - cell "KMP-2027-01867" [ref=e159]
+              - cell "Sunita Sharma" [ref=e160]
+              - cell "missing" [ref=e161]:
+                - generic [ref=e162]: missing
+              - cell "41-60" [ref=e164]
+              - cell "Zone Area 4" [ref=e165]
+              - cell "Reunited" [ref=e166]:
+                - generic [ref=e167]: Reunited
+            - row "KMP-2027-00919 Kavita Menon missing 61-70 Zone Area 31 Reunited" [ref=e169]:
+              - cell "KMP-2027-00919" [ref=e170]
+              - cell "Kavita Menon" [ref=e171]
+              - cell "missing" [ref=e172]:
+                - generic [ref=e173]: missing
+              - cell "61-70" [ref=e175]
+              - cell "Zone Area 31" [ref=e176]
+              - cell "Reunited" [ref=e177]:
+                - generic [ref=e178]: Reunited
+            - row "KMP-2027-01145 — missing 0-12 Zone Area 2 Reunited" [ref=e180]:
+              - cell "KMP-2027-01145" [ref=e181]
+              - cell "—" [ref=e182]
+              - cell "missing" [ref=e183]:
+                - generic [ref=e184]: missing
+              - cell "0-12" [ref=e186]
+              - cell "Zone Area 2" [ref=e187]
+              - cell "Reunited" [ref=e188]:
+                - generic [ref=e189]: Reunited
+      - generic [ref=e191]:
+        - generic [ref=e192]:
+          - heading "313 separations predicted in the next 6 hours" [level=3] [ref=e193]
+          - paragraph [ref=e194]: Pre-position 48 staff and 6 help desks at Sangam Ghat before the 4h peak.
+        - button "Plan operations" [ref=e195]
+  - region "Notifications alt+T":
+    - list:
+      - listitem [ref=e196]:
+        - img [ref=e198]
+        - generic [ref=e202]: Signed in

@@ -1,0 +1,79 @@
+- generic [ref=e2]:
+  - generic [ref=e200]:
+    - complementary [ref=e201]:
+      - generic [ref=e202]:
+        - generic [ref=e203]: स
+        - generic [ref=e204]:
+          - paragraph [ref=e205]: SANGAM
+          - paragraph [ref=e206]: Kumbh Mela Ops
+      - navigation [ref=e207]:
+        - paragraph [ref=e208]: Modules
+        - link "Dashboard" [ref=e209] [cursor=pointer]:
+          - /url: /
+          - img [ref=e210]
+          - text: Dashboard
+        - link "Review Queue" [ref=e215] [cursor=pointer]:
+          - /url: /queue
+          - img [ref=e216]
+          - text: Review Queue
+        - link "Face Search" [ref=e219] [cursor=pointer]:
+          - /url: /face
+          - img [ref=e220]
+          - text: Face Search
+        - link "Voice Match" [ref=e226] [cursor=pointer]:
+          - /url: /voice
+          - img [ref=e227]
+          - text: Voice Match
+        - link "Simulation" [ref=e228] [cursor=pointer]:
+          - /url: /simulation
+          - img [ref=e229]
+          - text: Simulation
+        - link "Routing" [ref=e231] [cursor=pointer]:
+          - /url: /routing
+          - img [ref=e232]
+          - text: Routing
+        - link "Staff & Analytics" [ref=e236] [cursor=pointer]:
+          - /url: /staff
+          - img [ref=e237]
+          - text: Staff & Analytics
+      - generic [ref=e242]:
+        - generic [ref=e243]:
+          - generic [ref=e244]: C
+          - generic [ref=e245]:
+            - paragraph [ref=e246]: Control Room Admin
+            - paragraph [ref=e247]: admin
+        - button "Sign out" [ref=e248]:
+          - img [ref=e249]
+          - text: Sign out
+    - main [ref=e253]:
+      - generic [ref=e255]:
+        - heading "Review Queue" [level=1] [ref=e256]
+        - paragraph [ref=e257]: Public missing-person reports awaiting staff review. Open a report, run a match against the registry, then confirm, create a new case, or reject.
+      - generic [ref=e258]:
+        - tablist [ref=e260]:
+          - tab "pending" [selected] [ref=e261]
+          - tab "reviewing" [ref=e262]
+          - tab "matched" [ref=e263]
+          - tab "promoted" [ref=e264]
+          - tab "rejected" [ref=e265]
+        - generic [ref=e266]:
+          - textbox "Search name / description…" [ref=e267]
+          - button [ref=e268]:
+            - img
+      - table [ref=e272]:
+        - rowgroup [ref=e273]:
+          - row "# Name Description Last seen Reporter Status" [ref=e274]:
+            - columnheader "#" [ref=e275]
+            - columnheader "Name" [ref=e276]
+            - columnheader "Description" [ref=e277]
+            - columnheader "Last seen" [ref=e278]
+            - columnheader "Reporter" [ref=e279]
+            - columnheader "Status" [ref=e280]
+        - rowgroup [ref=e281]:
+          - row "No pending submissions." [ref=e282]:
+            - cell "No pending submissions." [ref=e283]
+  - region "Notifications alt+T":
+    - list:
+      - listitem [ref=e284]:
+        - img [ref=e286]
+        - generic [ref=e290]: Signed in

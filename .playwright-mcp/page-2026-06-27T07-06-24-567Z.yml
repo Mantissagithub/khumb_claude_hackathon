@@ -1,0 +1,120 @@
+- generic [ref=e2]:
+  - generic [ref=e3]:
+    - banner [ref=e4]:
+      - generic [ref=e5]:
+        - generic [ref=e6]:
+          - generic [ref=e7]: स
+          - generic [ref=e8]: SANGAM
+          - generic [ref=e9]: · Kumbh Mela Ops
+        - navigation [ref=e10]:
+          - link "Dashboard" [ref=e11] [cursor=pointer]:
+            - /url: /
+            - img [ref=e12]
+            - generic [ref=e17]: Dashboard
+          - link "Face Search" [ref=e18] [cursor=pointer]:
+            - /url: /face
+            - img [ref=e19]
+            - generic [ref=e25]: Face Search
+          - link "Voice Match" [ref=e26] [cursor=pointer]:
+            - /url: /voice
+            - img [ref=e27]
+            - generic [ref=e28]: Voice Match
+          - link "Simulation" [ref=e29] [cursor=pointer]:
+            - /url: /simulation
+            - img [ref=e30]
+            - generic [ref=e32]: Simulation
+          - link "Routing" [ref=e33] [cursor=pointer]:
+            - /url: /routing
+            - img [ref=e34]
+            - generic [ref=e38]: Routing
+    - main [ref=e39]:
+      - generic [ref=e40]:
+        - generic [ref=e41]:
+          - heading "Operations Dashboard" [level=1] [ref=e42]
+          - paragraph [ref=e43]: Live overview of missing & found cases across all Kumbh Mela centers.
+        - generic [ref=e45]: checking…
+      - generic [ref=e47]:
+        - generic [ref=e49]:
+          - generic [ref=e50]:
+            - paragraph [ref=e51]: Total cases
+            - paragraph [ref=e52]: 2,500
+            - paragraph [ref=e53]: across 6 centers
+          - img [ref=e55]
+        - generic [ref=e61]:
+          - generic [ref=e62]:
+            - paragraph [ref=e63]: Active
+            - paragraph [ref=e64]: 1,842
+            - paragraph [ref=e65]: awaiting match
+          - img [ref=e67]
+        - generic [ref=e70]:
+          - generic [ref=e71]:
+            - paragraph [ref=e72]: Matched
+            - paragraph [ref=e73]: "471"
+            - paragraph [ref=e74]: pending confirmation
+          - img [ref=e76]
+        - generic [ref=e83]:
+          - generic [ref=e84]:
+            - paragraph [ref=e85]: Reunited
+            - paragraph [ref=e86]: "187"
+            - paragraph [ref=e87]: closed today
+          - img [ref=e89]
+      - generic [ref=e92]:
+        - generic [ref=e93]:
+          - generic [ref=e94]: Recent cases
+          - generic [ref=e95]: Newest reports from across all reporting centers.
+        - table [ref=e98]:
+          - rowgroup [ref=e99]:
+            - row "Case ID Name Type Age Zone Status" [ref=e100]:
+              - columnheader "Case ID" [ref=e101]
+              - columnheader "Name" [ref=e102]
+              - columnheader "Type" [ref=e103]
+              - columnheader "Age" [ref=e104]
+              - columnheader "Zone" [ref=e105]
+              - columnheader "Status" [ref=e106]
+          - rowgroup [ref=e107]:
+            - row "KMP-2027-00012 Ramabai Pawar missing 71-80 Zone Area 12 Active" [ref=e108]:
+              - cell "KMP-2027-00012" [ref=e109]
+              - cell "Ramabai Pawar" [ref=e110]
+              - cell "missing" [ref=e111]:
+                - generic [ref=e112]: missing
+              - cell "71-80" [ref=e114]
+              - cell "Zone Area 12" [ref=e115]
+              - cell "Active" [ref=e116]:
+                - generic [ref=e117]: Active
+            - row "FOUND-0007 — found 61-70 Sangam Ghat Matched" [ref=e119]:
+              - cell "FOUND-0007" [ref=e120]
+              - cell "—" [ref=e121]
+              - cell "found" [ref=e122]:
+                - generic [ref=e123]: found
+              - cell "61-70" [ref=e125]
+              - cell "Sangam Ghat" [ref=e126]
+              - cell "Matched" [ref=e127]:
+                - generic [ref=e128]: Matched
+            - row "KMP-2027-00031 Shankar Lal missing 80+ Zone Area 7 Reunited" [ref=e130]:
+              - cell "KMP-2027-00031" [ref=e131]
+              - cell "Shankar Lal" [ref=e132]
+              - cell "missing" [ref=e133]:
+                - generic [ref=e134]: missing
+              - cell "80+" [ref=e136]
+              - cell "Zone Area 7" [ref=e137]
+              - cell "Reunited" [ref=e138]:
+                - generic [ref=e139]: Reunited
+            - row "KMP-2027-00044 Geeta Devi missing 41-60 Zone Area 3 Active" [ref=e141]:
+              - cell "KMP-2027-00044" [ref=e142]
+              - cell "Geeta Devi" [ref=e143]
+              - cell "missing" [ref=e144]:
+                - generic [ref=e145]: missing
+              - cell "41-60" [ref=e147]
+              - cell "Zone Area 3" [ref=e148]
+              - cell "Active" [ref=e149]:
+                - generic [ref=e150]: Active
+            - row "FOUND-0019 Kumar found 13-25 Ram Ghat Active" [ref=e152]:
+              - cell "FOUND-0019" [ref=e153]
+              - cell "Kumar" [ref=e154]
+              - cell "found" [ref=e155]:
+                - generic [ref=e156]: found
+              - cell "13-25" [ref=e158]
+              - cell "Ram Ghat" [ref=e159]
+              - cell "Active" [ref=e160]:
+                - generic [ref=e161]: Active
+  - region "Notifications alt+T"

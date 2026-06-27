@@ -1,0 +1,28 @@
+- generic [ref=e2]:
+  - generic [ref=e62]:
+    - link "My reports" [ref=e63] [cursor=pointer]:
+      - /url: /reports
+      - img [ref=e64]
+      - text: My reports
+    - generic [ref=e67]:
+      - img [ref=e68]
+      - generic [ref=e71]:
+        - generic [ref=e72]:
+          - generic [ref=e73]: found
+          - generic [ref=e75]: "#6"
+        - paragraph [ref=e76]: Good news — a match was found. See where below.
+    - generic [ref=e77]:
+      - generic [ref=e78]:
+        - generic [ref=e79]: Where they were found
+        - generic [ref=e80]: Details captured when the person was found.
+      - paragraph [ref=e82]:
+        - img [ref=e83]
+        - generic [ref=e86]: Panchavati Help Center
+    - generic [ref=e87]:
+      - generic [ref=e89]: Your report
+      - generic [ref=e90]:
+        - paragraph [ref=e91]: "Name: Ravi Krishnan"
+        - paragraph [ref=e92]: "Gender / Age: — · —"
+        - paragraph [ref=e93]: "Location: Ramkund"
+        - paragraph [ref=e94]: "Description: elderly man saffron kurta rudraksha mala walking stick"
+  - region "Notifications alt+T"

@@ -1,0 +1,27 @@
+- generic [ref=e2]:
+  - generic [ref=e4]:
+    - link "Back" [ref=e5] [cursor=pointer]:
+      - /url: /
+      - img [ref=e6]
+      - text: Back
+    - generic [ref=e8]:
+      - generic [ref=e9]:
+        - generic [ref=e10]: What would you like to report?
+        - generic [ref=e11]: Choose the option that fits your situation.
+      - generic [ref=e12]:
+        - button "I am lost Report yourself as separated from your group." [ref=e13]:
+          - img [ref=e15]
+          - generic [ref=e20]:
+            - paragraph [ref=e21]: I am lost
+            - paragraph [ref=e22]: Report yourself as separated from your group.
+        - button "I'm searching for someone A family member or friend is missing." [ref=e23]:
+          - img [ref=e25]
+          - generic [ref=e28]:
+            - paragraph [ref=e29]: I'm searching for someone
+            - paragraph [ref=e30]: A family member or friend is missing.
+        - button "I found a lost person You found someone who seems lost." [ref=e31]:
+          - img [ref=e33]
+          - generic [ref=e38]:
+            - paragraph [ref=e39]: I found a lost person
+            - paragraph [ref=e40]: You found someone who seems lost.
+  - region "Notifications alt+T"

@@ -1,0 +1,21 @@
+- generic [ref=e2]:
+  - generic [ref=e4]:
+    - link "Back" [ref=e5] [cursor=pointer]:
+      - /url: /
+      - img [ref=e6]
+      - text: Back
+    - generic [ref=e8]:
+      - generic [ref=e9]:
+        - generic [ref=e10]:
+          - img [ref=e11]
+          - text: View my reports
+        - generic [ref=e14]: Enter the phone number you used when filing your report.
+      - generic [ref=e16]:
+        - generic [ref=e17]:
+          - generic [ref=e18]: Phone number
+          - textbox "Phone number" [ref=e19]:
+            - /placeholder: +91…
+        - button "Send code" [ref=e20]:
+          - img
+          - text: Send code
+  - region "Notifications alt+T"

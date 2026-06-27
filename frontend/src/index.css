@@ -1,0 +1,176 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+@import "@fontsource-variable/inter";
+
+@custom-variant dark (&:is(.dark *));
+
+/* ───────────────────────────────────────────────────────────────
+   SANGAM theme — Airtable design system (getdesign.md: airtable)
+   White editorial canvas · near-black ink · hairline borders ·
+   signature "voltage" cards (coral / forest / navy / mustard).
+   Inter Display = documented open-source substitute for Haas.
+   ─────────────────────────────────────────────────────────────── */
+
+@theme inline {
+    --font-heading: var(--font-sans);
+    --font-sans: 'Inter Variable', system-ui, -apple-system, 'Segoe UI', sans-serif;
+    --font-mono: ui-monospace, 'SF Mono', Menlo, monospace;
+
+    /* shadcn surface mappings */
+    --color-sidebar-ring: var(--sidebar-ring);
+    --color-sidebar-border: var(--sidebar-border);
+    --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+    --color-sidebar-accent: var(--sidebar-accent);
+    --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+    --color-sidebar-primary: var(--sidebar-primary);
+    --color-sidebar-foreground: var(--sidebar-foreground);
+    --color-sidebar: var(--sidebar);
+    --color-chart-5: var(--chart-5);
+    --color-chart-4: var(--chart-4);
+    --color-chart-3: var(--chart-3);
+    --color-chart-2: var(--chart-2);
+    --color-chart-1: var(--chart-1);
+    --color-ring: var(--ring);
+    --color-input: var(--input);
+    --color-border: var(--border);
+    --color-destructive: var(--destructive);
+    --color-accent-foreground: var(--accent-foreground);
+    --color-accent: var(--accent);
+    --color-muted-foreground: var(--muted-foreground);
+    --color-muted: var(--muted);
+    --color-secondary-foreground: var(--secondary-foreground);
+    --color-secondary: var(--secondary);
+    --color-primary-foreground: var(--primary-foreground);
+    --color-primary: var(--primary);
+    --color-popover-foreground: var(--popover-foreground);
+    --color-popover: var(--popover);
+    --color-card-foreground: var(--card-foreground);
+    --color-card: var(--card);
+    --color-foreground: var(--foreground);
+    --color-background: var(--background);
+
+    /* Airtable surface ladder (utilities: bg-surface-1 … bg-surface-4) */
+    --color-surface-1: var(--surface-1);
+    --color-surface-2: var(--surface-2);
+    --color-surface-3: var(--surface-3);
+    --color-surface-4: var(--surface-4);
+
+    /* Signature "voltage" colors — full-bleed brand surfaces */
+    --color-sig-navy: var(--sig-navy);
+    --color-sig-coral: var(--sig-coral);
+    --color-sig-forest: var(--sig-forest);
+    --color-sig-cream: var(--sig-cream);
+    --color-sig-mustard: var(--sig-mustard);
+    --color-sig-peach: var(--sig-peach);
+    --color-sig-mint: var(--sig-mint);
+
+    /* Semantic / status tokens for case states + simulation risk */
+    --color-success: var(--success);
+    --color-success-foreground: var(--success-foreground);
+    --color-warning: var(--warning);
+    --color-warning-foreground: var(--warning-foreground);
+    --color-danger: var(--danger);
+    --color-danger-foreground: var(--danger-foreground);
+    --color-info: var(--info);
+    --color-info-foreground: var(--info-foreground);
+
+    --radius-sm: calc(var(--radius) * 0.6);
+    --radius-md: calc(var(--radius) * 0.85);
+    --radius-lg: var(--radius);
+    --radius-xl: calc(var(--radius) * 1.2);
+    --radius-2xl: calc(var(--radius) * 1.6);
+    --radius-3xl: calc(var(--radius) * 2);
+    --radius-4xl: calc(var(--radius) * 2.4);
+}
+
+/* LIGHT mode — Airtable (default) */
+:root {
+    --radius: 0.625rem; /* 10px content cards; buttons ~12px feel */
+
+    --background: #ffffff;          /* canvas */
+    --foreground: #181d26;          /* ink */
+
+    --card: #ffffff;
+    --card-foreground: #181d26;
+    --popover: #ffffff;
+    --popover-foreground: #181d26;
+
+    --primary: #181d26;             /* near-black ink CTA */
+    --primary-foreground: #ffffff;
+
+    --secondary: #f8fafc;           /* surface-soft */
+    --secondary-foreground: #181d26;
+
+    --muted: #f8fafc;
+    --muted-foreground: #41454d;    /* muted */
+
+    --accent: #f8fafc;              /* surface-soft (hover) */
+    --accent-foreground: #181d26;
+
+    --destructive: #aa2d00;         /* coral */
+    --destructive-foreground: #ffffff;
+
+    --border: #dddddd;              /* hairline */
+    --input: #dddddd;
+    --ring: #458fff;               /* info-border focus */
+
+    /* Surface ladder */
+    --surface-1: #f8fafc;          /* surface-soft */
+    --surface-2: #eef1f5;
+    --surface-3: #e0e2e6;          /* surface-strong */
+    --surface-4: #d3d6db;
+
+    /* Signature colors */
+    --sig-navy: #181d26;
+    --sig-coral: #aa2d00;
+    --sig-forest: #0a2e0e;
+    --sig-cream: #f5e9d4;
+    --sig-mustard: #d9a441;
+    --sig-peach: #fcab79;
+    --sig-mint: #a8d8c4;
+
+    /* Status / semantic (dark enough to read as text on /15 tints) */
+    --success: #006400;            /* Reunited / low risk */
+    --success-foreground: #ffffff;
+    --warning: #8a5a12;            /* Matched / medium risk (dark mustard) */
+    --warning-foreground: #ffffff;
+    --danger: #aa2d00;             /* high risk / missing (coral) */
+    --danger-foreground: #ffffff;
+    --info: #254fad;               /* Active / found */
+    --info-foreground: #ffffff;
+
+    /* Charts (simulation / analytics) */
+    --chart-1: #aa2d00;
+    --chart-2: #0a2e0e;
+    --chart-3: #d9a441;
+    --chart-4: #254fad;
+    --chart-5: #fcab79;
+
+    /* Sidebar (Airtable rail) */
+    --sidebar: #ffffff;
+    --sidebar-foreground: #333840;
+    --sidebar-primary: #181d26;
+    --sidebar-primary-foreground: #ffffff;
+    --sidebar-accent: #f8fafc;
+    --sidebar-accent-foreground: #181d26;
+    --sidebar-border: #dddddd;
+    --sidebar-ring: #458fff;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+  html {
+    @apply font-sans;
+  }
+  /* Airtable: display type stays modest weight — emphasis via size, not bold */
+  h1, h2, h3 {
+    font-weight: 500;
+    letter-spacing: -0.2px;
+  }
+}

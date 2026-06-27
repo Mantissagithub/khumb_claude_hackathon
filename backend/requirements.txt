@@ -1,0 +1,7 @@
+fastapi
+uvicorn[standard]
+pandas
+python-multipart
+pyjwt
+passlib[bcrypt]
+bcrypt<4.1

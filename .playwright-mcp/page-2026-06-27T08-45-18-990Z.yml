@@ -1,0 +1,57 @@
+- generic [ref=e2]:
+  - generic [ref=e4]:
+    - link "Back" [ref=e5] [cursor=pointer]:
+      - /url: /
+      - img [ref=e6]
+      - text: Back
+    - generic [ref=e8]:
+      - generic [ref=e9]:
+        - generic [ref=e10]: I found a lost person
+        - generic [ref=e11]:
+          - text: Add as much detail as you can — it helps us match faster.
+          - button "Change" [ref=e41]
+      - generic [ref=e42]:
+        - generic [ref=e43]:
+          - generic [ref=e44]: Photo of the person you found
+          - generic [ref=e45] [cursor=pointer]:
+            - img [ref=e46]
+            - text: Tap to add a photo
+        - generic [ref=e49]:
+          - generic [ref=e50]: Their name (if they can tell you)
+          - textbox "Their name (if they can tell you)" [ref=e51]:
+            - /placeholder: e.g. Ramesh Kumar
+        - generic [ref=e52]:
+          - generic [ref=e53]:
+            - generic [ref=e54]: Gender
+            - combobox [ref=e55]:
+              - generic: Select
+              - img
+            - combobox [ref=e56]
+          - generic [ref=e57]:
+            - generic [ref=e58]: Approx. age
+            - combobox [ref=e59]:
+              - generic: Select
+              - img
+            - combobox [ref=e60]
+        - generic [ref=e61]:
+          - generic [ref=e62]: Where did you find them?
+          - textbox "Where did you find them?" [ref=e63]:
+            - /placeholder: e.g. Ramkund Ghat
+        - generic [ref=e64]:
+          - generic [ref=e65]: Help center they're at (if any)
+          - textbox "Help center they're at (if any)" [ref=e66]:
+            - /placeholder: e.g. Panchavati Help Center
+        - button "Use my current location" [ref=e67]:
+          - img
+          - text: Use my current location
+        - generic [ref=e68]:
+          - generic [ref=e69]: Description (clothes, marks, etc.)
+          - textbox "Description (clothes, marks, etc.)" [ref=e70]:
+            - /placeholder: e.g. saffron kurta, rudraksha mala, hard of hearing
+        - generic [ref=e71]:
+          - generic [ref=e72]: Your phone number *
+          - textbox "Your phone number *" [ref=e73]:
+            - /placeholder: +91…
+          - paragraph [ref=e74]: Used to update you on a match and to view your report later.
+        - button "Submit report" [ref=e75]
+  - region "Notifications alt+T"

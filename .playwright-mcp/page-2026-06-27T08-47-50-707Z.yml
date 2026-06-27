@@ -1,0 +1,26 @@
+- generic [ref=e2]:
+  - generic [ref=e4]:
+    - link "Back" [ref=e5] [cursor=pointer]:
+      - /url: /
+      - img [ref=e6]
+      - text: Back
+    - generic [ref=e8]:
+      - generic [ref=e9]:
+        - generic [ref=e10]:
+          - img [ref=e11]
+          - text: View my reports
+        - generic [ref=e14]: Enter the 6-digit code sent to 9123456789.
+      - generic [ref=e16]:
+        - generic [ref=e17]: "Demo code: 384450"
+        - generic [ref=e21]:
+          - generic [ref=e22]: Verification code
+          - textbox "Verification code" [ref=e23]:
+            - /placeholder: "------"
+            - text: "384450"
+        - button "Verify & view" [ref=e24]
+        - button "Use a different number" [ref=e25]
+  - region "Notifications alt+T":
+    - list:
+      - listitem [ref=e26]:
+        - img [ref=e28]
+        - generic [ref=e32]: Verification code sent

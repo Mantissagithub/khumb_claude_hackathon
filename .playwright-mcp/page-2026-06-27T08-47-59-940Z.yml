@@ -1,0 +1,28 @@
+- generic [ref=e2]:
+  - generic [ref=e34]:
+    - generic [ref=e35]:
+      - generic [ref=e36]:
+        - heading "My reports" [level=1] [ref=e37]
+        - paragraph [ref=e38]: "9123456789"
+      - button "Sign out" [ref=e39]:
+        - img
+        - text: Sign out
+    - link "File a new report" [ref=e40] [cursor=pointer]:
+      - /url: /new
+      - img
+      - text: File a new report
+    - link "found Searching for someone Ravi Krishnan elderly man saffron kurta rudraksha mala walking stick" [ref=e42] [cursor=pointer]:
+      - /url: /reports/6
+      - generic [ref=e44]:
+        - generic [ref=e45]:
+          - generic [ref=e46]:
+            - generic [ref=e47]: found
+            - generic [ref=e49]: Searching for someone
+          - paragraph [ref=e50]: Ravi Krishnan
+          - paragraph [ref=e51]: elderly man saffron kurta rudraksha mala walking stick
+        - img [ref=e52]
+  - region "Notifications alt+T":
+    - list:
+      - listitem [ref=e54]:
+        - img [ref=e56]
+        - generic [ref=e60]: Signed in

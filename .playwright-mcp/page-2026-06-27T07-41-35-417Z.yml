@@ -1,0 +1,7 @@
+- generic [ref=e2]:
+  - generic [ref=e53]:
+    - img [ref=e54]
+    - heading "Report received" [level=2] [ref=e57]
+    - paragraph [ref=e58]: "Reference #1. Our team will review it and call you on a match. Please stay near a help center."
+    - button "Submit another report" [ref=e59]
+  - region "Notifications alt+T"

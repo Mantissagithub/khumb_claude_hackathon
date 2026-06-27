@@ -1,0 +1,26 @@
+- generic [ref=e2]:
+  - generic [ref=e177]:
+    - generic [ref=e178]:
+      - generic [ref=e179]: स
+      - generic [ref=e180]: SANGAM
+    - generic [ref=e181]:
+      - generic [ref=e182]:
+        - generic [ref=e183]:
+          - img [ref=e184]
+          - text: Staff sign in
+        - generic [ref=e187]: Authorized control-room & field staff only.
+      - generic [ref=e188]:
+        - generic [ref=e189]:
+          - generic [ref=e190]:
+            - generic [ref=e191]: Username
+            - textbox "Username" [ref=e192]
+          - generic [ref=e193]:
+            - generic [ref=e194]: Password
+            - textbox "Password" [ref=e195]
+          - button "Sign in" [ref=e196]
+        - paragraph [ref=e197]:
+          - text: Reporting a missing person?
+          - link "Public report form" [ref=e198] [cursor=pointer]:
+            - /url: /submit
+    - paragraph [ref=e199]: "Demo: admin / admin123 · operator / operator123"
+  - region "Notifications alt+T"

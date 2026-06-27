@@ -1,0 +1,119 @@
+- generic [ref=e2]:
+  - generic [ref=e3]:
+    - complementary [ref=e4]:
+      - generic [ref=e5]:
+        - generic [ref=e6]: स
+        - generic [ref=e7]:
+          - paragraph [ref=e8]: SANGAM
+          - paragraph [ref=e9]: Kumbh Mela Ops
+      - navigation [ref=e10]:
+        - paragraph [ref=e11]: Modules
+        - link "Dashboard" [ref=e12] [cursor=pointer]:
+          - /url: /
+          - img [ref=e13]
+          - text: Dashboard
+        - link "Face Search" [ref=e18] [cursor=pointer]:
+          - /url: /face
+          - img [ref=e19]
+          - text: Face Search
+        - link "Voice Match" [ref=e25] [cursor=pointer]:
+          - /url: /voice
+          - img [ref=e26]
+          - text: Voice Match
+        - link "Simulation" [ref=e27] [cursor=pointer]:
+          - /url: /simulation
+          - img [ref=e28]
+          - text: Simulation
+        - link "Routing" [ref=e30] [cursor=pointer]:
+          - /url: /routing
+          - img [ref=e31]
+          - text: Routing
+      - paragraph [ref=e36]: Claude Impact Lab · Mumbai 2026
+    - main [ref=e38]:
+      - generic [ref=e39]:
+        - generic [ref=e40]:
+          - heading "Operations Dashboard" [level=1] [ref=e41]
+          - paragraph [ref=e42]: Live overview of missing & found cases across all Kumbh Mela centers.
+        - generic [ref=e44]: API offline (mock data)
+      - generic [ref=e46]:
+        - generic [ref=e47]:
+          - paragraph [ref=e48]: Total cases
+          - paragraph [ref=e49]: 2,500
+          - paragraph [ref=e50]: across 6 centers
+        - generic [ref=e51]:
+          - paragraph [ref=e52]: Active
+          - paragraph [ref=e53]: 1,842
+          - paragraph [ref=e54]: awaiting match
+        - generic [ref=e55]:
+          - paragraph [ref=e56]: Matched
+          - paragraph [ref=e57]: "471"
+          - paragraph [ref=e58]: pending confirmation
+        - generic [ref=e59]:
+          - paragraph [ref=e60]: Reunited
+          - paragraph [ref=e61]: "187"
+          - paragraph [ref=e62]: closed today
+      - generic [ref=e63]:
+        - generic [ref=e64]:
+          - generic [ref=e65]: Recent cases
+          - generic [ref=e66]: Newest reports from across all reporting centers.
+        - table [ref=e69]:
+          - rowgroup [ref=e70]:
+            - row "Case ID Name Type Age Zone Status" [ref=e71]:
+              - columnheader "Case ID" [ref=e72]
+              - columnheader "Name" [ref=e73]
+              - columnheader "Type" [ref=e74]
+              - columnheader "Age" [ref=e75]
+              - columnheader "Zone" [ref=e76]
+              - columnheader "Status" [ref=e77]
+          - rowgroup [ref=e78]:
+            - row "KMP-2027-00012 Ramabai Pawar missing 71-80 Zone Area 12 Active" [ref=e79]:
+              - cell "KMP-2027-00012" [ref=e80]
+              - cell "Ramabai Pawar" [ref=e81]
+              - cell "missing" [ref=e82]:
+                - generic [ref=e83]: missing
+              - cell "71-80" [ref=e85]
+              - cell "Zone Area 12" [ref=e86]
+              - cell "Active" [ref=e87]:
+                - generic [ref=e88]: Active
+            - row "FOUND-0007 — found 61-70 Sangam Ghat Matched" [ref=e90]:
+              - cell "FOUND-0007" [ref=e91]
+              - cell "—" [ref=e92]
+              - cell "found" [ref=e93]:
+                - generic [ref=e94]: found
+              - cell "61-70" [ref=e96]
+              - cell "Sangam Ghat" [ref=e97]
+              - cell "Matched" [ref=e98]:
+                - generic [ref=e99]: Matched
+            - row "KMP-2027-00031 Shankar Lal missing 80+ Zone Area 7 Reunited" [ref=e101]:
+              - cell "KMP-2027-00031" [ref=e102]
+              - cell "Shankar Lal" [ref=e103]
+              - cell "missing" [ref=e104]:
+                - generic [ref=e105]: missing
+              - cell "80+" [ref=e107]
+              - cell "Zone Area 7" [ref=e108]
+              - cell "Reunited" [ref=e109]:
+                - generic [ref=e110]: Reunited
+            - row "KMP-2027-00044 Geeta Devi missing 41-60 Zone Area 3 Active" [ref=e112]:
+              - cell "KMP-2027-00044" [ref=e113]
+              - cell "Geeta Devi" [ref=e114]
+              - cell "missing" [ref=e115]:
+                - generic [ref=e116]: missing
+              - cell "41-60" [ref=e118]
+              - cell "Zone Area 3" [ref=e119]
+              - cell "Active" [ref=e120]:
+                - generic [ref=e121]: Active
+            - row "FOUND-0019 Kumar found 13-25 Ram Ghat Active" [ref=e123]:
+              - cell "FOUND-0019" [ref=e124]
+              - cell "Kumar" [ref=e125]
+              - cell "found" [ref=e126]:
+                - generic [ref=e127]: found
+              - cell "13-25" [ref=e129]
+              - cell "Ram Ghat" [ref=e130]
+              - cell "Active" [ref=e131]:
+                - generic [ref=e132]: Active
+      - generic [ref=e134]:
+        - generic [ref=e135]:
+          - heading "313 separations predicted in the next 6 hours" [level=3] [ref=e136]
+          - paragraph [ref=e137]: Pre-position 48 staff and 6 help desks at Sangam Ghat before the 4h peak.
+        - button "Plan operations" [ref=e138]
+  - region "Notifications alt+T"

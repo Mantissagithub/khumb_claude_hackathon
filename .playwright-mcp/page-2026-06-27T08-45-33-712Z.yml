@@ -1,0 +1,12 @@
+- generic [ref=e2]:
+  - generic [ref=e77]:
+    - img [ref=e78]
+    - heading "Report received" [level=2] [ref=e81]
+    - paragraph [ref=e82]:
+      - text: Reference
+      - generic [ref=e83]: "#5"
+      - text: . We're actively searching across all centers. Track the status anytime by logging in with your phone number.
+    - generic [ref=e84]:
+      - button "Track my report" [ref=e85]
+      - button "File another report" [ref=e86]
+  - region "Notifications alt+T"

@@ -1,0 +1,77 @@
+- generic [ref=e2]:
+  - generic [ref=e4]:
+    - complementary [ref=e5]:
+      - generic [ref=e6]:
+        - generic [ref=e7]: स
+        - generic [ref=e8]:
+          - paragraph [ref=e9]: SANGAM
+          - paragraph [ref=e10]: Kumbh Mela Ops
+      - navigation [ref=e11]:
+        - paragraph [ref=e12]: Modules
+        - link "Dashboard" [ref=e13] [cursor=pointer]:
+          - /url: /ops
+          - img [ref=e14]
+          - text: Dashboard
+        - link "Public Reports" [ref=e19] [cursor=pointer]:
+          - /url: /ops/reports
+          - img [ref=e20]
+          - text: Public Reports
+        - link "Review Queue" [ref=e23] [cursor=pointer]:
+          - /url: /ops/queue
+          - img [ref=e24]
+          - text: Review Queue
+        - link "Face Search" [ref=e27] [cursor=pointer]:
+          - /url: /ops/face
+          - img [ref=e28]
+          - text: Face Search
+        - link "Voice Match" [ref=e34] [cursor=pointer]:
+          - /url: /ops/voice
+          - img [ref=e35]
+          - text: Voice Match
+        - link "Simulation" [ref=e36] [cursor=pointer]:
+          - /url: /ops/simulation
+          - img [ref=e37]
+          - text: Simulation
+        - link "Routing" [ref=e39] [cursor=pointer]:
+          - /url: /ops/routing
+          - img [ref=e40]
+          - text: Routing
+        - link "Staff & Analytics" [ref=e44] [cursor=pointer]:
+          - /url: /ops/staff
+          - img [ref=e45]
+          - text: Staff & Analytics
+      - generic [ref=e50]:
+        - generic [ref=e51]:
+          - generic [ref=e52]: C
+          - generic [ref=e53]:
+            - paragraph [ref=e54]: Control Room Admin
+            - paragraph [ref=e55]: admin
+        - button "Sign out" [ref=e56]:
+          - img [ref=e57]
+          - text: Sign out
+    - main [ref=e61]:
+      - generic [ref=e63]:
+        - heading "Public Reports" [level=1] [ref=e64]
+        - paragraph [ref=e65]: Reports filed by the public (lost / seeking / found). Open one, match it against found reports and the registry, then confirm — the reporter sees the result instantly.
+      - tablist [ref=e67]:
+        - tab "searching" [selected] [ref=e68]
+        - tab "found" [ref=e69]
+        - tab "reunited" [ref=e70]
+      - table [ref=e74]:
+        - rowgroup [ref=e75]:
+          - row "# Type Name Description Location Reporter Status" [ref=e76]:
+            - columnheader "#" [ref=e77]
+            - columnheader "Type" [ref=e78]
+            - columnheader "Name" [ref=e79]
+            - columnheader "Description" [ref=e80]
+            - columnheader "Location" [ref=e81]
+            - columnheader "Reporter" [ref=e82]
+            - columnheader "Status" [ref=e83]
+        - rowgroup [ref=e84]:
+          - row "No searching reports." [ref=e175]:
+            - cell "No searching reports." [ref=e176]
+  - region "Notifications alt+T":
+    - list:
+      - listitem [ref=e177]:
+        - img [ref=e179]
+        - generic [ref=e183]: Match confirmed — reporter notified

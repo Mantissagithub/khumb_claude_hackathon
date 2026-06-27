@@ -1,0 +1,31 @@
+- generic [ref=e2]:
+  - generic [ref=e4]:
+    - generic [ref=e5]:
+      - generic [ref=e6]: स
+      - generic [ref=e7]:
+        - paragraph [ref=e8]: SANGAM
+        - paragraph [ref=e9]: Kumbh Mela · Lost & Found
+    - generic [ref=e10]:
+      - img [ref=e11]
+      - heading "Reunite with your loved ones" [level=1] [ref=e13]
+      - paragraph [ref=e14]: File a report in seconds — no account needed. We search across every center to bring families back together.
+    - generic [ref=e15]:
+      - link "File a report" [ref=e16] [cursor=pointer]:
+        - /url: /new
+        - img
+        - text: File a report
+      - link "View my reports" [ref=e17] [cursor=pointer]:
+        - /url: /track
+        - img
+        - text: View my reports
+    - generic [ref=e18]:
+      - paragraph [ref=e19]:
+        - img [ref=e20]
+        - text: Emergency helpline
+      - paragraph [ref=e22]: "1920"
+      - paragraph [ref=e23]: Bhula-Bhatka / Lost & Found Kendra
+    - paragraph [ref=e24]:
+      - text: Staff member?
+      - link "Control-room sign in" [ref=e25] [cursor=pointer]:
+        - /url: /ops/login
+  - region "Notifications alt+T"

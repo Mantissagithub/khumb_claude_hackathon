@@ -1,0 +1,68 @@
+- generic [ref=e2]:
+  - generic [ref=e3]:
+    - complementary [ref=e4]:
+      - generic [ref=e5]:
+        - generic [ref=e6]: स
+        - generic [ref=e7]:
+          - paragraph [ref=e8]: SANGAM
+          - paragraph [ref=e9]: Kumbh Mela Ops
+      - navigation [ref=e10]:
+        - paragraph [ref=e11]: Modules
+        - link "Dashboard" [ref=e12] [cursor=pointer]:
+          - /url: /
+          - img [ref=e13]
+          - text: Dashboard
+        - link "Face Search" [ref=e18] [cursor=pointer]:
+          - /url: /face
+          - img [ref=e19]
+          - text: Face Search
+        - link "Voice Match" [ref=e25] [cursor=pointer]:
+          - /url: /voice
+          - img [ref=e26]
+          - text: Voice Match
+        - link "Simulation" [ref=e27] [cursor=pointer]:
+          - /url: /simulation
+          - img [ref=e28]
+          - text: Simulation
+        - link "Routing" [ref=e30] [cursor=pointer]:
+          - /url: /routing
+          - img [ref=e31]
+          - text: Routing
+      - paragraph [ref=e36]: Claude Impact Lab · Mumbai 2026
+    - main [ref=e38]:
+      - generic [ref=e40]:
+        - heading "Operations Simulation" [level=1] [ref=e41]
+        - paragraph [ref=e42]: Simulate crowd & separation scenarios across zones and chokepoints to predict hotspots and resource needs.
+      - generic [ref=e43]:
+        - generic [ref=e44]:
+          - generic [ref=e45]: Pilgrims
+          - spinbutton "Pilgrims" [ref=e46]: "50000"
+        - generic [ref=e47]:
+          - generic [ref=e48]: Hours
+          - spinbutton "Hours" [ref=e49]: "6"
+        - generic [ref=e50]:
+          - generic [ref=e51]: Seed
+          - spinbutton "Seed" [ref=e52]: "42"
+        - button "Run simulation" [ref=e53]:
+          - img
+          - text: Run simulation
+      - generic [ref=e54]:
+        - generic [ref=e55]:
+          - generic [ref=e56]:
+            - generic [ref=e57]: Predicted hotspots
+            - generic [ref=e58]: Zones ranked by separation risk.
+          - table [ref=e61]:
+            - rowgroup [ref=e62]:
+              - row "Zone Risk Level" [ref=e63]:
+                - columnheader "Zone" [ref=e64]
+                - columnheader "Risk" [ref=e65]
+                - columnheader "Level" [ref=e66]
+            - rowgroup [ref=e67]:
+              - row "Run a simulation to see hotspots." [ref=e68]:
+                - cell "Run a simulation to see hotspots." [ref=e69]
+        - generic [ref=e70]:
+          - generic [ref=e71]:
+            - generic [ref=e72]: Separation timeline
+            - generic [ref=e73]: Expected separations per hour.
+          - paragraph [ref=e75]: No timeline yet.
+  - region "Notifications alt+T"

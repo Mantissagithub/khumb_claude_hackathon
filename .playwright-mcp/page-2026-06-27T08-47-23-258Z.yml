@@ -1,0 +1,178 @@
+- generic:
+  - generic:
+    - generic:
+      - complementary:
+        - generic:
+          - generic: स
+          - generic:
+            - paragraph: SANGAM
+            - paragraph: Kumbh Mela Ops
+        - navigation:
+          - paragraph: Modules
+          - link:
+            - /url: /ops
+            - img
+            - text: Dashboard
+          - link:
+            - /url: /ops/reports
+            - img
+            - text: Public Reports
+          - link:
+            - /url: /ops/queue
+            - img
+            - text: Review Queue
+          - link:
+            - /url: /ops/face
+            - img
+            - text: Face Search
+          - link:
+            - /url: /ops/voice
+            - img
+            - text: Voice Match
+          - link:
+            - /url: /ops/simulation
+            - img
+            - text: Simulation
+          - link:
+            - /url: /ops/routing
+            - img
+            - text: Routing
+          - link:
+            - /url: /ops/staff
+            - img
+            - text: Staff & Analytics
+        - generic:
+          - generic:
+            - generic: C
+            - generic:
+              - paragraph: Control Room Admin
+              - paragraph: admin
+          - button:
+            - img
+            - text: Sign out
+      - generic:
+        - main:
+          - generic:
+            - generic:
+              - heading [level=1]: Public Reports
+              - paragraph: Reports filed by the public (lost / seeking / found). Open one, match it against found reports and the registry, then confirm — the reporter sees the result instantly.
+          - generic:
+            - tablist:
+              - tab [selected]: searching
+              - tab: found
+              - tab: reunited
+          - generic:
+            - generic:
+              - generic:
+                - table:
+                  - rowgroup:
+                    - row:
+                      - columnheader: "#"
+                      - columnheader: Type
+                      - columnheader: Name
+                      - columnheader: Description
+                      - columnheader: Location
+                      - columnheader: Reporter
+                      - columnheader: Status
+                  - rowgroup:
+                    - row:
+                      - cell: "6"
+                      - cell: Seeking
+                      - cell: Ravi Krishnan
+                      - cell: elderly man saffron kurta rudraksha mala walking stick
+                      - cell: Ramkund
+                      - cell: "9123456789"
+                      - cell:
+                        - generic: searching
+                    - row:
+                      - cell: "5"
+                      - cell: Found person
+                      - cell: Unknown elderly man
+                      - cell: elderly man saffron kurta rudraksha mala walking stick confused
+                      - cell: Ramkund Ghat
+                      - cell: "9000000001"
+                      - cell:
+                        - generic: searching
+    - region "Notifications alt+T"
+  - 'dialog "Report #6 searching Seeking" [active] [ref=e106]':
+    - generic [ref=e107]:
+      - 'heading "Report #6 searching Seeking" [level=2] [ref=e108]':
+        - text: "Report #6"
+        - generic [ref=e109]: searching
+        - generic [ref=e111]: Seeking
+      - paragraph [ref=e112]: Match against found reports + the registry, then confirm.
+    - generic [ref=e113]:
+      - generic [ref=e115]: No photo
+      - generic [ref=e116]:
+        - paragraph [ref=e117]: "Name: Ravi Krishnan"
+        - paragraph [ref=e118]: "Gender / Age: — · —"
+        - paragraph [ref=e119]:
+          - img [ref=e120]
+          - text: Ramkund
+        - paragraph [ref=e123]: "Description: elderly man saffron kurta rudraksha mala walking stick"
+        - paragraph [ref=e124]:
+          - img [ref=e125]
+          - text: "9123456789"
+    - generic [ref=e127]:
+      - button "Run match" [ref=e128]:
+        - img
+        - text: Run match
+      - button "Reject" [ref=e129]:
+        - img
+        - text: Reject
+    - generic [ref=e132]:
+      - paragraph [ref=e133]: 5 candidate matches
+      - generic [ref=e134]:
+        - generic [ref=e135]:
+          - generic [ref=e136]:
+            - paragraph [ref=e137]: "Unknown elderly man report #5"
+            - paragraph [ref=e138]: elderly man saffron kurta rudraksha mala walking stick confused
+            - paragraph [ref=e139]: 8 shared terms
+          - generic [ref=e140]:
+            - generic [ref=e141]: 62%
+            - button "Confirm" [ref=e142]:
+              - img
+              - text: Confirm
+        - generic [ref=e143]:
+          - generic [ref=e144]:
+            - paragraph [ref=e145]: Gaurav Krishnan KMP-2027-02259
+            - paragraph [ref=e146]: Man in saffron kurta, has rudraksha mala
+            - paragraph [ref=e147]: 5 shared terms
+          - generic [ref=e148]:
+            - generic [ref=e149]: 36%
+            - button "Confirm" [ref=e150]:
+              - img
+              - text: Confirm
+        - generic [ref=e151]:
+          - generic [ref=e152]:
+            - paragraph [ref=e153]: Unknown KMP-2027-00990
+            - paragraph [ref=e154]: Man in saffron kurta, has rudraksha mala
+            - paragraph [ref=e155]: 4 shared terms
+          - generic [ref=e156]:
+            - generic [ref=e157]: 31%
+            - button "Confirm" [ref=e158]:
+              - img
+              - text: Confirm
+        - generic [ref=e159]:
+          - generic [ref=e160]:
+            - paragraph [ref=e161]: Unknown KMP-2027-00880
+            - paragraph [ref=e162]: Man in saffron kurta, has rudraksha mala
+            - paragraph [ref=e163]: 4 shared terms
+          - generic [ref=e164]:
+            - generic [ref=e165]: 31%
+            - button "Confirm" [ref=e166]:
+              - img
+              - text: Confirm
+        - generic [ref=e167]:
+          - generic [ref=e168]:
+            - paragraph [ref=e169]: Geeta Sinha KMP-2027-00710
+            - paragraph [ref=e170]: Man in saffron kurta, has rudraksha mala
+            - paragraph [ref=e171]: 4 shared terms
+          - generic [ref=e172]:
+            - generic [ref=e173]: 29%
+            - button "Confirm" [ref=e174]:
+              - img
+              - text: Confirm
+    - button "Close" [ref=e130]:
+      - img
+      - generic [ref=e131]: Close

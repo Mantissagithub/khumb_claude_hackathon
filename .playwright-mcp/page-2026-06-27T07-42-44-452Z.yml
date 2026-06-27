@@ -1,0 +1,114 @@
+- generic [ref=e2]:
+  - generic [ref=e3]:
+    - complementary [ref=e4]:
+      - generic [ref=e5]:
+        - generic [ref=e6]: स
+        - generic [ref=e7]:
+          - paragraph [ref=e8]: SANGAM
+          - paragraph [ref=e9]: Kumbh Mela Ops
+      - navigation [ref=e10]:
+        - paragraph [ref=e11]: Modules
+        - link "Dashboard" [ref=e12] [cursor=pointer]:
+          - /url: /
+          - img [ref=e13]
+          - text: Dashboard
+        - link "Review Queue" [ref=e18] [cursor=pointer]:
+          - /url: /queue
+          - img [ref=e19]
+          - text: Review Queue
+        - link "Face Search" [ref=e22] [cursor=pointer]:
+          - /url: /face
+          - img [ref=e23]
+          - text: Face Search
+        - link "Voice Match" [ref=e29] [cursor=pointer]:
+          - /url: /voice
+          - img [ref=e30]
+          - text: Voice Match
+        - link "Simulation" [ref=e31] [cursor=pointer]:
+          - /url: /simulation
+          - img [ref=e32]
+          - text: Simulation
+        - link "Routing" [ref=e34] [cursor=pointer]:
+          - /url: /routing
+          - img [ref=e35]
+          - text: Routing
+        - link "Staff & Analytics" [ref=e39] [cursor=pointer]:
+          - /url: /staff
+          - img [ref=e40]
+          - text: Staff & Analytics
+      - generic [ref=e45]:
+        - generic [ref=e46]:
+          - generic [ref=e47]: C
+          - generic [ref=e48]:
+            - paragraph [ref=e49]: Control Room Admin
+            - paragraph [ref=e50]: admin
+        - button "Sign out" [ref=e51]:
+          - img [ref=e52]
+          - text: Sign out
+    - main [ref=e56]:
+      - generic [ref=e58]:
+        - heading "Staff & Analytics" [level=1] [ref=e59]
+        - paragraph [ref=e60]: "Admin-only: manage staff accounts and view registry health."
+      - generic [ref=e61]:
+        - generic [ref=e62]:
+          - paragraph [ref=e63]: Total cases
+          - paragraph [ref=e64]: "2500"
+          - paragraph [ref=e65]: 349 active
+        - generic [ref=e66]:
+          - paragraph [ref=e67]: Reunited
+          - paragraph [ref=e68]: "2151"
+        - generic [ref=e69]:
+          - paragraph [ref=e70]: Submissions
+          - paragraph [ref=e71]: "1"
+          - paragraph [ref=e72]: 0 pending review
+      - generic [ref=e73]:
+        - generic [ref=e74]:
+          - generic [ref=e75]:
+            - generic [ref=e76]:
+              - img [ref=e77]
+              - text: Add staff
+            - generic [ref=e80]: Create an operator or admin account.
+          - generic [ref=e82]:
+            - generic [ref=e83]:
+              - generic [ref=e84]: Full name
+              - textbox "Full name" [ref=e85]
+            - generic [ref=e86]:
+              - generic [ref=e87]: Username
+              - textbox "Username" [ref=e88]
+            - generic [ref=e89]:
+              - generic [ref=e90]: Password
+              - textbox "Password" [ref=e91]
+            - generic [ref=e92]:
+              - generic [ref=e93]: Role
+              - combobox [ref=e94]:
+                - generic: Operator
+                - img
+              - combobox [ref=e95]
+            - button "Add staff" [ref=e96]
+        - generic [ref=e97]:
+          - generic [ref=e98]:
+            - generic [ref=e99]: Staff accounts
+            - generic [ref=e100]: 2 account(s).
+          - table [ref=e103]:
+            - rowgroup [ref=e104]:
+              - row "Name Username Role Action" [ref=e105]:
+                - columnheader "Name" [ref=e106]
+                - columnheader "Username" [ref=e107]
+                - columnheader "Role" [ref=e108]
+                - columnheader "Action" [ref=e109]
+            - rowgroup [ref=e110]:
+              - row "Control Room Admin admin admin" [ref=e111]:
+                - cell "Control Room Admin" [ref=e112]
+                - cell "admin" [ref=e113]
+                - cell "admin" [ref=e114]
+                - cell [ref=e115]:
+                  - button [ref=e116]:
+                    - img
+              - row "Field Operator operator operator" [ref=e117]:
+                - cell "Field Operator" [ref=e118]
+                - cell "operator" [ref=e119]
+                - cell "operator" [ref=e120]
+                - cell [ref=e121]:
+                  - button [ref=e122]:
+                    - img
+  - region "Notifications alt+T"

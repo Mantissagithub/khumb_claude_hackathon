@@ -1,0 +1,81 @@
+- generic [ref=e2]:
+  - generic [ref=e4]:
+    - complementary [ref=e5]:
+      - generic [ref=e6]:
+        - generic [ref=e7]: स
+        - generic [ref=e8]:
+          - paragraph [ref=e9]: SANGAM
+          - paragraph [ref=e10]: Kumbh Mela Ops
+      - navigation [ref=e11]:
+        - paragraph [ref=e12]: Modules
+        - link "Dashboard" [ref=e13] [cursor=pointer]:
+          - /url: /
+          - img [ref=e14]
+          - text: Dashboard
+        - link "Review Queue" [ref=e19] [cursor=pointer]:
+          - /url: /queue
+          - img [ref=e20]
+          - text: Review Queue
+        - link "Face Search" [ref=e23] [cursor=pointer]:
+          - /url: /face
+          - img [ref=e24]
+          - text: Face Search
+        - link "Voice Match" [ref=e30] [cursor=pointer]:
+          - /url: /voice
+          - img [ref=e31]
+          - text: Voice Match
+        - link "Simulation" [ref=e32] [cursor=pointer]:
+          - /url: /simulation
+          - img [ref=e33]
+          - text: Simulation
+        - link "Routing" [ref=e35] [cursor=pointer]:
+          - /url: /routing
+          - img [ref=e36]
+          - text: Routing
+        - link "Staff & Analytics" [ref=e40] [cursor=pointer]:
+          - /url: /staff
+          - img [ref=e41]
+          - text: Staff & Analytics
+      - generic [ref=e46]:
+        - generic [ref=e47]:
+          - generic [ref=e48]: C
+          - generic [ref=e49]:
+            - paragraph [ref=e50]: Control Room Admin
+            - paragraph [ref=e51]: admin
+        - button "Sign out" [ref=e52]:
+          - img [ref=e53]
+          - text: Sign out
+    - main [ref=e57]:
+      - generic [ref=e59]:
+        - heading "Review Queue" [level=1] [ref=e60]
+        - paragraph [ref=e61]: Public missing-person reports awaiting staff review. Open a report, run a match against the registry, then confirm, create a new case, or reject.
+      - generic [ref=e62]:
+        - tablist [ref=e64]:
+          - tab "pending" [ref=e65]
+          - tab "reviewing" [ref=e66]
+          - tab "matched" [active] [selected] [ref=e67]
+          - tab "promoted" [ref=e68]
+          - tab "rejected" [ref=e69]
+        - generic [ref=e70]:
+          - textbox "Search name / description…" [ref=e71]
+          - button [ref=e72]:
+            - img
+      - table [ref=e76]:
+        - rowgroup [ref=e77]:
+          - row "# Name Description Last seen Reporter Status" [ref=e78]:
+            - columnheader "#" [ref=e79]
+            - columnheader "Name" [ref=e80]
+            - columnheader "Description" [ref=e81]
+            - columnheader "Last seen" [ref=e82]
+            - columnheader "Reporter" [ref=e83]
+            - columnheader "Status" [ref=e84]
+        - rowgroup [ref=e85]:
+          - row "2 Ravi Krishnan elderly man saffron kurta rudraksha mala walking stick Ramkund Ghat +919812345678 matched" [ref=e174] [cursor=pointer]:
+            - cell "2" [ref=e175]
+            - cell "Ravi Krishnan" [ref=e176]
+            - cell "elderly man saffron kurta rudraksha mala walking stick" [ref=e177]
+            - cell "Ramkund Ghat" [ref=e178]
+            - cell "+919812345678" [ref=e179]
+            - cell "matched" [ref=e180]:
+              - generic [ref=e181]: matched
+  - region "Notifications alt+T"
