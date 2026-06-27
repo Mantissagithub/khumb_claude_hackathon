@@ -1,0 +1,23 @@
+# === KumbhSeva unified Streamlit app + sim/planning ===
+# Run:  pip install -r requirements.txt  &&  streamlit run streamlit_app.py
+
+# --- Streamlit UI + data ---
+streamlit>=1.36
+pandas>=2.0
+numpy>=1.26
+pydeck>=0.8
+altair>=5.0
+Pillow>=10.0
+
+# --- Reunification matching / registry ---
+rapidfuzz>=3.6          # fast fuzzy name matching (light fallback if absent)
+pyjwt                   # used by backend auth layer (not required by the Streamlit app)
+passlib                 # staff password hashing on first-run DB seed
+bcrypt<4.1              # passlib bcrypt backend
+
+# --- Crowd simulation (sim/) ---
+numba>=0.59             # JIT for the social-force kernels
+scikit-fmm>=2023.4      # eikonal fast-marching navfield
+
+# --- Deployment planning (planning/) ---
+anthropic>=0.39         # optional: live Claude planner; heuristic fallback if no ANTHROPIC_API_KEY
