@@ -1,0 +1,1 @@
+{"root":["./src/App.tsx","./src/main.tsx","./src/data/csv.ts","./src/plan/deploy.ts","./src/render/CorridorCanvas.tsx","./src/render/GeoMap.tsx","./src/sim/corridor.ts","./src/sim/cpuFallback.ts","./src/sim/engine.ts","./src/sim/navfield.ts","./src/sim/params.ts","./src/sim/proj.ts","./src/sim/spawn.ts","./src/sim/useWebGPUSim.ts","./src/sim/webgpu/device.ts"],"version":"5.9.3"}
