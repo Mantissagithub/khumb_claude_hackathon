@@ -16,10 +16,13 @@ sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 
 from fastapi import FastAPI                                   # noqa: E402
 from fastapi.middleware.cors import CORSMiddleware            # noqa: E402
+from fastapi.responses import RedirectResponse                # noqa: E402
+from fastapi.staticfiles import StaticFiles                   # noqa: E402
 
 from services.face_search.router import router as face_router  # noqa: E402
+from sahayak.router import router as sahayak_router            # noqa: E402
 
-app = FastAPI(title="Sangam — Kumbh Reunification API", version="0.1.0")
+app = FastAPI(title="Sahayak — Kumbh Reunification", version="0.1.0")
 
 # Dev CORS (PLAN.md fallback; the Vite proxy is preferred in production).
 app.add_middleware(CORSMiddleware, allow_origins=["*"], allow_credentials=True,
@@ -28,10 +31,18 @@ app.add_middleware(CORSMiddleware, allow_origins=["*"], allow_credentials=True,
 
 @app.get("/api/ping")
 def ping() -> dict:
-    return {"ok": True, "service": "sangam", "features": ["face_search"]}
+    return {"ok": True, "service": "sahayak", "features": ["face_search", "sahayak"]}
 
 
 app.include_router(face_router)
-# Member 2: app.include_router(voice_router)
-# Member 3: app.include_router(sim_router)
-# Member 4: app.include_router(routing_router)
+app.include_router(sahayak_router)
+# Member 2: app.include_router(voice_router)  ·  Member 3: sim  ·  Member 4: routing
+
+# Serve the Sahayak web app (Volunteer + Admin).
+_WEB = os.path.join(os.path.dirname(os.path.abspath(__file__)), "sahayak", "web")
+app.mount("/app", StaticFiles(directory=_WEB, html=True), name="app")
+
+
+@app.get("/")
+def root():
+    return RedirectResponse("/app/")
